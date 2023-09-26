@@ -58,6 +58,12 @@
     <Compile Include="AdminLandingForm.Designer.cs">
       <DependentUpon>AdminLandingForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminShiftsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminShiftsForm.Designer.cs">
+      <DependentUpon>AdminShiftsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="EmployeeAddForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminLandingForm.resx">
       <DependentUpon>AdminLandingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminShiftsForm.resx">
+      <DependentUpon>AdminShiftsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeAddForm.resx">
       <DependentUpon>EmployeeAddForm.cs</DependentUpon>
