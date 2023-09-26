@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Asus\\Desktop\\git.house\\s2-group3\\Media Bazaar\\Class Library\\Class Library.csproj": {}
+    "C:\\Users\\Asus\\Desktop\\git.house\\s2-group3\\Media Bazaar\\Class Library\\DAL.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Asus\\Desktop\\git.house\\s2-group3\\Media Bazaar\\Class Library\\Class Library.csproj": {
+    "C:\\Users\\Asus\\Desktop\\git.house\\s2-group3\\Media Bazaar\\Class Library\\DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Asus\\Desktop\\git.house\\s2-group3\\Media Bazaar\\Class Library\\Class Library.csproj",
-        "projectName": "Class Library",
-        "projectPath": "C:\\Users\\Asus\\Desktop\\git.house\\s2-group3\\Media Bazaar\\Class Library\\Class Library.csproj",
+        "projectUniqueName": "C:\\Users\\Asus\\Desktop\\git.house\\s2-group3\\Media Bazaar\\Class Library\\DAL.csproj",
+        "projectName": "DAL",
+        "projectPath": "C:\\Users\\Asus\\Desktop\\git.house\\s2-group3\\Media Bazaar\\Class Library\\DAL.csproj",
         "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Asus\\Desktop\\git.house\\s2-group3\\Media Bazaar\\Class Library\\obj\\",
         "projectStyle": "PackageReference",
