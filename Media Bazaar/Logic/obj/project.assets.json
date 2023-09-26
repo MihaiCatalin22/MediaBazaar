@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Asus\\Desktop\\git.house\\s2-group3\\Media Bazaar\\Class Library\\DAL.csproj",
-      "projectName": "DAL",
-      "projectPath": "C:\\Users\\Asus\\Desktop\\git.house\\s2-group3\\Media Bazaar\\Class Library\\DAL.csproj",
+      "projectUniqueName": "C:\\Users\\Asus\\Desktop\\git.house\\s2-group3\\Media Bazaar\\Logic\\Logic.csproj",
+      "projectName": "Logic",
+      "projectPath": "C:\\Users\\Asus\\Desktop\\git.house\\s2-group3\\Media Bazaar\\Logic\\Logic.csproj",
       "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Asus\\Desktop\\git.house\\s2-group3\\Media Bazaar\\Class Library\\obj\\",
+      "outputPath": "C:\\Users\\Asus\\Desktop\\git.house\\s2-group3\\Media Bazaar\\Logic\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
