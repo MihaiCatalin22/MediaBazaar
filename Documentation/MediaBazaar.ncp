@@ -1,0 +1,170 @@
+<Project>
+  <Name>MediaBazaar</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Untitled</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Employee</Name>
+        <Access>Public</Access>
+        <Location left="295" top="21" />
+        <Size width="241" height="264" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int id</Member>
+        <Member type="Field">string username</Member>
+        <Member type="Field">string password</Member>
+        <Member type="Field">string email</Member>
+        <Member type="Field">string name</Member>
+        <Member type="Field">DateTime RegistrationDate</Member>
+        <Member type="Field">List&lt;ShiftType&gt; availableTime</Member>
+        <Member type="Field">string profilePic</Member>
+        <Member type="Field">int Salary</Member>
+        <Member type="Method">public void ResetPassword(string newPassword)</Member>
+        <Member type="Method">public void DeclineShift(Shift shift)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Enum">
+        <Name>ShiftType</Name>
+        <Access>Public</Access>
+        <Location left="66" top="416" />
+        <Size width="163" height="112" />
+        <Collapsed>False</Collapsed>
+        <Value>Morning</Value>
+        <Value>Afternoon</Value>
+        <Value>Evening</Value>
+      </Entity>
+      <Entity type="Class">
+        <Name>Shift</Name>
+        <Access>Public</Access>
+        <Location left="320" top="416" />
+        <Size width="163" height="145" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">DateTime startTime</Member>
+        <Member type="Field">DateTime endTime</Member>
+        <Member type="Field">Employee employee</Member>
+        <Member type="Field">ShiftType shiftType</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ShiftAdministration</Name>
+        <Access>Public</Access>
+        <Location left="614" top="416" />
+        <Size width="224" height="145" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">List&lt;Shift&gt; shifts</Member>
+        <Member type="Method">public void SearchShift(Employee employee)</Member>
+        <Member type="Method">public void CreateShift(Shift shift)</Member>
+        <Member type="Method">public void DeleteShift(Shift shift)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>EmployeeAdministration</Name>
+        <Access>Public</Access>
+        <Location left="614" top="21" />
+        <Size width="263" height="179" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">List&lt;Employee&gt; employees</Member>
+        <Member type="Field">Employee loggedInEmployee</Member>
+        <Member type="Method">public void Login(string username, string password)</Member>
+        <Member type="Method">public Employee SearchEmployee(int id)</Member>
+        <Member type="Method">public void AddEmployee(Employee employee)</Member>
+        <Member type="Method">public void DeleteEmployee(Employee employee)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Manager</Name>
+        <Access>Public</Access>
+        <Location left="983" top="21" />
+        <Size width="163" height="128" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int id</Member>
+        <Member type="Field">string username</Member>
+        <Member type="Field">string password</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ManagerAdministration</Name>
+        <Access>Public</Access>
+        <Location left="1214" top="21" />
+        <Size width="163" height="94" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">List&lt;Manager&gt; managers</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Admin</Name>
+        <Access>Public</Access>
+        <Location left="983" top="402" />
+        <Size width="163" height="128" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int id</Member>
+        <Member type="Field">string username</Member>
+        <Member type="Field">string password</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>AdminController</Name>
+        <Access>Public</Access>
+        <Location left="1225" top="402" />
+        <Size width="163" height="94" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">List&lt;Admin&gt; admins</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Association" first="0" second="2">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="3" second="2">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="2" second="1">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>270</X>
+          <Y>495</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="4" second="0">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="6" second="5">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="8" second="7">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+</Project>
