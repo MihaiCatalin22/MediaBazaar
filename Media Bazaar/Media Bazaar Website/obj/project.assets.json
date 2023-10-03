@@ -1,11 +1,49 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {}
+    "net6.0": {
+      "ClassLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ClassLibrary.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ClassLibrary.dll": {}
+        }
+      },
+      "DAL Library/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "ClassLibrary": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DAL Library.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DAL Library.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "ClassLibrary/1.0.0": {
+      "type": "project",
+      "path": "../Logic/ClassLibrary.csproj",
+      "msbuildProject": "../Logic/ClassLibrary.csproj"
+    },
+    "DAL Library/1.0.0": {
+      "type": "project",
+      "path": "../DAL Library/DAL Library.csproj",
+      "msbuildProject": "../DAL Library/DAL Library.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0": []
+    "net6.0": [
+      "ClassLibrary >= 1.0.0",
+      "DAL Library >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Asus\\.nuget\\packages\\": {},
@@ -39,7 +77,14 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Asus\\Desktop\\git.house\\s2-group3\\Media Bazaar\\DAL Library\\DAL Library.csproj": {
+              "projectPath": "C:\\Users\\Asus\\Desktop\\git.house\\s2-group3\\Media Bazaar\\DAL Library\\DAL Library.csproj"
+            },
+            "C:\\Users\\Asus\\Desktop\\git.house\\s2-group3\\Media Bazaar\\Logic\\ClassLibrary.csproj": {
+              "projectPath": "C:\\Users\\Asus\\Desktop\\git.house\\s2-group3\\Media Bazaar\\Logic\\ClassLibrary.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

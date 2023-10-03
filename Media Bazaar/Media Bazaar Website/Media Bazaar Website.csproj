@@ -7,4 +7,9 @@
     <RootNamespace>Media_Bazaar_Website</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DAL Library\DAL Library.csproj" />
+    <ProjectReference Include="..\Logic\ClassLibrary.csproj" />
+  </ItemGroup>
+
 </Project>
