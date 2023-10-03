@@ -8,24 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Asus\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\urael\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Asus\\Desktop\\git.house\\s2-group3\\Media Bazaar\\Logic\\ClassLibrary.csproj",
+      "projectUniqueName": "C:\\Users\\urael\\Documents\\GitHub\\s2-group3\\Media Bazaar\\Logic\\ClassLibrary.csproj",
       "projectName": "ClassLibrary",
-      "projectPath": "C:\\Users\\Asus\\Desktop\\git.house\\s2-group3\\Media Bazaar\\Logic\\ClassLibrary.csproj",
-      "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Asus\\Desktop\\git.house\\s2-group3\\Media Bazaar\\Logic\\obj\\",
+      "projectPath": "C:\\Users\\urael\\Documents\\GitHub\\s2-group3\\Media Bazaar\\Logic\\ClassLibrary.csproj",
+      "packagesPath": "C:\\Users\\urael\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\urael\\Documents\\GitHub\\s2-group3\\Media Bazaar\\Logic\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\urael\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -33,7 +28,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

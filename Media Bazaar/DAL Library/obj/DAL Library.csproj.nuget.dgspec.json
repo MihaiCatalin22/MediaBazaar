@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Asus\\Desktop\\git.house\\s2-group3\\Media Bazaar\\DAL Library\\DAL Library.csproj": {}
+    "C:\\Users\\urael\\Documents\\GitHub\\s2-group3\\Media Bazaar\\DAL Library\\DAL Library.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Asus\\Desktop\\git.house\\s2-group3\\Media Bazaar\\DAL Library\\DAL Library.csproj": {
+    "C:\\Users\\urael\\Documents\\GitHub\\s2-group3\\Media Bazaar\\DAL Library\\DAL Library.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Asus\\Desktop\\git.house\\s2-group3\\Media Bazaar\\DAL Library\\DAL Library.csproj",
+        "projectUniqueName": "C:\\Users\\urael\\Documents\\GitHub\\s2-group3\\Media Bazaar\\DAL Library\\DAL Library.csproj",
         "projectName": "DAL Library",
-        "projectPath": "C:\\Users\\Asus\\Desktop\\git.house\\s2-group3\\Media Bazaar\\DAL Library\\DAL Library.csproj",
-        "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Asus\\Desktop\\git.house\\s2-group3\\Media Bazaar\\DAL Library\\obj\\",
+        "projectPath": "C:\\Users\\urael\\Documents\\GitHub\\s2-group3\\Media Bazaar\\DAL Library\\DAL Library.csproj",
+        "packagesPath": "C:\\Users\\urael\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\urael\\Documents\\GitHub\\s2-group3\\Media Bazaar\\DAL Library\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\urael\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,15 +22,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Asus\\Desktop\\git.house\\s2-group3\\Media Bazaar\\Logic\\ClassLibrary.csproj": {
-                "projectPath": "C:\\Users\\Asus\\Desktop\\git.house\\s2-group3\\Media Bazaar\\Logic\\ClassLibrary.csproj"
+              "C:\\Users\\urael\\Documents\\GitHub\\s2-group3\\Media Bazaar\\Logic\\ClassLibrary.csproj": {
+                "projectPath": "C:\\Users\\urael\\Documents\\GitHub\\s2-group3\\Media Bazaar\\Logic\\ClassLibrary.csproj"
               }
             }
           }
@@ -68,21 +63,17 @@
         }
       }
     },
-    "C:\\Users\\Asus\\Desktop\\git.house\\s2-group3\\Media Bazaar\\Logic\\ClassLibrary.csproj": {
+    "C:\\Users\\urael\\Documents\\GitHub\\s2-group3\\Media Bazaar\\Logic\\ClassLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Asus\\Desktop\\git.house\\s2-group3\\Media Bazaar\\Logic\\ClassLibrary.csproj",
+        "projectUniqueName": "C:\\Users\\urael\\Documents\\GitHub\\s2-group3\\Media Bazaar\\Logic\\ClassLibrary.csproj",
         "projectName": "ClassLibrary",
-        "projectPath": "C:\\Users\\Asus\\Desktop\\git.house\\s2-group3\\Media Bazaar\\Logic\\ClassLibrary.csproj",
-        "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Asus\\Desktop\\git.house\\s2-group3\\Media Bazaar\\Logic\\obj\\",
+        "projectPath": "C:\\Users\\urael\\Documents\\GitHub\\s2-group3\\Media Bazaar\\Logic\\ClassLibrary.csproj",
+        "packagesPath": "C:\\Users\\urael\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\urael\\Documents\\GitHub\\s2-group3\\Media Bazaar\\Logic\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\urael\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -90,7 +81,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
