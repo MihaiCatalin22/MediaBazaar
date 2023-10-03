@@ -1,0 +1,11 @@
+E:\uni\s2\project\group\s2-group3\Media Bazaar\Media Bazaar\obj\Debug\Media Bazaar - Desktop App.csproj.AssemblyReference.cache
+E:\uni\s2\project\group\s2-group3\Media Bazaar\Media Bazaar\obj\Debug\Media_Bazaar.AdminLandingForm.resources
+E:\uni\s2\project\group\s2-group3\Media Bazaar\Media Bazaar\obj\Debug\Media_Bazaar.Properties.Resources.resources
+E:\uni\s2\project\group\s2-group3\Media Bazaar\Media Bazaar\obj\Debug\Media Bazaar - Desktop App.csproj.GenerateResource.cache
+E:\uni\s2\project\group\s2-group3\Media Bazaar\Media Bazaar\obj\Debug\Media Bazaar - Desktop App.csproj.CoreCompileInputs.cache
+E:\uni\s2\project\group\s2-group3\Media Bazaar\Media Bazaar\bin\Debug\Media Bazaar.exe.config
+E:\uni\s2\project\group\s2-group3\Media Bazaar\Media Bazaar\bin\Debug\Media Bazaar.exe
+E:\uni\s2\project\group\s2-group3\Media Bazaar\Media Bazaar\bin\Debug\Media Bazaar.pdb
+E:\uni\s2\project\group\s2-group3\Media Bazaar\Media Bazaar\obj\Debug\Media_Bazaar.Login.resources
+E:\uni\s2\project\group\s2-group3\Media Bazaar\Media Bazaar\obj\Debug\Media Bazaar.exe
+E:\uni\s2\project\group\s2-group3\Media Bazaar\Media Bazaar\obj\Debug\Media Bazaar.pdb
