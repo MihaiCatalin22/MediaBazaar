@@ -41,6 +41,14 @@ namespace Logic.Controllers
             }
             return null;
         }
+        public Employee Get(string username)
+        {
+            foreach (Employee employee in GetAll())
+            {
+                if (employee.Username == username) return employee;
+            }
+            return null;
+        }
         public Employee[] GetAllByDepartment(Department department)
         {
             List<Employee> employees = new();
@@ -64,7 +72,6 @@ namespace Logic.Controllers
             }
             return null;
         }
-
         public bool IsAdmin(Employee employee)
         {
             if (employee.Department.Name == "Administration")
