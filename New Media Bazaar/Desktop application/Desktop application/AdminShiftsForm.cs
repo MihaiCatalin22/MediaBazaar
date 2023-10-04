@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Logic.Controllers;
+using DAL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +14,7 @@ namespace Desktop_application
 {
     public partial class AdminShiftsForm : Form
     {
+        public ShiftController ShiftController { get; private set; } = new(new DALShiftController());
         public AdminShiftsForm()
         {
             InitializeComponent();

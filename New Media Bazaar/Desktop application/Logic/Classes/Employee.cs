@@ -64,6 +64,10 @@ namespace Logic.Classes
             Shifts = shifts;
         }
 
+        public Employee(int id, string username, string password, Department department, string? v1, string? v2, string? v3, decimal v4, DateTime dateTime, string? v5, int v6) : this(id, username, password, department)
+        {
+        }
+
         public void ChangeDetails(string name, string username, string phone, decimal salary)
         {
             Name = name;
