@@ -35,7 +35,7 @@ namespace Desktop_application
             if (login.CheckLogin(username, password) != null)
             {
                 (new AdminLandingForm()).Show();
-                this.Close();
+                this.Hide();
             }
             else
             {
