@@ -14,7 +14,7 @@ namespace Desktop_application
 {
     public partial class AdminShiftsForm : Form
     {
-        public ShiftController ShiftController { get; private set; } = new(new DALShiftController());
+        public ShiftController ShiftController { get; private set; } = new(new DALShiftController(new CreateConnection()));
         public AdminShiftsForm()
         {
             InitializeComponent();
