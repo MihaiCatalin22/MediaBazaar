@@ -16,5 +16,21 @@ namespace Desktop_application
         {
             InitializeComponent();
         }
+
+        private void btnCreateAnno_Click(object sender, EventArgs e)
+        {
+            (new CreateAnnouncement()).Show();
+            this.Hide();
+        }
+
+        private void lbAnnouncements_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (lbAnnouncements.SelectedItems != null)
+            {
+                (new EditAnnouncement()).Show();
+                this.Hide();
+            }
+            
+        }
     }
 }
