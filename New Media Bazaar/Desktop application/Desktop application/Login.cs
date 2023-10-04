@@ -1,4 +1,5 @@
 ﻿using ClassLibrary.Controllers;
+using DAL;
 using DAL_Library;
 using System;
 using System.Collections.Generic;
@@ -19,7 +20,7 @@ namespace Desktop_application
             InitializeComponent();
         }
 
-        LoginController login = new LoginController(new DALLogin());
+        LoginController login = new LoginController(new DALLogin(new CreateConnection()));
 
         private void btnLogin_Click(object sender, EventArgs e)
         {

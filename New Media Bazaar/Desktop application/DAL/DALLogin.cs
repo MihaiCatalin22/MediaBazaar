@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ClassLibrary.Classes;
 using ClassLibrary.Interfaces;
+using DAL;
 using Microsoft.Data.SqlClient;
 
 namespace DAL_Library
@@ -13,13 +14,17 @@ namespace DAL_Library
     public class DALLogin : ILoginConttroller
     {
         public Login Checkadmin = new Login();
-        private const string CONNECTION_STRING = "Server = mssqlstud.fhict.local; Database = dbi464839_mediabazar; User Id = dbi464839_mediabazar; Password = 1234;";
-        
+
+        private readonly CreateConnection createConnection;
+        public DALLogin(CreateConnection createConnection)
+        {
+            this.createConnection = createConnection;
+        }
         public Login CheckLogin(string username, string password)
         {
-            using SqlConnection conn = new SqlConnection(CONNECTION_STRING);
+            using SqlConnection conn = createConnection.Connection();
             {
-                string query = @"SELECT * FROM User WHERE Username=@Username";
+                string query = @"SELECT * FROM Employee WHERE Username=@Username";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 try
                 {
@@ -34,6 +39,10 @@ namespace DAL_Library
                             Checkadmin.Password = dr["Password"].ToString();
                         }
                     }
+                }
+                catch (SqlException sqlex)
+                {
+                    throw sqlex;
                 }
                 catch (Exception ex)
                 {
