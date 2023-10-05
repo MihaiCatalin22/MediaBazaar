@@ -12,6 +12,8 @@ namespace Logic.Controllers
     {
         private IDepartmentController _departmentDAL;
 
+        private List<Department> departments = new List<Department>();
+
         public DepartmentController(IDepartmentController departmentController)
         {
             _departmentDAL = departmentController;
@@ -48,5 +50,12 @@ namespace Logic.Controllers
             }
             return null;
         }
+
+        public void AddDepartment(Department department)
+        {
+            departments.Add(department);
+        }
+
+
     }
 }

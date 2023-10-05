@@ -62,6 +62,7 @@
             btnAdd.TabIndex = 41;
             btnAdd.Text = "Add employee";
             btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
             // 
             // btnBack
             // 
@@ -286,6 +287,7 @@
             Controls.Add(lblNewEmployee);
             Name = "EmployeeAddForm";
             Text = "EmployeeAddForm";
+            Load += EmployeeAddForm_Load;
             ((System.ComponentModel.ISupportInitialize)numUDSalary).EndInit();
             ResumeLayout(false);
             PerformLayout();
