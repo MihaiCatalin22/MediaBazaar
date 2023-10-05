@@ -202,6 +202,7 @@
             lblEmployees.Size = new Size(96, 20);
             lblEmployees.TabIndex = 1;
             lblEmployees.Text = "Employees";
+            lblEmployees.Click += lblEmployees_Click;
             // 
             // lblAnnouncements
             // 
@@ -212,6 +213,7 @@
             lblAnnouncements.Size = new Size(139, 20);
             lblAnnouncements.TabIndex = 0;
             lblAnnouncements.Text = "Announcements";
+            lblAnnouncements.Click += lblAnnouncements_Click;
             // 
             // monthCalendar1
             // 
