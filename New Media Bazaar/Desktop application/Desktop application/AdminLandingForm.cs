@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Logic.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,12 @@ namespace Desktop_application
 {
     public partial class AdminLandingForm : Form
     {
-        public AdminLandingForm()
+        private Employee _loggedInEmployee;
+        public AdminLandingForm(Employee loggedInEmployee)
         {
             InitializeComponent();
+            _loggedInEmployee = loggedInEmployee;
+            lblWelcome.Text = "Welcome, " + _loggedInEmployee.Username + "!";
         }
     }
 }

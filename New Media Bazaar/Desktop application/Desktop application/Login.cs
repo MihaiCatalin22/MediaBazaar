@@ -1,6 +1,8 @@
 ﻿using ClassLibrary.Controllers;
 using DAL;
 using DAL_Library;
+using Logic.Classes;
+using Logic.Controllers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +17,8 @@ namespace Desktop_application
 {
     public partial class Login : Form
     {
+        public EmployeeController EmployeeController { get; private set; } = new(new DALEmployeeController());
+        public Employee? LoggedInEmployee { get; private set; } = null;
         public Login()
         {
             InitializeComponent();
@@ -24,22 +28,29 @@ namespace Desktop_application
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string username = tbUsername.Text;
-            string password = tbPassword.Text;
-            if (username.Length== 0 || password.Length==0)
-            {
-                MessageBox.Show("Username and Password can not be empty");
-                return;
-            }
+            string _username = tbUsername.Text;
+            string _password = tbPassword.Text;
 
-            if (login.CheckLogin(username, password) != null)
+            if (EmployeeController.Login(_username, _password) == null)
             {
-                (new AdminLandingForm()).Show();
-                this.Close();
+                MessageBox.Show("Incorrect login details, try again.");
+                return;
             }
             else
             {
-                MessageBox.Show("Username or Password is not correct");
+                LoggedInEmployee = EmployeeController.Login(_username, _password);
+
+                if (EmployeeController.IsAdmin(LoggedInEmployee))
+                {
+                    AdminLandingForm form = new AdminLandingForm(LoggedInEmployee);
+                    this.Hide();
+                    form.ShowDialog();
+                    this.Close();
+                }               
+                else
+                {
+                    MessageBox.Show("You do not have permission to access the application.");
+                }
             }
         }
     }

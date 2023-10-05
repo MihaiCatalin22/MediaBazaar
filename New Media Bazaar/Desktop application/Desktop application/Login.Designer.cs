@@ -41,7 +41,7 @@
             // 
             btnLogin.BackColor = Color.Thistle;
             btnLogin.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnLogin.Location = new Point(315, 489);
+            btnLogin.Location = new Point(262, 475);
             btnLogin.Margin = new Padding(3, 4, 3, 4);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(176, 55);
@@ -54,7 +54,7 @@
             // 
             lblPassword.AutoSize = true;
             lblPassword.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            lblPassword.Location = new Point(195, 388);
+            lblPassword.Location = new Point(142, 374);
             lblPassword.Name = "lblPassword";
             lblPassword.Size = new Size(113, 25);
             lblPassword.TabIndex = 12;
@@ -64,7 +64,7 @@
             // 
             lblUsername.AutoSize = true;
             lblUsername.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            lblUsername.Location = new Point(192, 333);
+            lblUsername.Location = new Point(139, 319);
             lblUsername.Name = "lblUsername";
             lblUsername.Size = new Size(117, 25);
             lblUsername.TabIndex = 11;
@@ -72,15 +72,16 @@
             // 
             // tbPassword
             // 
-            tbPassword.Location = new Point(315, 393);
+            tbPassword.Location = new Point(262, 379);
             tbPassword.Margin = new Padding(3, 4, 3, 4);
             tbPassword.Name = "tbPassword";
+            tbPassword.PasswordChar = '*';
             tbPassword.Size = new Size(176, 27);
             tbPassword.TabIndex = 10;
             // 
             // tbUsername
             // 
-            tbUsername.Location = new Point(315, 337);
+            tbUsername.Location = new Point(262, 323);
             tbUsername.Margin = new Padding(3, 4, 3, 4);
             tbUsername.Name = "tbUsername";
             tbUsername.Size = new Size(176, 27);
@@ -90,7 +91,7 @@
             // 
             lblLogin.AutoSize = true;
             lblLogin.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            lblLogin.Location = new Point(351, 205);
+            lblLogin.Location = new Point(298, 191);
             lblLogin.Name = "lblLogin";
             lblLogin.Size = new Size(78, 29);
             lblLogin.TabIndex = 8;
@@ -100,7 +101,7 @@
             // 
             lblMediaBazaar.AutoSize = true;
             lblMediaBazaar.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            lblMediaBazaar.Location = new Point(282, 147);
+            lblMediaBazaar.Location = new Point(229, 133);
             lblMediaBazaar.Name = "lblMediaBazaar";
             lblMediaBazaar.Size = new Size(209, 36);
             lblMediaBazaar.TabIndex = 7;
