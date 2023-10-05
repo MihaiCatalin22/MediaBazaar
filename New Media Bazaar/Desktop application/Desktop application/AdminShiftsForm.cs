@@ -88,7 +88,6 @@ namespace Desktop_application
                 Panel panel = new Panel();
                 panel.Name = shift.ToString();
                 Label lblEmployee = new Label();
-                //lblEmployee.AutoSize = true;
                 lblEmployee.Text = $"{shift.Employee.Id}: {shift.Employee.Name}";
                 lblEmployee.Size = new Size(270, 150);
                 panel.Size = new Size(280, 150);
@@ -122,6 +121,22 @@ namespace Desktop_application
             {
                 flowLayoutPanelEvening.Controls.Add(panel);
             }
+        }
+
+        private void lblEmployees_Click(object sender, EventArgs e)
+        {
+            AdminEmployeeForm form = new AdminEmployeeForm();
+            this.Hide();
+            form.ShowDialog();
+            this.Close();
+        }
+
+        private void lblAnnouncements_Click(object sender, EventArgs e)
+        {
+            AdminLandingForm form = new AdminLandingForm();
+            this.Hide();
+            form.ShowDialog();
+            this.Close();
         }
     }
 }
