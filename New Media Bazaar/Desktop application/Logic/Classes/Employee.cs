@@ -82,5 +82,7 @@ namespace Logic.Classes
                 return $"{Id}: {Name} ({Username}) - {Email}";
             return $"{Id}: {Name} ({Username})";
         }
+
+
     }
 }

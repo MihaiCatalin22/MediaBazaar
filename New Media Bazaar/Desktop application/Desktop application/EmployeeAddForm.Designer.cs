@@ -144,6 +144,7 @@
             cbEvening.TabIndex = 32;
             cbEvening.Text = "Evening shift";
             cbEvening.UseVisualStyleBackColor = true;
+            cbEvening.CheckedChanged += cbEvening_CheckedChanged;
             // 
             // cbAfternoon
             // 
@@ -156,6 +157,7 @@
             cbAfternoon.TabIndex = 31;
             cbAfternoon.Text = "Afternoon shift";
             cbAfternoon.UseVisualStyleBackColor = true;
+            cbAfternoon.CheckedChanged += cbAfternoon_CheckedChanged;
             // 
             // cbMorning
             // 
@@ -168,6 +170,7 @@
             cbMorning.TabIndex = 30;
             cbMorning.Text = "Morning shift";
             cbMorning.UseVisualStyleBackColor = true;
+            cbMorning.CheckedChanged += cbMorning_CheckedChanged;
             // 
             // lblSalary
             // 
