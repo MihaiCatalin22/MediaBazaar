@@ -133,7 +133,7 @@ namespace Desktop_application
 
         private void lblAnnouncements_Click(object sender, EventArgs e)
         {
-            AdminLandingForm form = new AdminLandingForm();
+            AdminLandingForm form = new AdminLandingForm(_loggedInEmployee);
             this.Hide();
             form.ShowDialog();
             this.Close();
