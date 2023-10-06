@@ -70,7 +70,7 @@ namespace Desktop_application
 
         private void bttnEmployees_Click(object sender, EventArgs e)
         {
-            AdminEmployeeForm adminEmployeeForm = new AdminEmployeeForm();
+            AdminEmployeeForm adminEmployeeForm = new AdminEmployeeForm(_loggedInEmployee);
             this.Hide();
             adminEmployeeForm.ShowDialog();
             this.Close();

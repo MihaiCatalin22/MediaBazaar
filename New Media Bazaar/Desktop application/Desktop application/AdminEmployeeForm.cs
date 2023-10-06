@@ -77,6 +77,7 @@ namespace Desktop_application
             EmployeeAddForm form = new EmployeeAddForm(_loggedInEmployee);
             this.Hide();
             form.ShowDialog();
+            this.Close();
         }
 
         private void button4_Click(object sender, EventArgs e)
