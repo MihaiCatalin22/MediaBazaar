@@ -73,7 +73,7 @@ namespace DAL
                             DateTime startDate = DateTime.Parse(dr["StartDate"].ToString());
                             DateTime endDate = DateTime.Parse(dr["EndDate"].ToString());
 
-                            Announcement allAnnouncement = new Announcement(id,title, details,startDate,endDate);
+                            Announcement allAnnouncement = new Announcement(id, title, details, startDate, endDate);
                             list.Add(allAnnouncement);
                         }
                     }
@@ -83,20 +83,49 @@ namespace DAL
                 {
                     throw sqlex;
                 }
-                
+
             }
-            
+
             return list.ToArray();
         }
 
         public Announcement GetAnnouncement(int id)
         {
-            throw new NotImplementedException();
-        }
+            Announcement getAnnouncement = new Announcement();
+            using SqlConnection conn = createConnection.Connection();
+            {
+                string query = @"SELECT * FROM Announcements WHERE Id=@Id";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                try
+                {
+                    cmd.Parameters.AddWithValue("@id", id);
+                    conn.Open();
 
+                    using (SqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            string title = dr["Title"].ToString();
+                            string details = dr["Details"].ToString();
+                            DateTime startDate = DateTime.Parse(dr["StartDate"].ToString());
+                            DateTime endDate = DateTime.Parse(dr["EndDate"].ToString());
+
+                            getAnnouncement = new Announcement(id, title, details, startDate, endDate);
+                        }
+                    }
+                    conn.Close();
+                }
+                catch (SqlException sqlex)
+                {
+                    throw sqlex;
+                }
+                return getAnnouncement;
+            }
+        }
         public void RemoveAnnouncement(int id)
         {
             throw new NotImplementedException();
         }
+        
     }
 }

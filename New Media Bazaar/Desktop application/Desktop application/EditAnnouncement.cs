@@ -15,11 +15,14 @@ namespace Desktop_application
 {
     public partial class EditAnnouncement : Form
     {
-        public EditAnnouncement()
+        public EditAnnouncement(Announcement oldAnnouncement)
         {
             InitializeComponent();
             tbTitle.ReadOnly = true;
             tbDetails.ReadOnly = true;
+
+            tbTitle.Text = oldAnnouncement.Title;
+            tbDetails.Text = oldAnnouncement.Details;
         }
         Announcement announcement = new Announcement();
         AnnoucementController annoucementController = new AnnoucementController(new DALAnnoucement(new CreateConnection()));
@@ -27,12 +30,6 @@ namespace Desktop_application
         {
             tbTitle.ReadOnly = false;
             tbDetails.ReadOnly = false;
-        }
-
-        //ToDo edit
-        private void EditAnnouncement_Load(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
         }
 
         //ToDo save edit

@@ -19,6 +19,8 @@ namespace Desktop_application
         {
             InitializeComponent();
         }
+        List<Announcement> announcements = new List<Announcement>();
+        Announcement announcement = new Announcement();
         AnnoucementController annoucementController = new AnnoucementController(new DALAnnoucement(new CreateConnection()));
 
         private void btnCreateAnno_Click(object sender, EventArgs e)
@@ -30,9 +32,18 @@ namespace Desktop_application
         //ToDo double click
         private void lbAnnouncements_MouseDoubleClick(object sender, MouseEventArgs e)
         {
+            announcements = annoucementController.GetAllAnnouncements().ToList<Announcement>();
             if (lbAnnouncements.SelectedItems != null)
             {
-                new EditAnnouncement().Show();
+                foreach (Announcement currentAnnouncement in announcements)
+                {
+                    if (lbAnnouncements.SelectedItem.ToString() == currentAnnouncement.Title)
+                    {
+                        announcement = annoucementController.GetAnnouncement(currentAnnouncement.Id);
+                    }
+                }
+                EditAnnouncement editAnnouncement = new EditAnnouncement(announcement);
+                editAnnouncement.Show();
                 this.Hide();
             }
 
@@ -42,7 +53,7 @@ namespace Desktop_application
         {
             foreach (Announcement announcement in annoucementController.GetAllAnnouncements())
             {
-                lbAnnouncements.Items.Add(announcement).ToString();
+                lbAnnouncements.Items.Add(announcement.Title).ToString();
             }
         }
 

@@ -164,7 +164,6 @@
             Controls.Add(lblDetails);
             Name = "EditAnnouncement";
             Text = "EditAnnouncement";
-            Load += EditAnnouncement_Load;
             ResumeLayout(false);
             PerformLayout();
         }
