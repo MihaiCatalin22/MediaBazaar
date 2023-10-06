@@ -251,7 +251,9 @@
             Controls.Add(lblAnno);
             Controls.Add(lblWelcome);
             Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "AdminLandingForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AdminLandingForm";
             Load += AdminLandingForm_Load;
             gbFilters.ResumeLayout(false);

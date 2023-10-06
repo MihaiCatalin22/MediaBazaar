@@ -189,7 +189,9 @@
             Controls.Add(lbEmployees);
             Controls.Add(tbSearch);
             Controls.Add(lblEmp);
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "AdminEmployeeForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AdminEmployeeForm";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

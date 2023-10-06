@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using ClassLibrary.Classes;
 using DAL;
 using Logic.Classes;
@@ -20,32 +21,99 @@ namespace Desktop_application
         private Employee employee;
         public DepartmentController DepartmentController { get; private set; } = new(new DALDepartmentController());
         public EmployeeController EmployeeController { get; private set; } = new(new DALEmployeeController());
-
-        private int shiftCounter = 0;
-
-
-        private int idSeeder = 0;
-
-        public EmployeeAddForm()
+        Employee _loggedInEmployee;
+        public EmployeeAddForm(Employee loggedInEmployee)
         {
             InitializeComponent();
-            Department newDepartment = new Department("Department 1");
-            DepartmentController.AddDepartment(newDepartment);
-            cbDepartment.Items.Add(newDepartment.Name);
+            _loggedInEmployee = loggedInEmployee;
+            foreach (Department department in DepartmentController.GetAll())
+            {
+                cbDepartment.Items.Add(department.Name);
+            }
 
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (CheckFields())
+            string _name = tbName.Text;
+            string _password = tbPassword.Text;
+            string _username = tbUsername.Text;
+            decimal _salary = numUDSalary.Value;
+            string _email = tbEmail.Text;
+            string _phone = tbPhone.Text;
+            string departmentName = null;
+            if (cbDepartment.SelectedIndex != -1)
             {
-                idSeeder++;
-                Department department = new Department(this.cbDepartment.GetItemText(this.cbDepartment.SelectedItem));
-                DateTime dateTime = DateTime.Now;
-                employee = new Employee(idSeeder, tbUsername.Text, tbPassword.Text, department, tbName.Text, tbEmail.Text, tbPhone.Text, Convert.ToDecimal(numUDSalary.Value), dateTime, shiftCounter);
-                EmployeeController.AddEmployee(employee);
-                MessageBox.Show(employee.ToString());
+                departmentName = cbDepartment.SelectedItem.ToString();
             }
+            Department? _department = DepartmentController.Get(departmentName);
+            int _shifts = 0;
+
+            if (_name.Length == 0 || _password.Length == 0 || _username.Length == 0)
+            {
+                MessageBox.Show("Name, username and password cannot be empty!");
+                return;
+            }
+
+            if (_salary == 0)
+            {
+                MessageBox.Show("Salary cannot be 0!");
+                return;
+            }
+
+            if (ckbMorning.Checked == true && ckbAfternoon.Checked == true && ckbEvening.Checked == true)
+            {
+                MessageBox.Show("You cannot select more than 2 preferred shifts!");
+                return;
+            }
+            else
+            {
+                if (ckbMorning.Checked == false && ckbAfternoon.Checked == false && ckbEvening.Checked == false)
+                {
+                    MessageBox.Show("Please select at least one preferred shift!");
+                    return;
+                }
+                else
+                {
+                    if (ckbMorning.Checked == true && ckbAfternoon.Checked == true)
+                    {
+                        _shifts.AddShift(ShiftType.Morning);
+                        _shifts.AddShift(ShiftType.Afternoon);
+
+                    }
+                    else if (ckbMorning.Checked == true && ckbEvening.Checked == true)
+                    {
+                        _shifts.AddShift(ShiftType.Morning);
+                        _shifts.AddShift(ShiftType.Evening);
+                    }
+                    else if (ckbAfternoon.Checked == true && ckbEvening.Checked == true)
+                    {
+                        _shifts.AddShift(ShiftType.Afternoon);
+                        _shifts.AddShift(ShiftType.Evening);
+                    }
+                    else if (ckbMorning.Checked == true) _shifts.AddShift(ShiftType.Morning);
+                    else if (ckbAfternoon.Checked == true) _shifts.AddShift(ShiftType.Afternoon);
+                    else if (ckbEvening.Checked == true) _shifts.AddShift(ShiftType.Evening);
+                }
+            }
+
+            Employee employee = new Employee(_username, _password, _department, _name, _email, _phone, _salary, _shifts);
+
+
+
+            if (EmployeeController.AddEmployee(employee))
+            {
+                MessageBox.Show("Employee has been added successfully");
+            }
+            else
+            {
+                MessageBox.Show("Error creating employee");
+            }
+
+            AdminEmployeeForm form = new AdminEmployeeForm();
+            this.Hide();
+            form.ShowDialog();
+            this.Close();
 
         }
 
@@ -56,104 +124,19 @@ namespace Desktop_application
 
         private void cbMorning_CheckedChanged(object sender, EventArgs e)
         {
-            CheckBox? checkBox = sender as CheckBox;
-            if (checkBox != null)
-            {
-                if (checkBox.Checked)
-                {
-                    shiftCounter++;
-                }
-                else
-                {
-                    shiftCounter--;
-                }
-            }
+
         }
 
         private void cbAfternoon_CheckedChanged(object sender, EventArgs e)
         {
-            CheckBox? checkBox = sender as CheckBox;
-            if (checkBox != null)
-            {
-                if (checkBox.Checked)
-                {
-                    shiftCounter++;
-                }
-                else
-                {
-                    shiftCounter--;
-                }
-            }
+
         }
 
         private void cbEvening_CheckedChanged(object sender, EventArgs e)
         {
-            CheckBox? checkBox = sender as CheckBox;
-            if (checkBox != null)
-            {
-                if (checkBox.Checked)
-                {
-                    shiftCounter++;
-                }
-                else
-                {
-                    shiftCounter--;
-                }
-            }
+
         }
 
-        public bool CheckFields()
-        {
-            if (tbName.Text.IsNullOrEmpty())
-            {
-                MessageBox.Show("Please enter a name.");
-                return false;
-            }
-
-            if (tbUsername.Text.IsNullOrEmpty())
-            {
-                MessageBox.Show("Please enter a username.");
-                return false;
-            }
-
-            if (tbPassword.Text.IsNullOrEmpty())
-            {
-                MessageBox.Show("Please enter a password.");
-                return false;
-            }
-
-            if (tbEmail.Text.IsNullOrEmpty())
-            {
-                MessageBox.Show("Please enter an email address.");
-                return false;
-            }
-
-            if (cbDepartment.SelectedIndex == -1)
-            {
-                MessageBox.Show("Please select a department");
-                return false;
-            }
-
-            if (tbPhone.Text.IsNullOrEmpty())
-            {
-                MessageBox.Show("Please enter a phone number");
-                return false;
-            }
-
-            if (numUDSalary.Value == 0)
-            {
-                MessageBox.Show("Salary must be higher than 0!");
-                return false;
-            }
-
-            if (shiftCounter == 0)
-            {
-                MessageBox.Show("At least 1 shift must be assigned.");
-                return false;
-            }
-
-            else return true;
-        }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
