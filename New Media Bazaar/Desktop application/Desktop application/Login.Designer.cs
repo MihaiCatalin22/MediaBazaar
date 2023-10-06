@@ -119,7 +119,9 @@
             Controls.Add(tbUsername);
             Controls.Add(lblLogin);
             Controls.Add(lblMediaBazaar);
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "Login";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
             ResumeLayout(false);
             PerformLayout();

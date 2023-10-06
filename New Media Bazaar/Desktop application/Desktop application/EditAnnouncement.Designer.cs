@@ -174,7 +174,9 @@
             Controls.Add(lblSD);
             Controls.Add(lblTitle);
             Controls.Add(lblDetails);
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "EditAnnouncement";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "EditAnnouncement";
             ResumeLayout(false);
             PerformLayout();

@@ -150,7 +150,9 @@
             Controls.Add(lblSD);
             Controls.Add(lblTitle);
             Controls.Add(lblDetails);
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "CreateAnnouncement";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "CreateAnnouncement";
             ResumeLayout(false);
             PerformLayout();

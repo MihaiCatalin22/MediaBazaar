@@ -53,7 +53,7 @@ namespace Desktop_application
         private void btnCancel_Click(object sender, EventArgs e)
         {
             AdminLandingForm adminLandingForm = new AdminLandingForm(_loggedInEmployee);
-            this.Hide(); 
+            this.Hide();
             adminLandingForm.ShowDialog();
             this.Close();
         }

@@ -46,7 +46,7 @@ namespace Desktop_application
                     this.Hide();
                     form.ShowDialog();
                     this.Close();
-                }               
+                }
                 else
                 {
                     MessageBox.Show("You do not have permission to access the application.");

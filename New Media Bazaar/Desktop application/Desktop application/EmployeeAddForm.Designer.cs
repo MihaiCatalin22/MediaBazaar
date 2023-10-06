@@ -37,9 +37,9 @@
             cbDepartment = new ComboBox();
             tbPhone = new TextBox();
             numUDSalary = new NumericUpDown();
-            cbEvening = new CheckBox();
-            cbAfternoon = new CheckBox();
-            cbMorning = new CheckBox();
+            ckbEvening = new CheckBox();
+            ckbAfternoon = new CheckBox();
+            ckbMorning = new CheckBox();
             lblSalary = new Label();
             lblAvailability = new Label();
             lblPhone = new Label();
@@ -97,6 +97,7 @@
             tbPassword.Location = new Point(226, 207);
             tbPassword.Margin = new Padding(3, 4, 3, 4);
             tbPassword.Name = "tbPassword";
+            tbPassword.PasswordChar = '*';
             tbPassword.Size = new Size(120, 27);
             tbPassword.TabIndex = 37;
             // 
@@ -121,57 +122,60 @@
             // 
             tbPhone.Location = new Point(225, 350);
             tbPhone.Margin = new Padding(3, 4, 3, 4);
+            tbPhone.MaxLength = 12;
             tbPhone.Name = "tbPhone";
             tbPhone.Size = new Size(121, 27);
             tbPhone.TabIndex = 34;
             // 
             // numUDSalary
             // 
+            numUDSalary.DecimalPlaces = 2;
             numUDSalary.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             numUDSalary.Location = new Point(225, 407);
             numUDSalary.Margin = new Padding(3, 4, 3, 4);
+            numUDSalary.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
             numUDSalary.Name = "numUDSalary";
             numUDSalary.Size = new Size(120, 27);
             numUDSalary.TabIndex = 33;
             // 
-            // cbEvening
+            // ckbEvening
             // 
-            cbEvening.AutoSize = true;
-            cbEvening.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            cbEvening.Location = new Point(225, 535);
-            cbEvening.Margin = new Padding(3, 4, 3, 4);
-            cbEvening.Name = "cbEvening";
-            cbEvening.Size = new Size(127, 24);
-            cbEvening.TabIndex = 32;
-            cbEvening.Text = "Evening shift";
-            cbEvening.UseVisualStyleBackColor = true;
-            cbEvening.CheckedChanged += cbEvening_CheckedChanged;
+            ckbEvening.AutoSize = true;
+            ckbEvening.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            ckbEvening.Location = new Point(225, 535);
+            ckbEvening.Margin = new Padding(3, 4, 3, 4);
+            ckbEvening.Name = "ckbEvening";
+            ckbEvening.Size = new Size(127, 24);
+            ckbEvening.TabIndex = 32;
+            ckbEvening.Text = "Evening shift";
+            ckbEvening.UseVisualStyleBackColor = true;
+            ckbEvening.CheckedChanged += cbEvening_CheckedChanged;
             // 
-            // cbAfternoon
+            // ckbAfternoon
             // 
-            cbAfternoon.AutoSize = true;
-            cbAfternoon.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            cbAfternoon.Location = new Point(225, 501);
-            cbAfternoon.Margin = new Padding(3, 4, 3, 4);
-            cbAfternoon.Name = "cbAfternoon";
-            cbAfternoon.Size = new Size(140, 24);
-            cbAfternoon.TabIndex = 31;
-            cbAfternoon.Text = "Afternoon shift";
-            cbAfternoon.UseVisualStyleBackColor = true;
-            cbAfternoon.CheckedChanged += cbAfternoon_CheckedChanged;
+            ckbAfternoon.AutoSize = true;
+            ckbAfternoon.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            ckbAfternoon.Location = new Point(225, 501);
+            ckbAfternoon.Margin = new Padding(3, 4, 3, 4);
+            ckbAfternoon.Name = "ckbAfternoon";
+            ckbAfternoon.Size = new Size(140, 24);
+            ckbAfternoon.TabIndex = 31;
+            ckbAfternoon.Text = "Afternoon shift";
+            ckbAfternoon.UseVisualStyleBackColor = true;
+            ckbAfternoon.CheckedChanged += cbAfternoon_CheckedChanged;
             // 
-            // cbMorning
+            // ckbMorning
             // 
-            cbMorning.AutoSize = true;
-            cbMorning.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            cbMorning.Location = new Point(225, 468);
-            cbMorning.Margin = new Padding(3, 4, 3, 4);
-            cbMorning.Name = "cbMorning";
-            cbMorning.Size = new Size(128, 24);
-            cbMorning.TabIndex = 30;
-            cbMorning.Text = "Morning shift";
-            cbMorning.UseVisualStyleBackColor = true;
-            cbMorning.CheckedChanged += cbMorning_CheckedChanged;
+            ckbMorning.AutoSize = true;
+            ckbMorning.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            ckbMorning.Location = new Point(225, 468);
+            ckbMorning.Margin = new Padding(3, 4, 3, 4);
+            ckbMorning.Name = "ckbMorning";
+            ckbMorning.Size = new Size(128, 24);
+            ckbMorning.TabIndex = 30;
+            ckbMorning.Text = "Morning shift";
+            ckbMorning.UseVisualStyleBackColor = true;
+            ckbMorning.CheckedChanged += cbMorning_CheckedChanged;
             // 
             // lblSalary
             // 
@@ -277,9 +281,9 @@
             Controls.Add(cbDepartment);
             Controls.Add(tbPhone);
             Controls.Add(numUDSalary);
-            Controls.Add(cbEvening);
-            Controls.Add(cbAfternoon);
-            Controls.Add(cbMorning);
+            Controls.Add(ckbEvening);
+            Controls.Add(ckbAfternoon);
+            Controls.Add(ckbMorning);
             Controls.Add(lblSalary);
             Controls.Add(lblAvailability);
             Controls.Add(lblPhone);
@@ -289,7 +293,9 @@
             Controls.Add(lblUsername);
             Controls.Add(lblName);
             Controls.Add(lblNewEmployee);
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "EmployeeAddForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "EmployeeAddForm";
             Load += EmployeeAddForm_Load;
             ((System.ComponentModel.ISupportInitialize)numUDSalary).EndInit();
@@ -308,9 +314,9 @@
         private ComboBox cbDepartment;
         private TextBox tbPhone;
         private NumericUpDown numUDSalary;
-        private CheckBox cbEvening;
-        private CheckBox cbAfternoon;
-        private CheckBox cbMorning;
+        private CheckBox ckbEvening;
+        private CheckBox ckbAfternoon;
+        private CheckBox ckbMorning;
         private Label lblSalary;
         private Label lblAvailability;
         private Label lblPhone;
