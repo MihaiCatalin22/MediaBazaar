@@ -20,6 +20,7 @@ namespace Desktop_application
         private Employee employee;
         public DepartmentController DepartmentController { get; private set; } = new(new DALDepartmentController());
         public EmployeeController EmployeeController { get; private set; } = new(new DALEmployeeController());
+        public Employee LoggedInEmployee { get; }
 
         private int shiftCounter = 0;
 
@@ -33,6 +34,11 @@ namespace Desktop_application
             DepartmentController.AddDepartment(newDepartment);
             cbDepartment.Items.Add(newDepartment.Name);
 
+        }
+
+        public EmployeeAddForm(Employee loggedInEmployee)
+        {
+            LoggedInEmployee = loggedInEmployee;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

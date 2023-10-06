@@ -66,6 +66,7 @@
             lblShifts.Size = new Size(67, 25);
             lblShifts.TabIndex = 3;
             lblShifts.Text = "Shifts";
+            lblShifts.Click += lblShifts_Click;
             // 
             // lblDepartments
             // 
@@ -86,6 +87,7 @@
             lblEmployees.Size = new Size(118, 25);
             lblEmployees.TabIndex = 1;
             lblEmployees.Text = "Employees";
+            lblEmployees.Click += lblEmployees_Click;
             // 
             // lblAnnouncements
             // 
@@ -96,6 +98,7 @@
             lblAnnouncements.Size = new Size(168, 25);
             lblAnnouncements.TabIndex = 0;
             lblAnnouncements.Text = "Announcements";
+            lblAnnouncements.Click += lblAnnouncements_Click;
             // 
             // btnDelete
             // 
@@ -106,6 +109,7 @@
             btnDelete.TabIndex = 18;
             btnDelete.Text = "Delete selected employee";
             btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
             // button4
             // 
@@ -116,6 +120,7 @@
             button4.TabIndex = 17;
             button4.Text = "Edit details of selected employee";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // btnAddEmp
             // 
@@ -126,6 +131,7 @@
             btnAddEmp.TabIndex = 16;
             btnAddEmp.Text = "Add a new employee";
             btnAddEmp.UseVisualStyleBackColor = true;
+            btnAddEmp.Click += btnAddEmp_Click;
             // 
             // btnClear
             // 
@@ -136,6 +142,7 @@
             btnClear.TabIndex = 15;
             btnClear.Text = "Clear";
             btnClear.UseVisualStyleBackColor = true;
+            btnClear.Click += btnClear_Click;
             // 
             // btnSearch
             // 
@@ -146,6 +153,7 @@
             btnSearch.TabIndex = 14;
             btnSearch.Text = "Search employee";
             btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.Click += btnSearch_Click;
             // 
             // lbEmployees
             // 
