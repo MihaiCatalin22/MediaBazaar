@@ -78,7 +78,7 @@ namespace Desktop_application
 
             Shift[] shifts = ShiftController.GetAllByDateAndDepartment(_selectedDate, _selectedDepartment);
 
-            
+
 
             foreach (Shift shift in shifts)
             {
@@ -122,7 +122,7 @@ namespace Desktop_application
 
         private void lblEmployees_Click(object sender, EventArgs e)
         {
-            AdminEmployeeForm form = new AdminEmployeeForm();
+            AdminEmployeeForm form = new AdminEmployeeForm(_loggedInEmployee);
             this.Hide();
             form.ShowDialog();
             this.Close();
