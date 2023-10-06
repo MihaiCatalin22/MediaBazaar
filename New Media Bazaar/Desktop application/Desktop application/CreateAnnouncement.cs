@@ -23,6 +23,7 @@ namespace Desktop_application
             InitializeComponent();
         }
 
+        AnnoucementController annoucementController = new AnnoucementController(new DALAnnoucement(new CreateConnection()));
 
         private void btnSendAnno_Click(object sender, EventArgs e)
         {
@@ -30,8 +31,25 @@ namespace Desktop_application
 
             if (isFilledIn == true)
             {
-                
+                Announcement announcement = new Announcement();
+                announcement.Title = tbTitle.Text;
+                announcement.Details = tbDetails.Text;
+                announcement.StartDate = dtpStartTime.Value.Date;
+                announcement.EndDate = dtpEndTime.Value.Date;
+                annoucementController.AddAnnouncement(announcement);
+                new AdminLandingForm().Show();
+                this.Hide();
             }
+            else
+            {
+                MessageBox.Show("Not everything is filled in correctly");
+            }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            new AdminLandingForm().Show();
+            this.Hide();
         }
     }
 }

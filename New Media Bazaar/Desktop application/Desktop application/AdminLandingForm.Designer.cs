@@ -32,19 +32,18 @@
             radioButton1 = new RadioButton();
             radioButton3 = new RadioButton();
             radioButton2 = new RadioButton();
-            btnEditAnno = new Button();
             btnResetFilters = new Button();
             gbFilters = new GroupBox();
             btnCreateAnno = new Button();
-            btnDeleteAnno = new Button();
             lbAnnouncements = new ListBox();
             lblAnno = new Label();
             lblWelcome = new Label();
-            lblShifts = new Label();
-            lblDepartments = new Label();
-            lblEmployees = new Label();
             lblAnnouncements = new Label();
             panel1 = new Panel();
+            button2 = new Button();
+            bttnShifts = new Button();
+            bttnEmployees = new Button();
+            bttnAnnouncement = new Button();
             gbFilters.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -97,16 +96,6 @@
             radioButton2.Text = "Current announcements";
             radioButton2.UseVisualStyleBackColor = true;
             // 
-            // btnEditAnno
-            // 
-            btnEditAnno.Location = new Point(351, 495);
-            btnEditAnno.Margin = new Padding(3, 4, 3, 4);
-            btnEditAnno.Name = "btnEditAnno";
-            btnEditAnno.Size = new Size(108, 70);
-            btnEditAnno.TabIndex = 39;
-            btnEditAnno.Text = "Edit announcement";
-            btnEditAnno.UseVisualStyleBackColor = true;
-            // 
             // btnResetFilters
             // 
             btnResetFilters.Location = new Point(45, 170);
@@ -116,6 +105,7 @@
             btnResetFilters.TabIndex = 15;
             btnResetFilters.Text = "Reset filters";
             btnResetFilters.UseVisualStyleBackColor = true;
+            btnResetFilters.Click += btnResetFilters_Click;
             // 
             // gbFilters
             // 
@@ -138,21 +128,11 @@
             btnCreateAnno.Location = new Point(237, 495);
             btnCreateAnno.Margin = new Padding(3, 4, 3, 4);
             btnCreateAnno.Name = "btnCreateAnno";
-            btnCreateAnno.Size = new Size(108, 70);
+            btnCreateAnno.Size = new Size(336, 70);
             btnCreateAnno.TabIndex = 37;
             btnCreateAnno.Text = "Create announcement";
             btnCreateAnno.UseVisualStyleBackColor = true;
             btnCreateAnno.Click += btnCreateAnno_Click;
-            // 
-            // btnDeleteAnno
-            // 
-            btnDeleteAnno.Location = new Point(465, 495);
-            btnDeleteAnno.Margin = new Padding(3, 4, 3, 4);
-            btnDeleteAnno.Name = "btnDeleteAnno";
-            btnDeleteAnno.Size = new Size(108, 70);
-            btnDeleteAnno.TabIndex = 36;
-            btnDeleteAnno.Text = "Delete announcement";
-            btnDeleteAnno.UseVisualStyleBackColor = true;
             // 
             // lbAnnouncements
             // 
@@ -163,6 +143,7 @@
             lbAnnouncements.Name = "lbAnnouncements";
             lbAnnouncements.Size = new Size(336, 244);
             lbAnnouncements.TabIndex = 27;
+            lbAnnouncements.SelectedIndexChanged += lbAnnouncements_SelectedIndexChanged;
             lbAnnouncements.MouseDoubleClick += lbAnnouncements_MouseDoubleClick;
             // 
             // lblAnno
@@ -185,78 +166,97 @@
             lblWelcome.TabIndex = 25;
             lblWelcome.Text = "Welcome, ~~user~~!";
             // 
-            // lblShifts
-            // 
-            lblShifts.AutoSize = true;
-            lblShifts.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            lblShifts.Location = new Point(779, 46);
-            lblShifts.Name = "lblShifts";
-            lblShifts.Size = new Size(67, 25);
-            lblShifts.TabIndex = 3;
-            lblShifts.Text = "Shifts";
-            // 
-            // lblDepartments
-            // 
-            lblDepartments.AutoSize = true;
-            lblDepartments.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            lblDepartments.Location = new Point(504, 46);
-            lblDepartments.Name = "lblDepartments";
-            lblDepartments.Size = new Size(134, 25);
-            lblDepartments.TabIndex = 2;
-            lblDepartments.Text = "Departments";
-            // 
-            // lblEmployees
-            // 
-            lblEmployees.AutoSize = true;
-            lblEmployees.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            lblEmployees.Location = new Point(272, 46);
-            lblEmployees.Name = "lblEmployees";
-            lblEmployees.Size = new Size(118, 25);
-            lblEmployees.TabIndex = 1;
-            lblEmployees.Text = "Employees";
-            // 
             // lblAnnouncements
             // 
             lblAnnouncements.AutoSize = true;
             lblAnnouncements.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            lblAnnouncements.Location = new Point(25, 46);
+            lblAnnouncements.Location = new Point(31, 302);
             lblAnnouncements.Name = "lblAnnouncements";
-            lblAnnouncements.Size = new Size(168, 25);
+            lblAnnouncements.Size = new Size(0, 25);
             lblAnnouncements.TabIndex = 0;
-            lblAnnouncements.Text = "Announcements";
             // 
             // panel1
             // 
             panel1.BackColor = Color.DimGray;
-            panel1.Controls.Add(lblShifts);
-            panel1.Controls.Add(lblDepartments);
-            panel1.Controls.Add(lblEmployees);
-            panel1.Controls.Add(lblAnnouncements);
+            panel1.Controls.Add(button2);
+            panel1.Controls.Add(bttnShifts);
+            panel1.Controls.Add(bttnEmployees);
+            panel1.Controls.Add(bttnAnnouncement);
             panel1.Location = new Point(1, 1);
             panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
             panel1.Size = new Size(988, 125);
             panel1.TabIndex = 24;
             // 
+            // button2
+            // 
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            button2.Location = new Point(489, 0);
+            button2.Name = "button2";
+            button2.Size = new Size(244, 125);
+            button2.TabIndex = 43;
+            button2.Text = "Departments";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // bttnShifts
+            // 
+            bttnShifts.FlatAppearance.BorderSize = 0;
+            bttnShifts.FlatStyle = FlatStyle.Flat;
+            bttnShifts.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            bttnShifts.Location = new Point(727, 0);
+            bttnShifts.Name = "bttnShifts";
+            bttnShifts.Size = new Size(236, 125);
+            bttnShifts.TabIndex = 44;
+            bttnShifts.Text = "Shifts";
+            bttnShifts.UseVisualStyleBackColor = true;
+            bttnShifts.Click += bttnShifts_Click;
+            // 
+            // bttnEmployees
+            // 
+            bttnEmployees.FlatAppearance.BorderSize = 0;
+            bttnEmployees.FlatStyle = FlatStyle.Flat;
+            bttnEmployees.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            bttnEmployees.Location = new Point(236, 0);
+            bttnEmployees.Name = "bttnEmployees";
+            bttnEmployees.Size = new Size(257, 125);
+            bttnEmployees.TabIndex = 42;
+            bttnEmployees.Text = "Employees";
+            bttnEmployees.UseVisualStyleBackColor = true;
+            bttnEmployees.Click += bttnEmployees_Click;
+            // 
+            // bttnAnnouncement
+            // 
+            bttnAnnouncement.FlatAppearance.BorderSize = 0;
+            bttnAnnouncement.FlatStyle = FlatStyle.Flat;
+            bttnAnnouncement.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            bttnAnnouncement.Location = new Point(0, 0);
+            bttnAnnouncement.Name = "bttnAnnouncement";
+            bttnAnnouncement.Size = new Size(247, 125);
+            bttnAnnouncement.TabIndex = 41;
+            bttnAnnouncement.Text = "Announcements";
+            bttnAnnouncement.UseVisualStyleBackColor = true;
+            bttnAnnouncement.Click += bttnAnnouncement_Click;
+            // 
             // AdminLandingForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(956, 623);
-            Controls.Add(btnEditAnno);
             Controls.Add(gbFilters);
+            Controls.Add(lblAnnouncements);
             Controls.Add(btnCreateAnno);
-            Controls.Add(btnDeleteAnno);
             Controls.Add(lbAnnouncements);
             Controls.Add(lblAnno);
             Controls.Add(lblWelcome);
             Controls.Add(panel1);
             Name = "AdminLandingForm";
             Text = "AdminLandingForm";
+            Load += AdminLandingForm_Load;
             gbFilters.ResumeLayout(false);
             gbFilters.PerformLayout();
             panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -266,18 +266,17 @@
         private RadioButton radioButton1;
         private RadioButton radioButton3;
         private RadioButton radioButton2;
-        private Button btnEditAnno;
         private Button btnResetFilters;
         private GroupBox gbFilters;
         private Button btnCreateAnno;
-        private Button btnDeleteAnno;
         private ListBox lbAnnouncements;
         private Label lblAnno;
         private Label lblWelcome;
-        private Label lblShifts;
-        private Label lblDepartments;
-        private Label lblEmployees;
         private Label lblAnnouncements;
         private Panel panel1;
+        private Button bttnAnnouncement;
+        private Button button2;
+        private Button bttnShifts;
+        private Button bttnEmployees;
     }
 }

@@ -30,11 +30,11 @@
         {
             btnCancel = new Button();
             btnSendAnno = new Button();
-            dateTimePicker2 = new DateTimePicker();
-            dateTimePicker1 = new DateTimePicker();
+            dtpEndTime = new DateTimePicker();
+            dtpStartTime = new DateTimePicker();
             lblED = new Label();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            tbDetails = new TextBox();
+            tbTitle = new TextBox();
             lblSD = new Label();
             lblTitle = new Label();
             lblDetails = new Label();
@@ -49,6 +49,7 @@
             btnCancel.TabIndex = 51;
             btnCancel.Text = "Cancel announcement";
             btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
             // 
             // btnSendAnno
             // 
@@ -61,21 +62,21 @@
             btnSendAnno.UseVisualStyleBackColor = true;
             btnSendAnno.Click += btnSendAnno_Click;
             // 
-            // dateTimePicker2
+            // dtpEndTime
             // 
-            dateTimePicker2.Location = new Point(426, 215);
-            dateTimePicker2.Margin = new Padding(3, 4, 3, 4);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(224, 27);
-            dateTimePicker2.TabIndex = 49;
+            dtpEndTime.Location = new Point(426, 215);
+            dtpEndTime.Margin = new Padding(3, 4, 3, 4);
+            dtpEndTime.Name = "dtpEndTime";
+            dtpEndTime.Size = new Size(258, 27);
+            dtpEndTime.TabIndex = 49;
             // 
-            // dateTimePicker1
+            // dtpStartTime
             // 
-            dateTimePicker1.Location = new Point(426, 124);
-            dateTimePicker1.Margin = new Padding(3, 4, 3, 4);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(224, 27);
-            dateTimePicker1.TabIndex = 48;
+            dtpStartTime.Location = new Point(426, 124);
+            dtpStartTime.Margin = new Padding(3, 4, 3, 4);
+            dtpStartTime.Name = "dtpStartTime";
+            dtpStartTime.Size = new Size(258, 27);
+            dtpStartTime.TabIndex = 48;
             // 
             // lblED
             // 
@@ -87,22 +88,22 @@
             lblED.TabIndex = 47;
             lblED.Text = "End date of announcement:";
             // 
-            // textBox2
+            // tbDetails
             // 
-            textBox2.Location = new Point(76, 203);
-            textBox2.Margin = new Padding(3, 4, 3, 4);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(224, 83);
-            textBox2.TabIndex = 45;
+            tbDetails.Location = new Point(76, 203);
+            tbDetails.Margin = new Padding(3, 4, 3, 4);
+            tbDetails.Multiline = true;
+            tbDetails.Name = "tbDetails";
+            tbDetails.Size = new Size(224, 83);
+            tbDetails.TabIndex = 45;
             // 
-            // textBox1
+            // tbTitle
             // 
-            textBox1.Location = new Point(76, 124);
-            textBox1.Margin = new Padding(3, 4, 3, 4);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(224, 27);
-            textBox1.TabIndex = 44;
+            tbTitle.Location = new Point(76, 124);
+            tbTitle.Margin = new Padding(3, 4, 3, 4);
+            tbTitle.Name = "tbTitle";
+            tbTitle.Size = new Size(224, 27);
+            tbTitle.TabIndex = 44;
             // 
             // lblSD
             // 
@@ -141,11 +142,11 @@
             ClientSize = new Size(800, 450);
             Controls.Add(btnCancel);
             Controls.Add(btnSendAnno);
-            Controls.Add(dateTimePicker2);
-            Controls.Add(dateTimePicker1);
+            Controls.Add(dtpEndTime);
+            Controls.Add(dtpStartTime);
             Controls.Add(lblED);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(tbDetails);
+            Controls.Add(tbTitle);
             Controls.Add(lblSD);
             Controls.Add(lblTitle);
             Controls.Add(lblDetails);
@@ -159,11 +160,11 @@
 
         private Button btnCancel;
         private Button btnSendAnno;
-        private DateTimePicker dateTimePicker2;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dtpEndTime;
+        private DateTimePicker dtpStartTime;
         private Label lblED;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox tbDetails;
+        private TextBox tbTitle;
         private Label lblSD;
         private Label lblTitle;
         private Label lblDetails;
