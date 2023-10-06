@@ -18,9 +18,11 @@ namespace Desktop_application
 {
     public partial class CreateAnnouncement : Form
     {
-        public CreateAnnouncement()
+        private Employee _loggedInEmployee;
+        public CreateAnnouncement(Employee loggedInEmployee)
         {
             InitializeComponent();
+            _loggedInEmployee = loggedInEmployee;
         }
 
         AnnoucementController annoucementController = new AnnoucementController(new DALAnnoucement(new CreateConnection()));
@@ -37,8 +39,10 @@ namespace Desktop_application
                 announcement.StartDate = dtpStartTime.Value.Date;
                 announcement.EndDate = dtpEndTime.Value.Date;
                 annoucementController.AddAnnouncement(announcement);
-                new AdminLandingForm().Show();
+                AdminLandingForm adminLandingForm = new AdminLandingForm(_loggedInEmployee);
                 this.Hide();
+                adminLandingForm.ShowDialog();
+                this.Close();
             }
             else
             {
@@ -48,8 +52,10 @@ namespace Desktop_application
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            new AdminLandingForm().Show();
-            this.Hide();
+            AdminLandingForm adminLandingForm = new AdminLandingForm(_loggedInEmployee);
+            this.Hide(); 
+            adminLandingForm.ShowDialog();
+            this.Close();
         }
     }
 }

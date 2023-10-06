@@ -39,6 +39,7 @@
             lblTitle = new Label();
             lblDetails = new Label();
             bttnSave = new Button();
+            btnBack = new Button();
             SuspendLayout();
             // 
             // bttnDelete
@@ -137,7 +138,7 @@
             // 
             // bttnSave
             // 
-            bttnSave.Location = new Point(319, 307);
+            bttnSave.Location = new Point(320, 307);
             bttnSave.Margin = new Padding(3, 4, 3, 4);
             bttnSave.Name = "bttnSave";
             bttnSave.Size = new Size(171, 65);
@@ -146,11 +147,22 @@
             bttnSave.UseVisualStyleBackColor = true;
             bttnSave.Click += bttnSave_Click;
             // 
+            // btnBack
+            // 
+            btnBack.Location = new Point(26, 12);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(95, 46);
+            btnBack.TabIndex = 63;
+            btnBack.Text = "Go back";
+            btnBack.UseVisualStyleBackColor = true;
+            btnBack.Click += btnBack_Click;
+            // 
             // EditAnnouncement
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnBack);
             Controls.Add(bttnSave);
             Controls.Add(bttnDelete);
             Controls.Add(bttnEdit);
@@ -181,5 +193,6 @@
         private Label lblTitle;
         private Label lblDetails;
         private Button bttnSave;
+        private Button btnBack;
     }
 }

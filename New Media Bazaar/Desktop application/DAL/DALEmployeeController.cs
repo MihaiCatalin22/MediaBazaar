@@ -12,8 +12,8 @@ namespace DAL
 {
     public class DALEmployeeController : IEmployeeController
     {
-        //private const string CONNECTION_STRING = "Server = mssqlstud.fhict.local; Database = dbi501708_mbazaar2; User Id = dbi501708_mbazaar2; Password = mediabazaardb2;";
-        private const string CONNECTION_STRING = "Server = mssqlstud.fhict.local; Database = dbi464839_mediabazar; User Id = dbi464839_mediabazar; Password = 123;";
+
+        private const string CONNECTION_STRING = "Server = mssqlstud.fhict.local; Database = dbi464839_mediabazar; User Id = dbi464839_mediabazar; Password = 1234; TrustServerCertificate=true;";
 
         public bool Create(Employee employee)
         {
@@ -152,7 +152,7 @@ namespace DAL
             {
                 using SqlConnection conn = new SqlConnection(CONNECTION_STRING);
                 {
-                    string sql = "UPDATE Employee SET Username = @username, Password = @password, DepartmentID = @departmentID, Name = @name, Email = @email, Phone = @phone, Shifts = @shifts, ProfilePicture = @profilepicture, Salary = @salary, HireDate = @hiredate WHERE Id = @id";
+                    string sql = "UPDATE Employee SET Username = @username, Password = @password, DepartmentID = @departmentID, Name = @name, Email = @email, Phone = @phone, Shifts = @shifts, /*ProfilePicture = @profilepicture*/, Salary = @salary, HireDate = @hiredate WHERE Id = @id";
 
                     using (SqlCommand cmd = new SqlCommand(sql, conn))
                     {
@@ -164,7 +164,7 @@ namespace DAL
                         cmd.Parameters.AddWithValue("@email", employee.Email);
                         cmd.Parameters.AddWithValue("@phone", employee.Phone);
                         cmd.Parameters.AddWithValue("@shifts", employee.Shifts);
-                        cmd.Parameters.AddWithValue("@profilepicture", employee.ProfilePicture);
+                        //cmd.Parameters.AddWithValue("@profilepicture", employee.ProfilePicture);
                         cmd.Parameters.AddWithValue("@salary", employee.Salary);
                         cmd.Parameters.AddWithValue("@hiredate", employee.HireDate);
 

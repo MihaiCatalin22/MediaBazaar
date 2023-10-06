@@ -28,8 +28,10 @@ namespace Desktop_application
 
         private void btnCreateAnno_Click(object sender, EventArgs e)
         {
-            new CreateAnnouncement().Show();
+            CreateAnnouncement createAnnouncement = new CreateAnnouncement(_loggedInEmployee);
             this.Hide();
+            createAnnouncement.ShowDialog();
+            this.Close();
         }
 
         //ToDo double click
@@ -45,9 +47,10 @@ namespace Desktop_application
                         announcement = annoucementController.GetAnnouncement(currentAnnouncement.Id);
                     }
                 }
-                EditAnnouncement editAnnouncement = new EditAnnouncement(announcement);
-                editAnnouncement.Show();
+                EditAnnouncement editAnnouncement = new EditAnnouncement(announcement, _loggedInEmployee);
                 this.Hide();
+                editAnnouncement.ShowDialog();
+                this.Close();
             }
 
         }
@@ -67,14 +70,18 @@ namespace Desktop_application
 
         private void bttnEmployees_Click(object sender, EventArgs e)
         {
-            new AdminEmployeeForm().Show();
+            AdminEmployeeForm adminEmployeeForm = new AdminEmployeeForm();
             this.Hide();
+            adminEmployeeForm.ShowDialog();
+            this.Close();
         }
 
         private void bttnShifts_Click(object sender, EventArgs e)
         {
-            new AdminShiftsForm().Show();
+            AdminShiftsForm adminShiftsForm = new AdminShiftsForm(_loggedInEmployee);
             this.Hide();
+            adminShiftsForm.ShowDialog();
+            this.Close();
         }
 
         //Todo Filter

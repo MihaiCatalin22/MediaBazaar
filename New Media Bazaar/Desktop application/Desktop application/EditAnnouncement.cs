@@ -15,7 +15,8 @@ namespace Desktop_application
 {
     public partial class EditAnnouncement : Form
     {
-        public EditAnnouncement(Announcement oldAnnouncement)
+        private Employee _loggedInEmployee;
+        public EditAnnouncement(Announcement oldAnnouncement, Employee loggedInEmployee)
         {
             InitializeComponent();
             tbTitle.ReadOnly = true;
@@ -23,6 +24,7 @@ namespace Desktop_application
 
             tbTitle.Text = oldAnnouncement.Title;
             tbDetails.Text = oldAnnouncement.Details;
+            _loggedInEmployee = loggedInEmployee;
         }
         Announcement announcement = new Announcement();
         AnnoucementController annoucementController = new AnnoucementController(new DALAnnoucement(new CreateConnection()));
@@ -36,6 +38,14 @@ namespace Desktop_application
         private void bttnSave_Click(object sender, EventArgs e)
         {
             throw new NotImplementedException();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            AdminLandingForm adminLandingForm = new AdminLandingForm(_loggedInEmployee);
+            this.Hide();
+            adminLandingForm.ShowDialog();
+            this.Close();
         }
     }
 }

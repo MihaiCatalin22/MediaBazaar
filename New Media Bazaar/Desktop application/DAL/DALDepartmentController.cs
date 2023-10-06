@@ -11,7 +11,7 @@ namespace DAL
 {
     public class DALDepartmentController : IDepartmentController
     {
-        private const string CONNECTION_STRING = "Server = mssqlstud.fhict.local; Database = dbi501708_mbazaar2; User Id = dbi501708_mbazaar2; Password = mediabazaardb2;";
+        private const string CONNECTION_STRING = "Server = mssqlstud.fhict.local; Database = dbi464839_mediabazar; User Id = dbi464839_mediabazar; Password = 1234; TrustServerCertificate=true;";
         public bool Create(Department department)
         {
             try
