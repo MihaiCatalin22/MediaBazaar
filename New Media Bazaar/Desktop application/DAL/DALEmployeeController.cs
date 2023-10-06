@@ -12,7 +12,8 @@ namespace DAL
 {
     public class DALEmployeeController : IEmployeeController
     {
-        private const string CONNECTION_STRING = "Server = mssqlstud.fhict.local; Database = dbi501708_mbazaar2; User Id = dbi501708_mbazaar2; Password = mediabazaardb2;";
+        //private const string CONNECTION_STRING = "Server = mssqlstud.fhict.local; Database = dbi501708_mbazaar2; User Id = dbi501708_mbazaar2; Password = mediabazaardb2;";
+        private const string CONNECTION_STRING = "Server = mssqlstud.fhict.local; Database = dbi464839_mediabazar; User Id = dbi464839_mediabazar; Password = 123;";
 
         public bool Create(Employee employee)
         {
@@ -20,10 +21,11 @@ namespace DAL
             {
                 using SqlConnection conn = new SqlConnection(CONNECTION_STRING);
                 {
-                    string sql = "INSERT INTO Employee (Username, Password, DepartmentID, Name, Email, Phone, Shifts, ProfilePicture, Salary, HireDate) VALUES (@username, @password, @departmentID, @name, @email, @phone, @shifts, @profilepicture, @salary, @hiredate)";
+                    string sql = "INSERT INTO Employee (Id, Username, Password, DepartmentID, Name, Email, Phone, Shifts, Salary, HireDate) VALUES (@id, @username, @password, @departmentID, @name, @email, @phone, @shifts, @salary, @hiredate)";
 
                     using (SqlCommand cmd = new SqlCommand(sql, conn))
                     {
+                        cmd.Parameters.AddWithValue("@id", employee.Id);
                         cmd.Parameters.AddWithValue("@username", employee.Username);
                         cmd.Parameters.AddWithValue("@password", employee.Password);
                         cmd.Parameters.AddWithValue("@departmentID", employee.Department.Id);
@@ -31,7 +33,7 @@ namespace DAL
                         cmd.Parameters.AddWithValue("@email", employee.Email);
                         cmd.Parameters.AddWithValue("@phone", employee.Phone);
                         cmd.Parameters.AddWithValue("@shifts", employee.Shifts);
-                        cmd.Parameters.AddWithValue("@profilepicture", "https://upload.wikimedia.org/wikipedia/commons/2/2c/Default_pfp.svg");
+/*                        cmd.Parameters.AddWithValue("@profilepicture", "https://upload.wikimedia.org/wikipedia/commons/2/2c/Default_pfp.svg");*/
                         cmd.Parameters.AddWithValue("@salary", employee.Salary);
                         cmd.Parameters.AddWithValue("@hiredate", employee.HireDate);
 

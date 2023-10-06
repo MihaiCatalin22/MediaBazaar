@@ -74,6 +74,7 @@
             btnBack.TabIndex = 40;
             btnBack.Text = "Go back";
             btnBack.UseVisualStyleBackColor = true;
+            btnBack.Click += btnBack_Click;
             // 
             // tbName
             // 

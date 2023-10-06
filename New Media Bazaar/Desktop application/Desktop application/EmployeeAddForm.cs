@@ -19,6 +19,7 @@ namespace Desktop_application
     {
         private Employee employee;
         public DepartmentController DepartmentController { get; private set; } = new(new DALDepartmentController());
+        public EmployeeController EmployeeController { get; private set; } = new(new DALEmployeeController());
 
         private int shiftCounter = 0;
 
@@ -42,6 +43,7 @@ namespace Desktop_application
                 Department department = new Department(this.cbDepartment.GetItemText(this.cbDepartment.SelectedItem));
                 DateTime dateTime = DateTime.Now;
                 employee = new Employee(idSeeder, tbUsername.Text, tbPassword.Text, department, tbName.Text, tbEmail.Text, tbPhone.Text, Convert.ToDecimal(numUDSalary.Value), dateTime, shiftCounter);
+                EmployeeController.AddEmployee(employee);
                 MessageBox.Show(employee.ToString());
             }
 
@@ -113,7 +115,7 @@ namespace Desktop_application
                 MessageBox.Show("Please enter a username.");
                 return false;
             }
-            
+
             if (tbPassword.Text.IsNullOrEmpty())
             {
                 MessageBox.Show("Please enter a password.");
@@ -151,6 +153,15 @@ namespace Desktop_application
             }
 
             else return true;
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            AdminEmployeeForm form = new AdminEmployeeForm();
+            this.Hide();
+            form.ShowDialog();
+            this.Close();
+
         }
     }
 }
