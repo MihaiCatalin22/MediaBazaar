@@ -15,9 +15,12 @@ namespace Desktop_application
 {
     public partial class AdminLandingForm : Form
     {
-        public AdminLandingForm()
+        private Employee _loggedInEmployee;
+        public AdminLandingForm(Employee loggedInEmployee)
         {
             InitializeComponent();
+            _loggedInEmployee = loggedInEmployee;
+            lblWelcome.Text = "Welcome, " + _loggedInEmployee.Username + "!";
         }
         List<Announcement> announcements = new List<Announcement>();
         Announcement announcement = new Announcement();
