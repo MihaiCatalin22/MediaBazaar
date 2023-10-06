@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnAdd3 = new Button();
-            btnAdd2 = new Button();
-            btnAdd1 = new Button();
+            btnAddEvening = new Button();
+            btnAddAfternoon = new Button();
+            btnAddMorning = new Button();
             lblEvening = new Label();
             lblAfternoon = new Label();
             lblMorning = new Label();
@@ -49,39 +49,41 @@
             flowLayoutPanelEvening = new FlowLayoutPanel();
             flowLayoutPanelAfternoon = new FlowLayoutPanel();
             flowLayoutPanelMorning = new FlowLayoutPanel();
-            lblSelectedDate = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
-            // btnAdd3
+            // btnAddEvening
             // 
-            btnAdd3.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            btnAdd3.Location = new Point(809, 230);
-            btnAdd3.Name = "btnAdd3";
-            btnAdd3.Size = new Size(114, 33);
-            btnAdd3.TabIndex = 31;
-            btnAdd3.Text = "Add shift";
-            btnAdd3.UseVisualStyleBackColor = true;
+            btnAddEvening.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAddEvening.Location = new Point(809, 230);
+            btnAddEvening.Name = "btnAddEvening";
+            btnAddEvening.Size = new Size(114, 33);
+            btnAddEvening.TabIndex = 31;
+            btnAddEvening.Text = "Add shift";
+            btnAddEvening.UseVisualStyleBackColor = true;
+            btnAddEvening.Click += btnAddEvening_Click;
             // 
-            // btnAdd2
+            // btnAddAfternoon
             // 
-            btnAdd2.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            btnAdd2.Location = new Point(621, 230);
-            btnAdd2.Name = "btnAdd2";
-            btnAdd2.Size = new Size(114, 33);
-            btnAdd2.TabIndex = 30;
-            btnAdd2.Text = "Add shift";
-            btnAdd2.UseVisualStyleBackColor = true;
+            btnAddAfternoon.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAddAfternoon.Location = new Point(621, 230);
+            btnAddAfternoon.Name = "btnAddAfternoon";
+            btnAddAfternoon.Size = new Size(114, 33);
+            btnAddAfternoon.TabIndex = 30;
+            btnAddAfternoon.Text = "Add shift";
+            btnAddAfternoon.UseVisualStyleBackColor = true;
+            btnAddAfternoon.Click += btnAddAfternoon_Click;
             // 
-            // btnAdd1
+            // btnAddMorning
             // 
-            btnAdd1.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            btnAdd1.Location = new Point(449, 230);
-            btnAdd1.Name = "btnAdd1";
-            btnAdd1.Size = new Size(114, 33);
-            btnAdd1.TabIndex = 29;
-            btnAdd1.Text = "Add shift";
-            btnAdd1.UseVisualStyleBackColor = true;
+            btnAddMorning.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAddMorning.Location = new Point(449, 230);
+            btnAddMorning.Name = "btnAddMorning";
+            btnAddMorning.Size = new Size(114, 33);
+            btnAddMorning.TabIndex = 29;
+            btnAddMorning.Text = "Add shift";
+            btnAddMorning.UseVisualStyleBackColor = true;
+            btnAddMorning.Click += btnAddMorning_Click;
             // 
             // lblEvening
             // 
@@ -221,7 +223,6 @@
             monthCalendar1.Margin = new Padding(8);
             monthCalendar1.Name = "monthCalendar1";
             monthCalendar1.TabIndex = 23;
-            monthCalendar1.DateChanged += monthCalendar1_DateChanged;
             monthCalendar1.DateSelected += monthCalendar1_DateSelected;
             // 
             // panel1
@@ -269,27 +270,17 @@
             flowLayoutPanelMorning.Size = new Size(114, 207);
             flowLayoutPanelMorning.TabIndex = 32;
             // 
-            // lblSelectedDate
-            // 
-            lblSelectedDate.AutoSize = true;
-            lblSelectedDate.Location = new Point(132, 208);
-            lblSelectedDate.Name = "lblSelectedDate";
-            lblSelectedDate.Size = new Size(38, 15);
-            lblSelectedDate.TabIndex = 35;
-            lblSelectedDate.Text = "label1";
-            // 
             // AdminShiftsForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1034, 518);
-            Controls.Add(lblSelectedDate);
             Controls.Add(flowLayoutPanelEvening);
             Controls.Add(flowLayoutPanelAfternoon);
             Controls.Add(flowLayoutPanelMorning);
-            Controls.Add(btnAdd3);
-            Controls.Add(btnAdd2);
-            Controls.Add(btnAdd1);
+            Controls.Add(btnAddEvening);
+            Controls.Add(btnAddAfternoon);
+            Controls.Add(btnAddMorning);
             Controls.Add(lblEvening);
             Controls.Add(lblAfternoon);
             Controls.Add(lblMorning);
@@ -311,9 +302,9 @@
         }
 
         #endregion
-        private Button btnAdd3;
-        private Button btnAdd2;
-        private Button btnAdd1;
+        private Button btnAddEvening;
+        private Button btnAddAfternoon;
+        private Button btnAddMorning;
         private Label lblEvening;
         private Label lblAfternoon;
         private Label lblMorning;
@@ -332,6 +323,5 @@
         private FlowLayoutPanel flowLayoutPanelEvening;
         private FlowLayoutPanel flowLayoutPanelAfternoon;
         private FlowLayoutPanel flowLayoutPanelMorning;
-        private Label lblSelectedDate;
     }
 }

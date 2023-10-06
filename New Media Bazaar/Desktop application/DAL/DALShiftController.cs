@@ -12,17 +12,13 @@ namespace DAL
 {
     public class DALShiftController : IShiftController
     {
-        private readonly CreateConnection createConnection;
-        public DALShiftController(CreateConnection createConnection)
-        {
-            this.createConnection = createConnection;
-        }
+        private const string CONNECTION_STRING = "Server = mssqlstud.fhict.local; Database = dbi464839_mediabazar; User Id = dbi464839_mediabazar; Password = 1234; TrustServerCertificate=true;";
 
         public bool Create(Shift shift)
         {
-            try
+            
             {
-                using SqlConnection conn = createConnection.Connection();
+                using SqlConnection conn = new SqlConnection(CONNECTION_STRING);
                 {
                     string sql = "INSERT INTO Shift (EmployeeId, Date, ShiftType, IsCancelled) VALUES (@employeeid, @date, @shiftType, @isCancelled)";
 
@@ -43,17 +39,14 @@ namespace DAL
                 }
                 return true;
             }
-            catch (Exception ex)
-            {
-                return false;
-            }
+            
         }
 
         public bool Delete(Shift shift)
         {
             try
             {
-                using SqlConnection conn = createConnection.Connection(); ;
+                using SqlConnection conn = new SqlConnection(CONNECTION_STRING);
                 {
                     string sql = "DELETE FROM Shift WHERE Id = @id";
 
@@ -82,7 +75,7 @@ namespace DAL
                 List<Shift> shifts = new();
                 EmployeeController employeeController = new EmployeeController(new DALEmployeeController());
 
-                using SqlConnection conn = createConnection.Connection();
+                using SqlConnection conn = new SqlConnection(CONNECTION_STRING);
                 {
                     string sql = "SELECT * FROM Shift";
 
@@ -118,7 +111,7 @@ namespace DAL
             try
             {
                 List<Shift> shifts = new();
-                using SqlConnection conn = createConnection.Connection();
+                using SqlConnection conn = new SqlConnection(CONNECTION_STRING);
                 {
                     string sql = "SELECT * FROM Shift WHERE EmployeeId = @id";
 
@@ -155,7 +148,7 @@ namespace DAL
                 Shift shift;
                 EmployeeController employeeController = new EmployeeController(new DALEmployeeController());
 
-                using SqlConnection conn = createConnection.Connection();
+                using SqlConnection conn = new SqlConnection(CONNECTION_STRING);
                 {
                     string sql = "SELECT * FROM Shift Where Id = @id";
 
@@ -186,7 +179,7 @@ namespace DAL
             {
                 List<Shift> shifts = new();
                 EmployeeController employeeController = new EmployeeController(new DALEmployeeController());
-                using SqlConnection conn = createConnection.Connection();
+                using SqlConnection conn = new SqlConnection(CONNECTION_STRING);
                 {
                     string sql = "SELECT * FROM Shift WHERE Date = @date";
 
@@ -220,7 +213,7 @@ namespace DAL
         {
             try
             {
-                using SqlConnection conn = createConnection.Connection();
+                using SqlConnection conn = new SqlConnection(CONNECTION_STRING);
                 {
                     string sql = "UPDATE Shift SET EmployeeId = @employeeId, Date = @date, ShiftType = @shiftType, IsCancelled = @isCancelled " + "WHERE Id = @id";
 

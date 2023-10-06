@@ -15,7 +15,7 @@ namespace Desktop_application
 {
     public partial class AdminShiftsForm : Form
     {
-        public ShiftController ShiftController { get; private set; } = new(new DALShiftController(new CreateConnection()));
+        public ShiftController ShiftController { get; private set; } = new(new DALShiftController());
         Employee _loggedInEmployee;
         public DepartmentController DepartmentController { get; private set; } = new(new DALDepartmentController());
         Department _selectedDepartment;
@@ -47,10 +47,7 @@ namespace Desktop_application
             _selectedDate = monthCalendar1.SelectionStart.Date;
         }
 
-        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
-        {
 
-        }
         private void comboBoxDepartment_SelectedIndexChanged(object sender, EventArgs e)
         {
             string departmentName = cbDepartment.SelectedItem.ToString();
@@ -81,7 +78,7 @@ namespace Desktop_application
 
             Shift[] shifts = ShiftController.GetAllByDateAndDepartment(_selectedDate, _selectedDepartment);
 
-            lblSelectedDate.Text = _selectedDate.ToShortDateString();
+            
 
             foreach (Shift shift in shifts)
             {
@@ -137,6 +134,54 @@ namespace Desktop_application
             this.Hide();
             form.ShowDialog();
             this.Close();
+        }
+
+        private void btnAddMorning_Click(object sender, EventArgs e)
+        {
+            if (_selectedDate == default)
+            {
+                MessageBox.Show("The date was not selected!");
+                return;
+            }
+            if (cbDepartment.SelectedIndex == -1)
+            {
+                MessageBox.Show("The department was not selected!");
+                return;
+            }
+            ChooseEmployeeByDepartment form = new ChooseEmployeeByDepartment(_loggedInEmployee, _selectedDepartment, _selectedDate, ShiftType.Morning);
+            form.ShowDialog();
+        }
+
+        private void btnAddAfternoon_Click(object sender, EventArgs e)
+        {
+            if (_selectedDate == default)
+            {
+                MessageBox.Show("The date was not selected!");
+                return;
+            }
+            if (cbDepartment.SelectedIndex == -1)
+            {
+                MessageBox.Show("The department was not selected!");
+                return;
+            }
+            ChooseEmployeeByDepartment form = new ChooseEmployeeByDepartment(_loggedInEmployee, _selectedDepartment, _selectedDate, ShiftType.Afternoon);
+            form.ShowDialog();
+        }
+
+        private void btnAddEvening_Click(object sender, EventArgs e)
+        {
+            if (_selectedDate == default)
+            {
+                MessageBox.Show("The date was not selected!");
+                return;
+            }
+            if (cbDepartment.SelectedIndex == -1)
+            {
+                MessageBox.Show("The department was not selected!");
+                return;
+            }
+            ChooseEmployeeByDepartment form = new ChooseEmployeeByDepartment(_loggedInEmployee, _selectedDepartment, _selectedDate, ShiftType.Evening);
+            form.ShowDialog();
         }
     }
 }
