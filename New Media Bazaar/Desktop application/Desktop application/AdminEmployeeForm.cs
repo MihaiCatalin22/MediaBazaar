@@ -26,7 +26,7 @@ namespace Desktop_application
             lbEmployees.Items.Clear();
             foreach (Employee employee in EmployeeController.GetAll())
             {
-                if (employee.Department.Id > 2) lbEmployees.Items.Add(employee.ToString());
+                if (employee.Department.Id > 0) lbEmployees.Items.Add(employee.ToString());
             }
         }
 
@@ -39,7 +39,7 @@ namespace Desktop_application
             lbEmployees.Items.Clear();
             foreach (Employee employee in EmployeeController.GetAll())
             {
-                if (employee.Department.Id > 2 && employee.ToString().ToLower().Contains(tbSearch.Text.ToLower()))
+                if (employee.Department.Id > 0 && employee.ToString().ToLower().Contains(tbSearch.Text.ToLower()))
                     lbEmployees.Items.Add(employee.ToString());
             }
         }
@@ -50,7 +50,7 @@ namespace Desktop_application
             lbEmployees.Items.Clear();
             foreach (Employee employee in EmployeeController.GetAll())
             {
-                if (employee.Department.Id > 2)
+                if (employee.Department.Id > 0)
                     lbEmployees.Items.Add(employee.ToString());
             }
         }
@@ -119,6 +119,11 @@ namespace Desktop_application
             this.Hide();
             form.ShowDialog();
             this.Close();
+        }
+
+        private void lbEmployees_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

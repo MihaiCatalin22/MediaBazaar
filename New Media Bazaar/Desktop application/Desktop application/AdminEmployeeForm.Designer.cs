@@ -164,6 +164,7 @@
             lbEmployees.Name = "lbEmployees";
             lbEmployees.Size = new Size(532, 264);
             lbEmployees.TabIndex = 13;
+            lbEmployees.SelectedIndexChanged += lbEmployees_SelectedIndexChanged;
             // 
             // tbSearch
             // 

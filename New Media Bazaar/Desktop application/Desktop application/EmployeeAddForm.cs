@@ -140,7 +140,7 @@ namespace Desktop_application
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            AdminEmployeeForm form = new AdminEmployeeForm();
+            AdminEmployeeForm form = new AdminEmployeeForm(_loggedInEmployee);
             this.Hide();
             form.ShowDialog();
             this.Close();
