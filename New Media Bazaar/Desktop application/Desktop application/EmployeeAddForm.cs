@@ -110,7 +110,7 @@ namespace Desktop_application
                 MessageBox.Show("Error creating employee");
             }
 
-            AdminEmployeeForm form = new AdminEmployeeForm();
+            AdminEmployeeForm form = new AdminEmployeeForm(_loggedInEmployee);
             this.Hide();
             form.ShowDialog();
             this.Close();

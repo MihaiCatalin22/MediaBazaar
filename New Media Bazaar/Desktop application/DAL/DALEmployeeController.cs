@@ -21,11 +21,11 @@ namespace DAL
             {
                 using SqlConnection conn = new SqlConnection(CONNECTION_STRING);
                 {
-                    string sql = "INSERT INTO Employee (Id, Username, Password, DepartmentID, Name, Email, Phone, Shifts, Salary, HireDate) VALUES (@id, @username, @password, @departmentID, @name, @email, @phone, @shifts, @salary, @hiredate)";
+                    string sql = "INSERT INTO Employee  (Username, Password, DepartmentID, Name, Email, Phone, Shifts, Salary, HireDate) VALUES (@username, @password, @departmentID, @name, @email, @phone, @shifts, @salary, @hiredate)";
 
                     using (SqlCommand cmd = new SqlCommand(sql, conn))
                     {
-                        cmd.Parameters.AddWithValue("@id", employee.Id);
+                        
                         cmd.Parameters.AddWithValue("@username", employee.Username);
                         cmd.Parameters.AddWithValue("@password", employee.Password);
                         cmd.Parameters.AddWithValue("@departmentID", employee.Department.Id);

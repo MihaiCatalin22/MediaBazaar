@@ -30,9 +30,7 @@ namespace Desktop_application
             }
         }
 
-        public AdminEmployeeForm()
-        {
-        }
+        
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
@@ -82,19 +80,7 @@ namespace Desktop_application
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if (lbEmployees.SelectedIndex != -1)
-            {
-                string[] split = lbEmployees.SelectedItem.ToString().Split(new char[] { ':' });
-
-                int _index = Convert.ToInt32(split[0]);
-
-                Employee _employee = EmployeeController.GetById(_index);
-
-                EmployeeDetailsForm form = new EmployeeDetailsForm(_loggedInEmployee, _employee);
-                this.Hide();
-                form.ShowDialog();
-            }
-            else MessageBox.Show("Please select an employee!");
+            
         }
 
         private void lblAnnouncements_Click(object sender, EventArgs e)
