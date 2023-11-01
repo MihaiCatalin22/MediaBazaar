@@ -9,19 +9,11 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class DALAnnoucement : IAnnoucementController
-    {
-        private CreateConnection createConnection;
-
-        public DALAnnoucement(CreateConnection createConnection)
-        {
-            this.createConnection = createConnection;
-
-        }
-
+    public class DALAnnoucement : BaseDAL, IAnnoucementController
+    {           
         public void AddAnnouncement(Announcement announcement)
         {
-            using (SqlConnection conn = createConnection.Connection())
+            using SqlConnection conn = new SqlConnection(CONNECTION_STRING);
             {
                 string query = "INSERT INTO Announcements (Title, Details, StartDate, EndDate) VALUES (@Title, @Details, @StartDate, @EndDate);";
                 SqlCommand cmd = new SqlCommand(query, conn);
@@ -55,7 +47,7 @@ namespace DAL
         public Announcement[] GetAllAnnouncements()
         {
             List<Announcement> list = new List<Announcement>();
-            using SqlConnection conn = createConnection.Connection();
+            using SqlConnection conn = new SqlConnection(CONNECTION_STRING);
             {
                 string query = @"SELECT * FROM Announcements ";
                 SqlCommand cmd = new SqlCommand(query, conn);
@@ -92,7 +84,7 @@ namespace DAL
         public Announcement GetAnnouncement(int id)
         {
             Announcement getAnnouncement = new Announcement();
-            using SqlConnection conn = createConnection.Connection();
+            using SqlConnection conn = new SqlConnection(CONNECTION_STRING);
             {
                 string query = @"SELECT * FROM Announcements WHERE Id=@Id";
                 SqlCommand cmd = new SqlCommand(query, conn);

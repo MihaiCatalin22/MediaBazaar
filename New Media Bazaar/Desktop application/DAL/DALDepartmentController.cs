@@ -9,9 +9,8 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class DALDepartmentController : IDepartmentController
-    {
-        private const string CONNECTION_STRING = "Server = mssqlstud.fhict.local; Database = dbi464839_mediabazar; User Id = dbi464839_mediabazar; Password = 1234; TrustServerCertificate=true;";
+    public class DALDepartmentController : BaseDAL, IDepartmentController
+    {       
         public bool Create(Department department)
         {
             try

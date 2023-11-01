@@ -25,7 +25,7 @@ namespace Desktop_application
             _loggedInEmployee = loggedInEmployee;
         }
 
-        AnnoucementController annoucementController = new AnnoucementController(new DALAnnoucement(new CreateConnection()));
+        public AnnoucementController AnnoucementController { get; private set; } = new(new DALAnnoucement());
 
         private void btnSendAnno_Click(object sender, EventArgs e)
         {
@@ -38,7 +38,7 @@ namespace Desktop_application
                 announcement.Details = tbDetails.Text;
                 announcement.StartDate = dtpStartTime.Value.Date;
                 announcement.EndDate = dtpEndTime.Value.Date;
-                annoucementController.AddAnnouncement(announcement);
+                AnnoucementController.AddAnnouncement(announcement);
                 AdminLandingForm adminLandingForm = new AdminLandingForm(_loggedInEmployee);
                 this.Hide();
                 adminLandingForm.ShowDialog();

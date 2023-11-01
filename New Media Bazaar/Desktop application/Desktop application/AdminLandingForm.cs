@@ -24,7 +24,7 @@ namespace Desktop_application
         }
         List<Announcement> announcements = new List<Announcement>();
         Announcement announcement = new Announcement();
-        AnnoucementController annoucementController = new AnnoucementController(new DALAnnoucement(new CreateConnection()));
+        public AnnoucementController AnnoucementController { get; private set; } = new(new DALAnnoucement());
 
         private void btnCreateAnno_Click(object sender, EventArgs e)
         {
@@ -37,14 +37,14 @@ namespace Desktop_application
         //ToDo double click
         private void lbAnnouncements_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            announcements = annoucementController.GetAllAnnouncements().ToList<Announcement>();
+            announcements = AnnoucementController.GetAllAnnouncements().ToList<Announcement>();
             if (lbAnnouncements.SelectedItems != null)
             {
                 foreach (Announcement currentAnnouncement in announcements)
                 {
                     if (lbAnnouncements.SelectedItem.ToString() == currentAnnouncement.Title)
                     {
-                        announcement = annoucementController.GetAnnouncement(currentAnnouncement.Id);
+                        announcement = AnnoucementController.GetAnnouncement(currentAnnouncement.Id);
                     }
                 }
                 EditAnnouncement editAnnouncement = new EditAnnouncement(announcement, _loggedInEmployee);
@@ -57,7 +57,7 @@ namespace Desktop_application
 
         private void AdminLandingForm_Load(object sender, EventArgs e)
         {
-            foreach (Announcement announcement in annoucementController.GetAllAnnouncements())
+            foreach (Announcement announcement in AnnoucementController.GetAllAnnouncements())
             {
                 lbAnnouncements.Items.Add(announcement.Title).ToString();
             }

@@ -11,18 +11,12 @@ using Microsoft.Data.SqlClient;
 
 namespace DAL_Library
 {
-    public class DALLogin : ILoginConttroller
+    public class DALLogin : BaseDAL, ILoginConttroller
     {
-        public Login Checkadmin = new Login();
-
-        private readonly CreateConnection createConnection;
-        public DALLogin(CreateConnection createConnection)
-        {
-            this.createConnection = createConnection;
-        }
+        public Login Checkadmin = new Login();       
         public Login CheckLogin(string username, string password)
         {
-            using SqlConnection conn = createConnection.Connection();
+            using SqlConnection conn = new SqlConnection(CONNECTION_STRING);
             {
                 string query = @"SELECT * FROM Employee WHERE Username=@Username";
                 SqlCommand cmd = new SqlCommand(query, conn);

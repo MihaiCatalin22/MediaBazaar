@@ -10,10 +10,8 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class DALShiftController : IShiftController
+    public class DALShiftController : BaseDAL, IShiftController
     {
-        private const string CONNECTION_STRING = "Server = mssqlstud.fhict.local; Database = dbi464839_mediabazar; User Id = dbi464839_mediabazar; Password = 1234; TrustServerCertificate=true;";
-
         public bool Create(Shift shift)
         {
             

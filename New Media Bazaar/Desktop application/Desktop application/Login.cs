@@ -24,8 +24,6 @@ namespace Desktop_application
             InitializeComponent();
         }
 
-        LoginController login = new LoginController(new DALLogin(new CreateConnection()));
-
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string _username = tbUsername.Text;

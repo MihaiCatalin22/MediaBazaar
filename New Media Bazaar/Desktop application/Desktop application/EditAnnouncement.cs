@@ -27,7 +27,7 @@ namespace Desktop_application
             _loggedInEmployee = loggedInEmployee;
         }
         Announcement announcement = new Announcement();
-        AnnoucementController annoucementController = new AnnoucementController(new DALAnnoucement(new CreateConnection()));
+        public AnnoucementController AnnoucementController { get; private set; } = new(new DALAnnoucement());
         private void bttnEdit_Click(object sender, EventArgs e)
         {
             tbTitle.ReadOnly = false;

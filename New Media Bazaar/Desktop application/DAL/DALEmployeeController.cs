@@ -10,11 +10,8 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class DALEmployeeController : IEmployeeController
-    {
-
-        private const string CONNECTION_STRING = "Server = mssqlstud.fhict.local; Database = dbi464839_mediabazar; User Id = dbi464839_mediabazar; Password = 1234; TrustServerCertificate=true;";
-
+    public class DALEmployeeController : BaseDAL, IEmployeeController
+    {      
         public bool Create(Employee employee)
         {
             try
