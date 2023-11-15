@@ -9,7 +9,7 @@ namespace WebApplication2.Pages
 		{
 			
 			HttpContext.Session.Clear();
-			return RedirectToPage("Login");
+			return RedirectToPage("Index");
 		}
 	}
 }
