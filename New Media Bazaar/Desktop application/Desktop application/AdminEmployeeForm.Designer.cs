@@ -34,7 +34,7 @@
             lblEmployees = new Label();
             lblAnnouncements = new Label();
             btnDelete = new Button();
-            button4 = new Button();
+            btnEditDetails = new Button();
             btnAddEmp = new Button();
             btnClear = new Button();
             btnSearch = new Button();
@@ -111,16 +111,16 @@
             btnDelete.UseVisualStyleBackColor = true;
             btnDelete.Click += btnDelete_Click;
             // 
-            // button4
+            // btnEditDetails
             // 
-            button4.Location = new Point(919, 576);
-            button4.Margin = new Padding(3, 4, 3, 4);
-            button4.Name = "button4";
-            button4.Size = new Size(122, 81);
-            button4.TabIndex = 17;
-            button4.Text = "Edit details of selected employee";
-            button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
+            btnEditDetails.Location = new Point(919, 576);
+            btnEditDetails.Margin = new Padding(3, 4, 3, 4);
+            btnEditDetails.Name = "btnEditDetails";
+            btnEditDetails.Size = new Size(122, 81);
+            btnEditDetails.TabIndex = 17;
+            btnEditDetails.Text = "Edit details of selected employee";
+            btnEditDetails.UseVisualStyleBackColor = true;
+            btnEditDetails.Click += btnEditDetails_Click;
             // 
             // btnAddEmp
             // 
@@ -191,7 +191,7 @@
             ClientSize = new Size(1182, 691);
             Controls.Add(panel1);
             Controls.Add(btnDelete);
-            Controls.Add(button4);
+            Controls.Add(btnEditDetails);
             Controls.Add(btnAddEmp);
             Controls.Add(btnClear);
             Controls.Add(btnSearch);
@@ -216,7 +216,7 @@
         private Label lblEmployees;
         private Label lblAnnouncements;
         private Button btnDelete;
-        private Button button4;
+        private Button btnEditDetails;
         private Button btnAddEmp;
         private Button btnClear;
         private Button btnSearch;

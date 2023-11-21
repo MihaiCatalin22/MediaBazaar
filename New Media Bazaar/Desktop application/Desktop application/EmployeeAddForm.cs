@@ -42,6 +42,8 @@ namespace Desktop_application
             string _email = tbEmail.Text;
             string _phone = tbPhone.Text;
             string departmentName = null;
+            string _bsn = tbBSN.Text;
+            DateTime _dateOfBirth = dtpDOB.Value;
             if (cbDepartment.SelectedIndex != -1)
             {
                 departmentName = cbDepartment.SelectedItem.ToString();
@@ -97,7 +99,7 @@ namespace Desktop_application
                 }
             }
 
-            Employee employee = new Employee(_username, _password, _department, _name, _email, _phone, _salary, _shifts);
+            Employee employee = new Employee(0, _username, _password, _department, _name, _email, _phone, _salary, null, _shifts, _dateOfBirth, _bsn);
 
 
 

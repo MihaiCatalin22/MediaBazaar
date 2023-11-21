@@ -18,7 +18,7 @@ namespace DAL
             {
                 using SqlConnection conn = new SqlConnection(CONNECTION_STRING);
                 {
-                    string sql = "INSERT INTO Employee  (Username, Password, DepartmentID, Name, Email, Phone, Shifts, Salary, HireDate) VALUES (@username, @password, @departmentID, @name, @email, @phone, @shifts, @salary, @hiredate)";
+                    string sql = "INSERT INTO Employee  (Username, Password, DepartmentID, Name, Email, Phone, Shifts, Salary, HireDate, DateOfBirth, BSN) VALUES (@username, @password, @departmentID, @name, @email, @phone, @shifts, @salary, @hiredate, @dateOfBirth, @bsn)";
 
                     using (SqlCommand cmd = new SqlCommand(sql, conn))
                     {
@@ -29,10 +29,11 @@ namespace DAL
                         cmd.Parameters.AddWithValue("@name", employee.Name);
                         cmd.Parameters.AddWithValue("@email", employee.Email);
                         cmd.Parameters.AddWithValue("@phone", employee.Phone);
-                        cmd.Parameters.AddWithValue("@shifts", employee.Shifts);
-/*                        cmd.Parameters.AddWithValue("@profilepicture", "https://upload.wikimedia.org/wikipedia/commons/2/2c/Default_pfp.svg");*/
+                        cmd.Parameters.AddWithValue("@shifts", employee.Shifts);                     
                         cmd.Parameters.AddWithValue("@salary", employee.Salary);
                         cmd.Parameters.AddWithValue("@hiredate", employee.HireDate);
+                        cmd.Parameters.AddWithValue("@dateOfBirth", employee.DateOfBirth);
+                        cmd.Parameters.AddWithValue("@bsn", employee.BSN);
 
                         conn.Open();
                         int result = cmd.ExecuteNonQuery();
@@ -79,9 +80,9 @@ namespace DAL
         {
             try
             {
-                List<Employee> employees = new();
-                DepartmentController _departmentController = new(new DALDepartmentController());
-                using SqlConnection conn = new SqlConnection(CONNECTION_STRING);
+                List<Employee> employees = new List<Employee>();
+                DepartmentController _departmentController = new DepartmentController(new DALDepartmentController());
+                using (SqlConnection conn = new SqlConnection(CONNECTION_STRING))
                 {
                     string sql = "SELECT * FROM Employee";
 
@@ -92,19 +93,32 @@ namespace DAL
 
                         while (dr.Read())
                         {
-                            Department department = _departmentController.Get(Convert.ToInt32(dr[3]));
-                            if (department.Id > 2)
-                                employees.Add(new Employee(Convert.ToInt32(dr[0]), dr[1].ToString(), dr[2].ToString(), department, dr[4].ToString(), dr[5].ToString(), dr[6].ToString(), Convert.ToDecimal(dr[7]), Convert.ToDateTime(dr[8]), dr[9].ToString(), Convert.ToInt32(dr[10])));
-                            else
-                                employees.Add(new Employee(Convert.ToInt32(dr[0]), dr[1].ToString(), dr[2].ToString(), department));
+                            int id = Convert.ToInt32(dr["ID"]);
+                            string username = dr["Username"].ToString();
+                            string password = dr["Password"].ToString();
+                            Department department = _departmentController.Get(Convert.ToInt32(dr["DepartmentID"]));
+
+                            // Handling nullable columns with ternary operators
+                            string name = dr.IsDBNull(dr.GetOrdinal("Name")) ? null : dr["Name"].ToString();
+                            string email = dr.IsDBNull(dr.GetOrdinal("Email")) ? null : dr["Email"].ToString();
+                            string bsn = dr.IsDBNull(dr.GetOrdinal("BSN")) ? null : dr["BSN"].ToString();
+                            DateTime? dateOfBirth = dr.IsDBNull(dr.GetOrdinal("DateOfBirth")) ? (DateTime?)null : Convert.ToDateTime(dr["DateOfBirth"]);
+                            string phone = dr.IsDBNull(dr.GetOrdinal("Phone")) ? null : dr["Phone"].ToString();
+                            decimal? salary = dr.IsDBNull(dr.GetOrdinal("Salary")) ? (decimal?)null : Convert.ToDecimal(dr["Salary"]);
+                            DateTime? hireDate = dr.IsDBNull(dr.GetOrdinal("HireDate")) ? (DateTime?)null : Convert.ToDateTime(dr["HireDate"]);
+                            int? shifts = dr.IsDBNull(dr.GetOrdinal("Shifts")) ? (int?)null : Convert.ToInt32(dr["Shifts"]);
+
+                            // Make sure to use the correct constructor
+                            employees.Add(new Employee(id, username, password, department, name, email, phone, salary, hireDate, shifts, dateOfBirth, bsn));
                         }
                     }
-
                 }
                 return employees.ToArray();
             }
             catch (Exception ex)
             {
+                // Log the exception message
+                Console.WriteLine(ex.Message); // or use any logging mechanism you have
                 return null;
             }
         }
@@ -130,7 +144,7 @@ namespace DAL
                         if (dr.Read())
                         {
                             Department department = _departmentController.Get(Convert.ToInt32(dr[3]));
-                            employee = new Employee(Convert.ToInt32(dr[0]), dr[1].ToString(), dr[2].ToString(), department, dr[4].ToString(), dr[5].ToString(), dr[6].ToString(), Convert.ToDecimal(dr[7]), Convert.ToDateTime(dr[8]), dr[9].ToString(), Convert.ToInt32(dr[10]));
+                            employee = new Employee(Convert.ToInt32(dr[0]), dr[1].ToString(), dr[2].ToString(), department, dr[4].ToString(), dr[5].ToString(), dr[6].ToString(), Convert.ToDecimal(dr[7]), Convert.ToDateTime(dr[8]), Convert.ToInt32(dr[9]), Convert.ToDateTime(dr[10]), dr[11].ToString());
                         }
                     }
 
@@ -149,7 +163,7 @@ namespace DAL
             {
                 using SqlConnection conn = new SqlConnection(CONNECTION_STRING);
                 {
-                    string sql = "UPDATE Employee SET Username = @username, Password = @password, DepartmentID = @departmentID, Name = @name, Email = @email, Phone = @phone, Shifts = @shifts, /*ProfilePicture = @profilepicture*/, Salary = @salary, HireDate = @hiredate WHERE Id = @id";
+                    string sql = "UPDATE Employee SET Username = @username, Password = @password, DepartmentID = @departmentID, Name = @name, Email = @email, Phone = @phone, Shifts = @shifts, Salary = @salary, HireDate = @hiredate, DateOfBirth = @dateOfBirth, BSN = @bsn WHERE Id = @id";
 
                     using (SqlCommand cmd = new SqlCommand(sql, conn))
                     {
@@ -161,9 +175,10 @@ namespace DAL
                         cmd.Parameters.AddWithValue("@email", employee.Email);
                         cmd.Parameters.AddWithValue("@phone", employee.Phone);
                         cmd.Parameters.AddWithValue("@shifts", employee.Shifts);
-                        //cmd.Parameters.AddWithValue("@profilepicture", employee.ProfilePicture);
                         cmd.Parameters.AddWithValue("@salary", employee.Salary);
                         cmd.Parameters.AddWithValue("@hiredate", employee.HireDate);
+                        cmd.Parameters.AddWithValue("@dateOfBirth", employee.DateOfBirth);
+                        cmd.Parameters.AddWithValue("@bsn", employee.BSN);
 
                         conn.Open();
                         int result = cmd.ExecuteNonQuery();
@@ -203,9 +218,9 @@ namespace DAL
                         {
                             Department department = _departmentController.Get(Convert.ToInt32(dr[3]));
                             if (department.Id > 2)
-                                employees.Add(new Employee(Convert.ToInt32(dr[0]), dr[1].ToString(), dr[2].ToString(), department, dr[4].ToString(), dr[5].ToString(), dr[6].ToString(), Convert.ToDecimal(dr[7]), Convert.ToDateTime(dr[8]), dr[9].ToString(), Convert.ToInt32(dr[10])));
+                                employees.Add(new Employee(Convert.ToInt32(dr[0]), dr[1].ToString(), dr[2].ToString(), department, dr[4].ToString(), dr[5].ToString(), dr[6].ToString(), Convert.ToDecimal(dr[7]), Convert.ToDateTime(dr[8]), Convert.ToInt32(dr[9]), Convert.ToDateTime(dr[10]), dr[11].ToString()));
                             else
-                                employees.Add(new Employee(Convert.ToInt32(dr[0]), dr[1].ToString(), dr[2].ToString(), department));
+                                employees.Add(new Employee(Convert.ToInt32(dr[0]), dr[1].ToString(), dr[2].ToString(), department, Convert.ToDateTime(dr[5]), dr[6].ToString()));
                         }
                     }
 

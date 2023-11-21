@@ -18,19 +18,26 @@ namespace Desktop_application
 
         public EmployeeController EmployeeController { get; private set; } = new(new DALEmployeeController());
         Employee _loggedInEmployee;
+        private Employee selectedEmployee;
+
         public AdminEmployeeForm(Employee loggedInEmployee)
         {
             InitializeComponent();
             _loggedInEmployee = loggedInEmployee;
 
-            lbEmployees.Items.Clear();
             foreach (Employee employee in EmployeeController.GetAll())
             {
-                if (employee.Department.Id > 0) lbEmployees.Items.Add(employee.ToString());
+                if (employee.Department.Id > 0)
+                {
+                    lbEmployees.Items.Add(new EmployeeListItem(employee.Id, employee.ToString()));
+                }
             }
+
+            lbEmployees.DisplayMember = "Text";
+            lbEmployees.ValueMember = "Id";
         }
 
-        
+
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
@@ -78,9 +85,22 @@ namespace Desktop_application
             this.Close();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void btnEditDetails_Click(object sender, EventArgs e)
         {
-            
+            if (lbEmployees.SelectedIndex != -1)
+            {
+                EmployeeListItem selectedItem = (EmployeeListItem)lbEmployees.SelectedItem;
+                selectedEmployee = EmployeeController.GetById(selectedItem.Id);
+
+                EmployeeEditForm form = new EmployeeEditForm(_loggedInEmployee, selectedEmployee);
+                this.Hide();
+                form.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Please select an employee!");
+            }
         }
 
         private void lblAnnouncements_Click(object sender, EventArgs e)

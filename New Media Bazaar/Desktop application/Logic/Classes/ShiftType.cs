@@ -8,8 +8,9 @@ namespace Logic.Classes
 {
     public enum ShiftType
     {
-        Morning = 0b001,
-        Afternoon = 0b0010,
-        Evening = 0b0100
+        None = 0,
+        Morning = 1,
+        Afternoon = 2,
+        Evening = 4
     }
 }
