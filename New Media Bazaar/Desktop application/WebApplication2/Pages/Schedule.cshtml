@@ -1,0 +1,75 @@
+﻿@page
+@using Logic;
+@using Logic.Classes;
+@model WebApplication2.Pages.ScheduleModel
+@{
+}
+
+<div class="h-100" style="display: flex; flex-direction: column; width:100%; gap: 1rem;">
+	<form method="post" class="emp-schedule-form">
+		<input type="hidden" name="today" value="@Model.Today" />
+		<button type="submit" name="weekSelectionButton" value="1" class="login-button"> Previous Week </button>
+		<p class="week-number">
+			@{
+				// Get the day of the year
+				int dayOfYear = Model.Today.DayOfYear;
+
+				// Get the day of the week (0 - Sunday, 1 - Monday, ..., 6 - Saturday)
+				int dayOfWeek = (int)Model.Today.DayOfWeek;
+
+				// Calculate the week number
+				int weekNumber = (dayOfYear + 6 - dayOfWeek) / 7;
+				<text>Week @weekNumber.ToString()</text>
+			}
+		</p>
+		<button type="submit" name="weekSelectionButton" value="2" class="login-button"> Next Week </button>
+	</form>
+	<ul style="list-style-type: none;" class="emp-schedule-container">
+		@if (Model.Shifts != null)
+		{
+			@foreach (Shift shift in Model.Shifts)
+			{
+				if (shift.Date >= DateTime.Now.AddDays(-1))
+				{
+					<li>
+						<div class="emp-schedule-day"><p>@shift.Date.ToString("dddd")</p></div>
+						<div class="emp-schedule-content">
+							<div class="shift-info">
+								<p> Shift Information </p>
+							</div>
+
+							<p>@shift.Date.ToString("MM/dd/yyyy") </p>
+							<p>
+								@if (shift.IsMorning)
+								{
+									<text>7 to 15</text>
+								}
+								else
+								{
+									<text>11 to 19</text>
+								}
+							</p>
+						</div>
+					</li>
+				}
+				else
+				{
+					<li>
+						<div class="emp-schedule-day"><p>@shift.Date.ToString("dddd")</p></div>
+						<div class="emp-schedule-content">
+							<div class="shift-info">
+								<p> Shift Information </p>
+							</div>
+
+							<p>@shift.Date.ToString("MM/dd/yyyy") </p>
+							<p style="font-size: 9px">
+								Shift Completed
+							</p>
+						</div>
+					</li>
+				}
+			}
+		}
+
+	</ul>
+</div>

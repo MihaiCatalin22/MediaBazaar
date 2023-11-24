@@ -7,6 +7,7 @@
         public DateTime Date { get; private set; }
         public int Type { get; private set; }
         public bool IsCancelled { get; set; }
+        public bool IsMorning { get; set; }
 
         public Shift() { }
         public string GetType()

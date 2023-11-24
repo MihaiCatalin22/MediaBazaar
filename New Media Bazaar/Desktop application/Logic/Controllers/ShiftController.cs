@@ -55,5 +55,10 @@ namespace Logic.Controllers
             }
             return shifts.ToArray();
         }
-    }
+
+		public static Shift[] GetWeeklyShifts(DateTime today)
+		{
+			throw new NotImplementedException();
+		}
+	}
 }
