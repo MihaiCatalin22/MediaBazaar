@@ -1,0 +1,106 @@
+﻿@page
+@using Logic.Classes;
+@model WebApplication2.Pages.ProfileModel
+@{
+    ViewData["Title"] = "Employee Profile";
+}
+    <h2>Employee Profile</h2>
+<div class="container">
+	<div class="row mt-5">
+		<div class="col-3">		
+		</div>
+
+
+		<div class="col-7">
+			<h1>@Model._loggedInEmployee.Name</h1>
+			<h4>Employee - Department: @Model._loggedInEmployee.Department.Name</h4>
+
+			<div class="row mt-4">
+				<div class="col-3">
+					<h5>Username:</h5>
+				</div>
+				<div class="col-3">
+					<h5>@Model._loggedInEmployee.Username</h5>
+				</div>
+			</div>
+			<div class="row mt-2">
+				<div class="col-3">
+					<h5>Hire date:</h5>
+				</div>
+				<div class="col-3">
+					<h5>@Model._loggedInEmployee.HireDate.ToShortDateString()</h5>
+				</div>
+			</div>
+			<div class="row mt-2">
+				<div class="col-3">
+					<h5>BSN:</h5>
+				</div>
+				<div class="col-3">
+					<h5>@Model._loggedInEmployee.BSN</h5>
+				</div>
+			</div>
+			<div class="row mt-2">
+				<div class="col-3">
+					<h5>Date of Birth:</h5>
+				</div>
+				<div class="col-3">
+					<h5>@Model._loggedInEmployee.DateOfBirth.ToString("d")</h5>
+				</div>
+			</div>
+			<div class="row mt-2">
+				<div class="col-3">
+					<h5>Salary:</h5>
+				</div>
+				<div class="col-3">
+					<h5>@Model._loggedInEmployee.Salary</h5>
+				</div>
+			</div>
+			<div class="row mt-2">
+				<div class="col-3">
+					<h5>Available shift(s):</h5>
+				</div>
+
+				@{
+					int shifts = Model._loggedInEmployee.Shifts;
+					string _shifts = string.Empty;
+					if (shifts.HasShift(ShiftType.Morning))
+					{
+						_shifts += "Morning ";
+					}
+					if (shifts.HasShift(ShiftType.Afternoon))
+					{
+						_shifts += "Afternoon ";
+					}
+					if (shifts.HasShift(ShiftType.Evening))
+					{
+						_shifts += "Evening ";
+					}
+					<div class="col-3">
+						<h5>@_shifts</h5>
+					</div>
+				}
+
+			</div>
+			<form method="post">
+				<div class="col-3">
+					<h5>Email:</h5>
+				</div>
+				<input type="email" asp-for="UpdateInfo.Email" value="@Model._loggedInEmployee.Email" class="form-control" />
+
+				<div class="col-3">
+					<h5>Phone number:</h5>
+				</div>
+				<input type="tel" asp-for="UpdateInfo.Phone" value="@Model._loggedInEmployee.Phone" class="form-control" />
+
+				<div class="col-3">
+					<h5>Password:</h5>
+				</div>
+				<input type="password" asp-for="UpdateInfo.Password" value="@Model._loggedInEmployee.Password" class="form-control" />
+
+				<!-- Submit button -->
+				<button type="submit" class="btn btn-primary">Update</button>
+			</form>
+		</div>
+	</div>
+</div>
+

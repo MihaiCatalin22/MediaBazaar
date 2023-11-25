@@ -16,11 +16,11 @@
 						<div class="form-group mt-3">
 							<p style="color: red">@ViewData["Message"]</p><br />
 							<label asp-for="employee.Username">Username:  </label>
-							<input type="text" asp-for="employee.Username" placeholder="Type your username..." class="inputs" value="Murat"><br />
+							<input type="text" asp-for="employee.Username" placeholder="Type your username..." /><br />
 							<span asp-validation-for="employee.Username" style="color: red"></span><br />
 
 							<label asp-for="employee.Password" class="mt-3">Password:  </label>
-							<input type="password" asp-for="employee.Password" placeholder="Type your password..." class=" inputs" value="123"><br />
+							<input type="password" asp-for="employee.Password" placeholder="Type your password..." /><br />
 							<span asp-validation-for="employee.Password" style="color: red"></span><br><br>
 						</div>
 						<button type="submit" class="btn btn-dark btn-lg">Login</button>
