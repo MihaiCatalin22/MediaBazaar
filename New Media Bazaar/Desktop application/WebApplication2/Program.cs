@@ -1,6 +1,7 @@
 using ClassLibrary.Classes;
+using DAL;
 using Microsoft.AspNetCore.Identity;
-
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,7 +14,13 @@ builder.Services.AddSession(options =>
 	options.Cookie.HttpOnly = true;
 	options.Cookie.IsEssential = true;
 });
-
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options =>
+{
+	options.ExpireTimeSpan = TimeSpan.FromMinutes(20);
+	options.SlidingExpiration = true;
+	options.LogoutPath = "/Logout";
+});
+builder.Services.AddScoped<Logic.Interfaces.IEmployeeController, DALEmployeeController>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -30,6 +37,7 @@ app.UseStaticFiles();
 app.UseRouting();
 app.UseSession();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapRazorPages();

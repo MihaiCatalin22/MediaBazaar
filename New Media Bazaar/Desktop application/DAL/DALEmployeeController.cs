@@ -108,7 +108,7 @@ namespace DAL
                             DateTime? hireDate = dr.IsDBNull(dr.GetOrdinal("HireDate")) ? (DateTime?)null : Convert.ToDateTime(dr["HireDate"]);
                             int? shifts = dr.IsDBNull(dr.GetOrdinal("Shifts")) ? (int?)null : Convert.ToInt32(dr["Shifts"]);
 
-                            // Make sure to use the correct constructor
+                  
                             employees.Add(new Employee(id, username, password, department, name, email, phone, salary, hireDate, shifts, dateOfBirth, bsn));
                         }
                     }
@@ -117,8 +117,8 @@ namespace DAL
             }
             catch (Exception ex)
             {
-                // Log the exception message
-                Console.WriteLine(ex.Message); // or use any logging mechanism you have
+              
+                Console.WriteLine(ex.Message); 
                 return null;
             }
         }
