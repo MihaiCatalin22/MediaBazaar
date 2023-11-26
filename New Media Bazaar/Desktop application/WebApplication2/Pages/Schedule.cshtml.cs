@@ -4,45 +4,75 @@ using DAL;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Text.RegularExpressions;
+using Logic.Interfaces;
 
 namespace WebApplication2.Pages
 {
     public class ScheduleModel : PageModel
     {
-		[BindProperty]
-		public Shift[] Shifts { get; set; }
-		public ShiftController shiftController = new ShiftController(new DALShiftController());
-		public EmployeeController employeeController = new EmployeeController(new DALEmployeeController());
-		
-		[BindProperty]
-		public DateTime Today { get; set; }
+		public Employee _loggedInEmployee;
+		public Shift[] _assignedShifts;
+		private readonly EmployeeController employeeController = new EmployeeController(new DALEmployeeController());
+		private readonly ShiftController shiftController = new ShiftController(new DALShiftController());
+		public List<string> WeekDays { get; set; } = new List<string> { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" };
+		public DateTime CurrentDate { get; set; } = DateTime.Today;
+		public DateTime NewDate { get; set; }
 
-		
+		private static int counter = 0;
 
-		public void OnGet()
+
+
+		public IActionResult OnGet()
         {
-			//string username = HttpContext.Session.GetString("username");
+            counter = 0;
+            NewDate = CurrentDate;
 
-			//Employee thisEmployee = employeeController.Get(username);
-			////int employeeId = Convert.ToInt32(HttpContext.Session.GetString("employeeId"));
+            if (HttpContext.Session.GetString("username") != null)
+            {
+                _loggedInEmployee = employeeController.Get(HttpContext.Session.GetString("username"));
+            }
+            _assignedShifts = shiftController.GetAllAssigned(_loggedInEmployee);
 
-			//if (username == null || username == " ")
-			//{
-			//	Response.Redirect("Login");
-			//}
+            return Page();
+		}
+		public void OnPostPreviousWeek()
+		{
+			counter--;
+			NewDate = CurrentDate.AddDays(counter * 7);
+			CurrentDate = NewDate;
 
-			//Today = DateTime.Now;
-
-			//Shift[] allShifts = ShiftController.GetWeeklyShifts(Today);
-			//List<Shift> empShifts = new List<Shift>();
-			//foreach (Shift shift in allShifts)
-			//{
-			//	empShifts.Add(shift);
-
-			//}
-
-			//Shifts = empShifts.ToArray();
+			if (HttpContext.Session.GetString("username") != null)
+			{
+				_loggedInEmployee = employeeController.Get(HttpContext.Session.GetString("username"));
+			}
+			_assignedShifts = shiftController.GetAllAssigned(_loggedInEmployee);
 
 		}
-    }
+
+		public void OnPostCurrentWeek()
+		{
+			counter = 0;
+			NewDate = CurrentDate;
+
+			if (HttpContext.Session.GetString("username") != null)
+			{
+				_loggedInEmployee = employeeController.Get(HttpContext.Session.GetString("username"));
+			}
+			_assignedShifts = shiftController.GetAllAssigned(_loggedInEmployee);
+		}
+
+		public void OnPostNextWeek()
+		{
+			counter++;
+			NewDate = CurrentDate.AddDays(counter * 7);
+			CurrentDate = NewDate;
+
+			if (HttpContext.Session.GetString("username") != null)
+			{
+				_loggedInEmployee = employeeController.Get(HttpContext.Session.GetString("username"));
+			}
+			_assignedShifts = shiftController.GetAllAssigned(_loggedInEmployee);
+
+		}
+	}
 }
