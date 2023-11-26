@@ -16,3 +16,16 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+/*schedule*/
+table {
+    font-size: 20px;
+}
+
+.schedule {
+    display: inline-block;
+}
+.thead{
+    color: white;
+    background-color: mediumpurple
+}

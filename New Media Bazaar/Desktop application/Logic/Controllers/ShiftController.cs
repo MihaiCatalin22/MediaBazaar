@@ -46,19 +46,15 @@ namespace Logic.Controllers
         public Shift[] GetAllByDateAndDepartment(DateTime date, Department department)
         {
             List<Shift> shifts = new();
-            foreach (Shift s in GetAllByDate(date))
+            foreach (Shift shift in GetAllByDate(date))
             {
-                if (s.Employee.Department.Id == department.Id)
+                if (shift.Employee.Department.Id == department.Id)
                 {
-                    shifts.Add(s);
+                    shifts.Add(shift);
                 }
             }
             return shifts.ToArray();
         }
 
-		public static Shift[] GetWeeklyShifts(DateTime today)
-		{
-			throw new NotImplementedException();
-		}
 	}
 }

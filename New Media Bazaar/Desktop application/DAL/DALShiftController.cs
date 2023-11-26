@@ -115,23 +115,32 @@ namespace DAL
 
                     using (SqlCommand cmd = new SqlCommand(sql, conn))
                     {
-                        cmd.Parameters.AddWithValue("@id", employee.Id);
-                        conn.Open();
-                        SqlDataReader dr = cmd.ExecuteReader();
-
-                        while (dr.Read())
+                        if (employee != null)
                         {
-                            Shift newShift = new Shift(Convert.ToInt32(dr[0]), employee, Convert.ToDateTime(dr[2]), Convert.ToInt32(dr[3]), Convert.ToBoolean(dr[4]));
+                            cmd.Parameters.AddWithValue("@id", employee.Id);
+                            conn.Open();
+                            SqlDataReader dr = cmd.ExecuteReader();
 
-                            if (!newShift.IsCancelled)
+                            while (dr.Read())
                             {
-                                shifts.Add(newShift);
+                                Shift newShift = new Shift(Convert.ToInt32(dr[0]), employee, Convert.ToDateTime(dr[2]), Convert.ToInt32(dr[3]), Convert.ToBoolean(dr[4]));
+
+                                if (!newShift.IsCancelled)
+                                {
+                                    shifts.Add(newShift);
+                                }
                             }
+
+                            return shifts.ToArray();
                         }
+                        else
+                        {
+                            return null;
+                        }
+                        
                     }
 
                 }
-                return shifts.ToArray();
             }
             catch (Exception ex)
             {
