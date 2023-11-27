@@ -39,6 +39,35 @@ namespace DAL
             }
         }
 
+        public void UpdateAnnouncement(Announcement announcement)
+        {
+            using SqlConnection conn = new SqlConnection(CONNECTION_STRING);
+            {
+                string query = "UPDATE Announcements SET Title = @Title, Details= @Details , StartDate = @StartDate, EndDate = @EndDate WHERE id = @Id;";
+                SqlCommand cmd = new SqlCommand(query, conn);
+
+                try
+                {
+                    conn.Open();
+
+                    cmd.Parameters.AddWithValue("@Id", announcement.Id);
+                    cmd.Parameters.AddWithValue("@Title", announcement.Title);
+                    cmd.Parameters.AddWithValue("@Details", announcement.Details);
+                    cmd.Parameters.AddWithValue("@StartDate", announcement.StartDate);
+                    cmd.Parameters.AddWithValue("@EndDate", announcement.EndDate);
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    conn.Close();
+                }
+                catch (Exception e)
+                {
+                    conn.Close();
+                }
+
+            }
+        }
+
         public Announcement EditAnnouncement(Announcement announcement)
         {
             throw new NotImplementedException();

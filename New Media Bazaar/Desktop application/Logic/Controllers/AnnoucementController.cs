@@ -20,6 +20,10 @@ namespace Logic.Controllers
         {
             accessAnnoucement.AddAnnouncement(annoucement);
         }
+        public void UpdateAnnouncement(Announcement annoucement)
+        {
+            accessAnnoucement.UpdateAnnouncement(annoucement);
+        }
 
         public void RemoveAnnouncement(int  id)
         {

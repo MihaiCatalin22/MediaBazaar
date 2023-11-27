@@ -10,6 +10,7 @@ namespace Logic.Interfaces
     public interface IAnnoucementController
     {
         void AddAnnouncement(Announcement announcement);
+        void UpdateAnnouncement(Announcement announcement);
         void RemoveAnnouncement(int id);
         Announcement GetAnnouncement(int id);
         Announcement[] GetAllAnnouncements();

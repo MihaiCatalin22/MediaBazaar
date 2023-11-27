@@ -16,6 +16,7 @@ namespace Desktop_application
     public partial class EditAnnouncement : Form
     {
         private Employee _loggedInEmployee;
+        private Announcement _announcement;
         public EditAnnouncement(Announcement oldAnnouncement, Employee loggedInEmployee)
         {
             InitializeComponent();
@@ -25,8 +26,9 @@ namespace Desktop_application
             tbTitle.Text = oldAnnouncement.Title;
             tbDetails.Text = oldAnnouncement.Details;
             _loggedInEmployee = loggedInEmployee;
+            _announcement = oldAnnouncement;    
         }
-        Announcement announcement = new Announcement();
+        //Announcement announcement = new Announcement();
         public AnnoucementController AnnoucementController { get; private set; } = new(new DALAnnoucement());
         private void bttnEdit_Click(object sender, EventArgs e)
         {
@@ -37,7 +39,18 @@ namespace Desktop_application
         //ToDo save edit
         private void bttnSave_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            _announcement.Title = tbTitle.Text;
+            _announcement.Details = tbDetails.Text;
+            _announcement.StartDate = dtpStartTime.Value.Date;
+            _announcement.EndDate = dtpEndTime.Value.Date;
+            AnnoucementController.UpdateAnnouncement(_announcement);
+
+            AdminLandingForm adminLandingForm = new AdminLandingForm(_loggedInEmployee);
+            this.Hide();
+            adminLandingForm.ShowDialog();
+            this.Close();
+
+
         }
 
         private void btnBack_Click(object sender, EventArgs e)
