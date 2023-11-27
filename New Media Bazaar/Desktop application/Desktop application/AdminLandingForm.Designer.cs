@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            radioButton4 = new RadioButton();
-            radioButton1 = new RadioButton();
-            radioButton3 = new RadioButton();
-            radioButton2 = new RadioButton();
+            rbPostPonedAnnouncement = new RadioButton();
+            rbPastAnnouncement = new RadioButton();
+            rbAllAnnouncements = new RadioButton();
+            rbCurrentAnnouncement = new RadioButton();
             btnResetFilters = new Button();
             gbFilters = new GroupBox();
             btnCreateAnno = new Button();
@@ -48,53 +48,53 @@
             panel1.SuspendLayout();
             SuspendLayout();
             // 
-            // radioButton4
+            // rbPostPonedAnnouncement
             // 
-            radioButton4.AutoSize = true;
-            radioButton4.Location = new Point(14, 92);
-            radioButton4.Margin = new Padding(3, 4, 3, 4);
-            radioButton4.Name = "radioButton4";
-            radioButton4.Size = new Size(214, 24);
-            radioButton4.TabIndex = 21;
-            radioButton4.TabStop = true;
-            radioButton4.Text = "Post-poned announcements";
-            radioButton4.UseVisualStyleBackColor = true;
+            rbPostPonedAnnouncement.AutoSize = true;
+            rbPostPonedAnnouncement.Location = new Point(14, 92);
+            rbPostPonedAnnouncement.Margin = new Padding(3, 4, 3, 4);
+            rbPostPonedAnnouncement.Name = "rbPostPonedAnnouncement";
+            rbPostPonedAnnouncement.Size = new Size(214, 24);
+            rbPostPonedAnnouncement.TabIndex = 21;
+            rbPostPonedAnnouncement.TabStop = true;
+            rbPostPonedAnnouncement.Text = "Post-poned announcements";
+            rbPostPonedAnnouncement.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // rbPastAnnouncement
             // 
-            radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(14, 27);
-            radioButton1.Margin = new Padding(3, 4, 3, 4);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(164, 24);
-            radioButton1.TabIndex = 18;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "Past announcements";
-            radioButton1.UseVisualStyleBackColor = true;
+            rbPastAnnouncement.AutoSize = true;
+            rbPastAnnouncement.Location = new Point(14, 27);
+            rbPastAnnouncement.Margin = new Padding(3, 4, 3, 4);
+            rbPastAnnouncement.Name = "rbPastAnnouncement";
+            rbPastAnnouncement.Size = new Size(164, 24);
+            rbPastAnnouncement.TabIndex = 18;
+            rbPastAnnouncement.TabStop = true;
+            rbPastAnnouncement.Text = "Past announcements";
+            rbPastAnnouncement.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // rbAllAnnouncements
             // 
-            radioButton3.AutoSize = true;
-            radioButton3.Location = new Point(14, 125);
-            radioButton3.Margin = new Padding(3, 4, 3, 4);
-            radioButton3.Name = "radioButton3";
-            radioButton3.Size = new Size(156, 24);
-            radioButton3.TabIndex = 20;
-            radioButton3.TabStop = true;
-            radioButton3.Text = "All announcements";
-            radioButton3.UseVisualStyleBackColor = true;
+            rbAllAnnouncements.AutoSize = true;
+            rbAllAnnouncements.Location = new Point(14, 125);
+            rbAllAnnouncements.Margin = new Padding(3, 4, 3, 4);
+            rbAllAnnouncements.Name = "rbAllAnnouncements";
+            rbAllAnnouncements.Size = new Size(156, 24);
+            rbAllAnnouncements.TabIndex = 20;
+            rbAllAnnouncements.TabStop = true;
+            rbAllAnnouncements.Text = "All announcements";
+            rbAllAnnouncements.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rbCurrentAnnouncement
             // 
-            radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(14, 60);
-            radioButton2.Margin = new Padding(3, 4, 3, 4);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(186, 24);
-            radioButton2.TabIndex = 19;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "Current announcements";
-            radioButton2.UseVisualStyleBackColor = true;
+            rbCurrentAnnouncement.AutoSize = true;
+            rbCurrentAnnouncement.Location = new Point(14, 60);
+            rbCurrentAnnouncement.Margin = new Padding(3, 4, 3, 4);
+            rbCurrentAnnouncement.Name = "rbCurrentAnnouncement";
+            rbCurrentAnnouncement.Size = new Size(186, 24);
+            rbCurrentAnnouncement.TabIndex = 19;
+            rbCurrentAnnouncement.TabStop = true;
+            rbCurrentAnnouncement.Text = "Current announcements";
+            rbCurrentAnnouncement.UseVisualStyleBackColor = true;
             // 
             // btnResetFilters
             // 
@@ -109,11 +109,11 @@
             // 
             // gbFilters
             // 
-            gbFilters.Controls.Add(radioButton4);
-            gbFilters.Controls.Add(radioButton1);
+            gbFilters.Controls.Add(rbPostPonedAnnouncement);
+            gbFilters.Controls.Add(rbPastAnnouncement);
             gbFilters.Controls.Add(btnResetFilters);
-            gbFilters.Controls.Add(radioButton3);
-            gbFilters.Controls.Add(radioButton2);
+            gbFilters.Controls.Add(rbAllAnnouncements);
+            gbFilters.Controls.Add(rbCurrentAnnouncement);
             gbFilters.Location = new Point(579, 242);
             gbFilters.Margin = new Padding(3, 4, 3, 4);
             gbFilters.Name = "gbFilters";
@@ -264,10 +264,10 @@
         }
 
         #endregion
-        private RadioButton radioButton4;
-        private RadioButton radioButton1;
-        private RadioButton radioButton3;
-        private RadioButton radioButton2;
+        private RadioButton rbPostPonedAnnouncement;
+        private RadioButton rbPastAnnouncement;
+        private RadioButton rbAllAnnouncements;
+        private RadioButton rbCurrentAnnouncement;
         private Button btnResetFilters;
         private GroupBox gbFilters;
         private Button btnCreateAnno;

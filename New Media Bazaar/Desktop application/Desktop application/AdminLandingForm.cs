@@ -87,8 +87,51 @@ namespace Desktop_application
         //Todo Filter
         private void btnResetFilters_Click(object sender, EventArgs e)
         {
+            lbAnnouncements.Items.Clear();
+            if (rbAllAnnouncements.Checked)
+            {
+                filterAllAnno();
+            }
+            else if (rbCurrentAnnouncement.Checked)
+            {
+                filterCurrentAnno();
+            }
+            else if (rbPastAnnouncement.Checked)
+            {
+                filterPastAnno();
+            }
 
         }
+        private void filterPastAnno()
+        {
+            foreach (Announcement announcement in AnnoucementController.GetAllAnnouncements())
+            {
+                if (announcement.EndDate < DateTime.Now)
+                {
+                    lbAnnouncements.Items.Add(announcement.Title).ToString();
+                }
+
+            }
+        }
+        private void filterCurrentAnno()
+        {
+            foreach (Announcement announcement in AnnoucementController.GetAllAnnouncements())
+            {
+                if (announcement.StartDate < DateTime.Now & announcement.EndDate > DateTime.Now)
+                {
+                    lbAnnouncements.Items.Add(announcement.Title).ToString();
+                }
+
+            }
+        }
+        private void filterAllAnno()
+        {
+            foreach (Announcement announcement in AnnoucementController.GetAllAnnouncements())
+            {
+                lbAnnouncements.Items.Add(announcement.Title).ToString();
+            }
+        }
+
 
         //ToDo fix listbox
         private void lbAnnouncements_SelectedIndexChanged(object sender, EventArgs e)
