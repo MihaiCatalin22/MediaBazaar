@@ -84,7 +84,7 @@ namespace Desktop_application
             this.Close();
         }
 
-        //Todo Filter
+        //Todo Filters
         private void btnResetFilters_Click(object sender, EventArgs e)
         {
             lbAnnouncements.Items.Clear();
@@ -100,6 +100,10 @@ namespace Desktop_application
             {
                 filterPastAnno();
             }
+            else if (rbPostPonedAnnouncement.Checked)
+            {
+                filterFutureAnno();
+            }
 
         }
         private void filterPastAnno()
@@ -107,6 +111,17 @@ namespace Desktop_application
             foreach (Announcement announcement in AnnoucementController.GetAllAnnouncements())
             {
                 if (announcement.EndDate < DateTime.Now)
+                {
+                    lbAnnouncements.Items.Add(announcement.Title).ToString();
+                }
+
+            }
+        }
+        private void filterFutureAnno()
+        {
+            foreach (Announcement announcement in AnnoucementController.GetAllAnnouncements())
+            {
+                if(announcement.EndDate > DateTime.Now)
                 {
                     lbAnnouncements.Items.Add(announcement.Title).ToString();
                 }

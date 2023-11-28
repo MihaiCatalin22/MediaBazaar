@@ -118,7 +118,7 @@
             gbFilters.Margin = new Padding(3, 4, 3, 4);
             gbFilters.Name = "gbFilters";
             gbFilters.Padding = new Padding(3, 4, 3, 4);
-            gbFilters.Size = new Size(213, 242);
+            gbFilters.Size = new Size(228, 242);
             gbFilters.TabIndex = 40;
             gbFilters.TabStop = false;
             gbFilters.Text = "Filters";
