@@ -90,14 +90,13 @@
 				<div class="col-3">
 					<h5>Phone number:</h5>
 				</div>
-				<input type="tel" asp-for="UpdateInfo.Phone" value="@Model._loggedInEmployee.Phone" class="form-control" />
+				<input type="tel" autocomplete="off" asp-for="UpdateInfo.Phone" value="@Model._loggedInEmployee.Phone" class="form-control"maxlength="12" pattern="^\+?\d{0,12}$" title="Phone number must be up to 12 digits and may include a leading '+'." />
 
 				<div class="col-3">
 					<h5>Password:</h5>
 				</div>
 				<input type="password" asp-for="UpdateInfo.Password" value="@Model._loggedInEmployee.Password" class="form-control" />
 
-				<!-- Submit button -->
 				<button type="submit" class="btn btn-primary">Update</button>
 			</form>
 		</div>
