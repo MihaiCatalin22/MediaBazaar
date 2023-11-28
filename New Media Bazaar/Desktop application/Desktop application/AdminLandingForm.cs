@@ -34,7 +34,7 @@ namespace Desktop_application
             this.Close();
         }
 
-        //ToDo double click
+  
         private void lbAnnouncements_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             announcements = AnnoucementController.GetAllAnnouncements().ToList<Announcement>();
@@ -84,7 +84,6 @@ namespace Desktop_application
             this.Close();
         }
 
-        //Todo Filters
         private void btnResetFilters_Click(object sender, EventArgs e)
         {
             lbAnnouncements.Items.Clear();
@@ -106,40 +105,40 @@ namespace Desktop_application
             }
 
         }
-        private void filterPastAnno()
-        {
-            foreach (Announcement announcement in AnnoucementController.GetAllAnnouncements())
-            {
-                if (announcement.EndDate < DateTime.Now)
-                {
-                    lbAnnouncements.Items.Add(announcement.Title).ToString();
-                }
-
-            }
-        }
-        private void filterFutureAnno()
-        {
-            foreach (Announcement announcement in AnnoucementController.GetAllAnnouncements())
-            {
-                if(announcement.EndDate > DateTime.Now)
-                {
-                    lbAnnouncements.Items.Add(announcement.Title).ToString();
-                }
-
-            }
-        }
-        private void filterCurrentAnno()
-        {
-            foreach (Announcement announcement in AnnoucementController.GetAllAnnouncements())
-            {
-                if (announcement.StartDate < DateTime.Now & announcement.EndDate > DateTime.Now)
-                {
-                    lbAnnouncements.Items.Add(announcement.Title).ToString();
-                }
-
-            }
-        }
-        private void filterAllAnno()
+		private void filterPastAnno()
+		{
+			DateOnly today = DateOnly.FromDateTime(DateTime.Now);
+			foreach (Announcement announcement in AnnoucementController.GetAllAnnouncements())
+			{
+				if (announcement.EndDate < today)
+				{
+					lbAnnouncements.Items.Add(announcement.Title).ToString();
+				}
+			}
+		}
+		private void filterFutureAnno()
+		{
+			DateOnly today = DateOnly.FromDateTime(DateTime.Now);
+			foreach (Announcement announcement in AnnoucementController.GetAllAnnouncements())
+			{
+				if (announcement.EndDate > today)
+				{
+					lbAnnouncements.Items.Add(announcement.Title).ToString();
+				}
+			}
+		}
+		private void filterCurrentAnno()
+		{
+			DateOnly today = DateOnly.FromDateTime(DateTime.Now);
+			foreach (Announcement announcement in AnnoucementController.GetAllAnnouncements())
+			{
+				if (announcement.StartDate <= today && announcement.EndDate >= today)
+				{
+					lbAnnouncements.Items.Add(announcement.Title).ToString();
+				}
+			}
+		}
+		private void filterAllAnno()
         {
             foreach (Announcement announcement in AnnoucementController.GetAllAnnouncements())
             {
@@ -148,7 +147,7 @@ namespace Desktop_application
         }
 
 
-        //ToDo fix listbox
+        
         private void lbAnnouncements_SelectedIndexChanged(object sender, EventArgs e)
         {
 

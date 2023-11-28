@@ -55,6 +55,9 @@ namespace Logic.Controllers
             }
             return shifts.ToArray();
         }
-
+		public Shift[] GetFutureShiftsByEmp(Employee employee)
+		{
+			return _shiftDal.GetFutureShiftsByEmp(employee);
+		}
 	}
 }

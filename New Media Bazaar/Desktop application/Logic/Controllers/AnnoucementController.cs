@@ -11,7 +11,7 @@ namespace Logic.Controllers
     public class AnnoucementController
     {
         private readonly IAnnoucementController accessAnnoucement;
-        public AnnoucementController(IAnnoucementController accessAnnoucement) 
+        public AnnoucementController(IAnnoucementController accessAnnoucement)
         {
             this.accessAnnoucement = accessAnnoucement;
         }
@@ -25,7 +25,7 @@ namespace Logic.Controllers
             accessAnnoucement.UpdateAnnouncement(annoucement);
         }
 
-        public void RemoveAnnouncement(int  id)
+        public void RemoveAnnouncement(int id)
         {
             accessAnnoucement.RemoveAnnouncement(id);
         }
@@ -34,7 +34,7 @@ namespace Logic.Controllers
         {
             return accessAnnoucement.GetAnnouncement(id);
         }
-        
+
         public Announcement[] GetAllAnnouncements()
         {
             return accessAnnoucement.GetAllAnnouncements();
@@ -43,5 +43,11 @@ namespace Logic.Controllers
         {
             return accessAnnoucement.EditAnnouncement(announcement);
         }
+        public Announcement[] GetAllCurrent()
+        {
+            return accessAnnoucement.GetAllCurrent();
+
+        }
     }
 }
+

@@ -18,6 +18,6 @@ namespace Logic.Interfaces
         public Shift[] GetAllAssigned(Employee employee);
         public Shift[] GetAllByDate(DateTime date);
         public Shift GetById(int id);
-
-    }
+		public Shift[] GetFutureShiftsByEmp(Employee employee);
+	}
 }

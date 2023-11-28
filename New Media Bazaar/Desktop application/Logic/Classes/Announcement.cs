@@ -9,7 +9,7 @@ namespace Logic.Classes
     public class Announcement
     {
         public Announcement() { }
-        public Announcement(int id, string title, string details, DateTime startDate, DateTime endDate) 
+        public Announcement(int id, string title, string details, DateOnly startDate, DateOnly endDate) 
         { 
             Id = id;
             Title = title;
@@ -21,8 +21,8 @@ namespace Logic.Classes
         public int Id { get; set; }
         public string Title { get; set; }
         public string Details { get; set; }
-        public DateTime StartDate { get; set; }
-        public DateTime EndDate { get; set; }
+        public DateOnly StartDate { get; set; }
+        public DateOnly EndDate { get; set; }
 
     }
 }

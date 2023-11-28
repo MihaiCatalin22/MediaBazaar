@@ -36,9 +36,9 @@ namespace Desktop_application
                 Announcement announcement = new Announcement();
                 announcement.Title = tbTitle.Text;
                 announcement.Details = tbDetails.Text;
-                announcement.StartDate = dtpStartTime.Value.Date;
-                announcement.EndDate = dtpEndTime.Value.Date;
-                AnnoucementController.AddAnnouncement(announcement);
+				announcement.StartDate = DateOnly.FromDateTime(dtpStartTime.Value.Date);
+				announcement.EndDate = DateOnly.FromDateTime(dtpEndTime.Value.Date);
+				AnnoucementController.AddAnnouncement(announcement);
                 AdminLandingForm adminLandingForm = new AdminLandingForm(_loggedInEmployee);
                 this.Hide();
                 adminLandingForm.ShowDialog();

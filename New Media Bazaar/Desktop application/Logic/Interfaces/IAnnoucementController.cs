@@ -15,5 +15,6 @@ namespace Logic.Interfaces
         Announcement GetAnnouncement(int id);
         Announcement[] GetAllAnnouncements();
         Announcement EditAnnouncement(Announcement announcement);
-    }
+		public Announcement[] GetAllCurrent();
+	}
 }

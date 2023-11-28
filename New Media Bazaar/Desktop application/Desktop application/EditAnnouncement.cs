@@ -36,21 +36,18 @@ namespace Desktop_application
             tbDetails.ReadOnly = false;
         }
 
-        //ToDo save edit
         private void bttnSave_Click(object sender, EventArgs e)
         {
             _announcement.Title = tbTitle.Text;
             _announcement.Details = tbDetails.Text;
-            _announcement.StartDate = dtpStartTime.Value.Date;
-            _announcement.EndDate = dtpEndTime.Value.Date;
-            AnnoucementController.UpdateAnnouncement(_announcement);
+			_announcement.StartDate = DateOnly.FromDateTime(dtpStartTime.Value.Date);
+			_announcement.EndDate = DateOnly.FromDateTime(dtpEndTime.Value.Date);
+			AnnoucementController.UpdateAnnouncement(_announcement);
 
             AdminLandingForm adminLandingForm = new AdminLandingForm(_loggedInEmployee);
             this.Hide();
             adminLandingForm.ShowDialog();
             this.Close();
-
-
         }
 
         private void btnBack_Click(object sender, EventArgs e)

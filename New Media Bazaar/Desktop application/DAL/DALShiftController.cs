@@ -246,7 +246,42 @@ namespace DAL
             }
 
         }
+		public Shift[] GetFutureShiftsByEmp(Employee employee)
+		{
+			try
+			{
+				List<Shift> shifts = new();
+				using SqlConnection conn = new SqlConnection(CONNECTION_STRING);
+				{
+					string sql = "SELECT * FROM Shift WHERE EmployeeId = @id AND Date >= @date AND IsCancelled = 0";
 
-        
-    }
+					using (SqlCommand cmd = new SqlCommand(sql, conn))
+					{
+						cmd.Parameters.AddWithValue("@id", employee.Id);
+						cmd.Parameters.AddWithValue("@date", DateTime.Now.Date);
+
+						conn.Open();
+						SqlDataReader dr = cmd.ExecuteReader();
+
+						while (dr.Read())
+						{
+							Shift newShift = new Shift(Convert.ToInt32(dr[0]), employee, Convert.ToDateTime(dr[2]), Convert.ToInt32(dr[3]), Convert.ToBoolean(dr[4]));
+
+							if (!newShift.IsCancelled)
+							{
+								shifts.Add(newShift);
+							}
+						}
+					}
+
+				}
+				return shifts.ToArray();
+			}
+			catch (Exception ex)
+			{
+				return null;
+			}
+		}
+
+	}
 }
