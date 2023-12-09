@@ -152,5 +152,50 @@ namespace Desktop_application
 		{
 
 		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			AdminLandingForm form = new AdminLandingForm(_loggedInEmployee);
+			this.Hide();
+			form.ShowDialog();
+			this.Close();
+		}
+
+		private void btnEmployees_Click(object sender, EventArgs e)
+		{
+			AdminEmployeeForm form = new AdminEmployeeForm(_loggedInEmployee);
+			this.Hide();
+			form.ShowDialog();
+			this.Close();
+		}
+
+		private void btnDepartments_Click(object sender, EventArgs e)
+		{
+			// TO BE IMPLEMENTED
+		}
+
+		private void btnShifts_Click(object sender, EventArgs e)
+		{
+			AdminShiftsForm form = new AdminShiftsForm(_loggedInEmployee);
+			this.Hide();
+			form.ShowDialog();
+			this.Close();
+		}
+
+		private void btnStocks_Click(object sender, EventArgs e)
+		{
+			AdminStockDetails form = new AdminStockDetails(_loggedInEmployee);
+			this.Hide();
+			form.ShowDialog();
+			this.Close();
+		}
+
+		private void btnLogout_Click(object sender, EventArgs e)
+		{
+			Login form = new Login();
+			this.Hide();
+			form.ShowDialog();
+			this.Close();
+		}
 	}
 }

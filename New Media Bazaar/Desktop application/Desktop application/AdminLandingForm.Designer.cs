@@ -39,22 +39,23 @@
 			lblAnno = new Label();
 			lblWelcome = new Label();
 			lblAnnouncements = new Label();
-			panel1 = new Panel();
-			button2 = new Button();
-			bttnShifts = new Button();
-			bttnEmployees = new Button();
-			bttnAnnouncement = new Button();
+			panel2 = new Panel();
+			btnLogout = new Button();
+			btnStocks = new Button();
+			btnAnnouncements = new Button();
+			btnDepartments = new Button();
+			btnShifts = new Button();
+			btnEmployees = new Button();
 			gbFilters.SuspendLayout();
-			panel1.SuspendLayout();
+			panel2.SuspendLayout();
 			SuspendLayout();
 			// 
 			// rbPostPonedAnnouncement
 			// 
 			rbPostPonedAnnouncement.AutoSize = true;
-			rbPostPonedAnnouncement.Location = new Point(14, 92);
-			rbPostPonedAnnouncement.Margin = new Padding(3, 4, 3, 4);
+			rbPostPonedAnnouncement.Location = new Point(12, 69);
 			rbPostPonedAnnouncement.Name = "rbPostPonedAnnouncement";
-			rbPostPonedAnnouncement.Size = new Size(214, 24);
+			rbPostPonedAnnouncement.Size = new Size(176, 19);
 			rbPostPonedAnnouncement.TabIndex = 21;
 			rbPostPonedAnnouncement.TabStop = true;
 			rbPostPonedAnnouncement.Text = "Post-poned announcements";
@@ -63,10 +64,9 @@
 			// rbPastAnnouncement
 			// 
 			rbPastAnnouncement.AutoSize = true;
-			rbPastAnnouncement.Location = new Point(14, 27);
-			rbPastAnnouncement.Margin = new Padding(3, 4, 3, 4);
+			rbPastAnnouncement.Location = new Point(12, 20);
 			rbPastAnnouncement.Name = "rbPastAnnouncement";
-			rbPastAnnouncement.Size = new Size(164, 24);
+			rbPastAnnouncement.Size = new Size(136, 19);
 			rbPastAnnouncement.TabIndex = 18;
 			rbPastAnnouncement.TabStop = true;
 			rbPastAnnouncement.Text = "Past announcements";
@@ -75,10 +75,9 @@
 			// rbAllAnnouncements
 			// 
 			rbAllAnnouncements.AutoSize = true;
-			rbAllAnnouncements.Location = new Point(14, 125);
-			rbAllAnnouncements.Margin = new Padding(3, 4, 3, 4);
+			rbAllAnnouncements.Location = new Point(12, 94);
 			rbAllAnnouncements.Name = "rbAllAnnouncements";
-			rbAllAnnouncements.Size = new Size(156, 24);
+			rbAllAnnouncements.Size = new Size(128, 19);
 			rbAllAnnouncements.TabIndex = 20;
 			rbAllAnnouncements.TabStop = true;
 			rbAllAnnouncements.Text = "All announcements";
@@ -87,10 +86,9 @@
 			// rbCurrentAnnouncement
 			// 
 			rbCurrentAnnouncement.AutoSize = true;
-			rbCurrentAnnouncement.Location = new Point(14, 60);
-			rbCurrentAnnouncement.Margin = new Padding(3, 4, 3, 4);
+			rbCurrentAnnouncement.Location = new Point(12, 45);
 			rbCurrentAnnouncement.Name = "rbCurrentAnnouncement";
-			rbCurrentAnnouncement.Size = new Size(186, 24);
+			rbCurrentAnnouncement.Size = new Size(154, 19);
 			rbCurrentAnnouncement.TabIndex = 19;
 			rbCurrentAnnouncement.TabStop = true;
 			rbCurrentAnnouncement.Text = "Current announcements";
@@ -98,10 +96,9 @@
 			// 
 			// btnResetFilters
 			// 
-			btnResetFilters.Location = new Point(45, 170);
-			btnResetFilters.Margin = new Padding(3, 4, 3, 4);
+			btnResetFilters.Location = new Point(39, 128);
 			btnResetFilters.Name = "btnResetFilters";
-			btnResetFilters.Size = new Size(110, 44);
+			btnResetFilters.Size = new Size(96, 33);
 			btnResetFilters.TabIndex = 15;
 			btnResetFilters.Text = "Apply filters";
 			btnResetFilters.UseVisualStyleBackColor = true;
@@ -114,21 +111,18 @@
 			gbFilters.Controls.Add(btnResetFilters);
 			gbFilters.Controls.Add(rbAllAnnouncements);
 			gbFilters.Controls.Add(rbCurrentAnnouncement);
-			gbFilters.Location = new Point(579, 242);
-			gbFilters.Margin = new Padding(3, 4, 3, 4);
+			gbFilters.Location = new Point(507, 182);
 			gbFilters.Name = "gbFilters";
-			gbFilters.Padding = new Padding(3, 4, 3, 4);
-			gbFilters.Size = new Size(228, 242);
+			gbFilters.Size = new Size(200, 182);
 			gbFilters.TabIndex = 40;
 			gbFilters.TabStop = false;
 			gbFilters.Text = "Filters";
 			// 
 			// btnCreateAnno
 			// 
-			btnCreateAnno.Location = new Point(237, 495);
-			btnCreateAnno.Margin = new Padding(3, 4, 3, 4);
+			btnCreateAnno.Location = new Point(207, 371);
 			btnCreateAnno.Name = "btnCreateAnno";
-			btnCreateAnno.Size = new Size(336, 70);
+			btnCreateAnno.Size = new Size(294, 52);
 			btnCreateAnno.TabIndex = 37;
 			btnCreateAnno.Text = "Create announcement";
 			btnCreateAnno.UseVisualStyleBackColor = true;
@@ -137,11 +131,10 @@
 			// lbAnnouncements
 			// 
 			lbAnnouncements.FormattingEnabled = true;
-			lbAnnouncements.ItemHeight = 20;
-			lbAnnouncements.Location = new Point(237, 242);
-			lbAnnouncements.Margin = new Padding(3, 4, 3, 4);
+			lbAnnouncements.ItemHeight = 15;
+			lbAnnouncements.Location = new Point(207, 182);
 			lbAnnouncements.Name = "lbAnnouncements";
-			lbAnnouncements.Size = new Size(336, 244);
+			lbAnnouncements.Size = new Size(294, 184);
 			lbAnnouncements.TabIndex = 27;
 			lbAnnouncements.SelectedIndexChanged += lbAnnouncements_SelectedIndexChanged;
 			lbAnnouncements.MouseDoubleClick += lbAnnouncements_MouseDoubleClick;
@@ -150,19 +143,19 @@
 			// 
 			lblAnno.AutoSize = true;
 			lblAnno.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
-			lblAnno.Location = new Point(237, 203);
+			lblAnno.Location = new Point(207, 152);
 			lblAnno.Name = "lblAnno";
-			lblAnno.Size = new Size(115, 18);
+			lblAnno.Size = new Size(96, 15);
 			lblAnno.TabIndex = 26;
 			lblAnno.Text = "Announcements";
 			// 
 			// lblWelcome
 			// 
 			lblWelcome.AutoSize = true;
-			lblWelcome.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-			lblWelcome.Location = new Point(45, 154);
+			lblWelcome.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+			lblWelcome.Location = new Point(39, 116);
 			lblWelcome.Name = "lblWelcome";
-			lblWelcome.Size = new Size(154, 20);
+			lblWelcome.Size = new Size(166, 18);
 			lblWelcome.TabIndex = 25;
 			lblWelcome.Text = "Welcome, ~~user~~!";
 			// 
@@ -170,95 +163,130 @@
 			// 
 			lblAnnouncements.AutoSize = true;
 			lblAnnouncements.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
-			lblAnnouncements.Location = new Point(31, 302);
+			lblAnnouncements.Location = new Point(27, 226);
 			lblAnnouncements.Name = "lblAnnouncements";
-			lblAnnouncements.Size = new Size(0, 25);
+			lblAnnouncements.Size = new Size(0, 20);
 			lblAnnouncements.TabIndex = 0;
 			// 
-			// panel1
+			// panel2
 			// 
-			panel1.BackColor = Color.DimGray;
-			panel1.Controls.Add(button2);
-			panel1.Controls.Add(bttnShifts);
-			panel1.Controls.Add(bttnEmployees);
-			panel1.Controls.Add(bttnAnnouncement);
-			panel1.Location = new Point(1, 1);
-			panel1.Margin = new Padding(3, 4, 3, 4);
-			panel1.Name = "panel1";
-			panel1.Size = new Size(988, 125);
-			panel1.TabIndex = 24;
+			panel2.BackColor = Color.DimGray;
+			panel2.Controls.Add(btnLogout);
+			panel2.Controls.Add(btnStocks);
+			panel2.Controls.Add(btnAnnouncements);
+			panel2.Controls.Add(btnDepartments);
+			panel2.Controls.Add(btnShifts);
+			panel2.Controls.Add(btnEmployees);
+			panel2.Location = new Point(1, 0);
+			panel2.Name = "panel2";
+			panel2.Size = new Size(864, 94);
+			panel2.TabIndex = 41;
 			// 
-			// button2
+			// btnLogout
 			// 
-			button2.FlatAppearance.BorderSize = 0;
-			button2.FlatStyle = FlatStyle.Flat;
-			button2.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-			button2.Location = new Point(489, 0);
-			button2.Name = "button2";
-			button2.Size = new Size(244, 125);
-			button2.TabIndex = 43;
-			button2.Text = "Departments";
-			button2.UseVisualStyleBackColor = true;
+			btnLogout.FlatAppearance.BorderSize = 0;
+			btnLogout.FlatStyle = FlatStyle.Flat;
+			btnLogout.Font = new Font("Segoe UI Semibold", 13F, FontStyle.Bold, GraphicsUnit.Point);
+			btnLogout.Location = new Point(702, 0);
+			btnLogout.Margin = new Padding(3, 2, 3, 2);
+			btnLogout.Name = "btnLogout";
+			btnLogout.Size = new Size(136, 94);
+			btnLogout.TabIndex = 43;
+			btnLogout.Text = "Logout";
+			btnLogout.UseVisualStyleBackColor = true;
+			btnLogout.Click += btnLogout_Click;
 			// 
-			// bttnShifts
+			// btnStocks
 			// 
-			bttnShifts.FlatAppearance.BorderSize = 0;
-			bttnShifts.FlatStyle = FlatStyle.Flat;
-			bttnShifts.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-			bttnShifts.Location = new Point(727, 0);
-			bttnShifts.Name = "bttnShifts";
-			bttnShifts.Size = new Size(236, 125);
-			bttnShifts.TabIndex = 44;
-			bttnShifts.Text = "Shifts";
-			bttnShifts.UseVisualStyleBackColor = true;
-			bttnShifts.Click += bttnShifts_Click;
+			btnStocks.FlatAppearance.BorderSize = 0;
+			btnStocks.FlatStyle = FlatStyle.Flat;
+			btnStocks.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+			btnStocks.Location = new Point(556, -1);
+			btnStocks.Margin = new Padding(3, 2, 3, 2);
+			btnStocks.Name = "btnStocks";
+			btnStocks.Size = new Size(140, 94);
+			btnStocks.TabIndex = 45;
+			btnStocks.Text = "Stocks";
+			btnStocks.UseVisualStyleBackColor = true;
+			btnStocks.Click += btnStocks_Click;
 			// 
-			// bttnEmployees
+			// btnAnnouncements
 			// 
-			bttnEmployees.FlatAppearance.BorderSize = 0;
-			bttnEmployees.FlatStyle = FlatStyle.Flat;
-			bttnEmployees.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-			bttnEmployees.Location = new Point(236, 0);
-			bttnEmployees.Name = "bttnEmployees";
-			bttnEmployees.Size = new Size(257, 125);
-			bttnEmployees.TabIndex = 42;
-			bttnEmployees.Text = "Employees";
-			bttnEmployees.UseVisualStyleBackColor = true;
-			bttnEmployees.Click += bttnEmployees_Click;
+			btnAnnouncements.FlatAppearance.BorderSize = 0;
+			btnAnnouncements.FlatStyle = FlatStyle.Flat;
+			btnAnnouncements.Font = new Font("Segoe UI Semibold", 13F, FontStyle.Bold, GraphicsUnit.Point);
+			btnAnnouncements.Location = new Point(0, 0);
+			btnAnnouncements.Margin = new Padding(3, 2, 3, 2);
+			btnAnnouncements.Name = "btnAnnouncements";
+			btnAnnouncements.Size = new Size(157, 94);
+			btnAnnouncements.TabIndex = 41;
+			btnAnnouncements.Text = "Announcements";
+			btnAnnouncements.UseVisualStyleBackColor = true;
+			btnAnnouncements.Click += button1_Click;
 			// 
-			// bttnAnnouncement
+			// btnDepartments
 			// 
-			bttnAnnouncement.FlatAppearance.BorderSize = 0;
-			bttnAnnouncement.FlatStyle = FlatStyle.Flat;
-			bttnAnnouncement.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-			bttnAnnouncement.Location = new Point(0, 0);
-			bttnAnnouncement.Name = "bttnAnnouncement";
-			bttnAnnouncement.Size = new Size(247, 125);
-			bttnAnnouncement.TabIndex = 41;
-			bttnAnnouncement.Text = "Announcements";
-			bttnAnnouncement.UseVisualStyleBackColor = true;
-			bttnAnnouncement.Click += bttnAnnouncement_Click;
+			btnDepartments.FlatAppearance.BorderSize = 0;
+			btnDepartments.FlatStyle = FlatStyle.Flat;
+			btnDepartments.Font = new Font("Segoe UI Semibold", 13F, FontStyle.Bold, GraphicsUnit.Point);
+			btnDepartments.Location = new Point(288, 0);
+			btnDepartments.Margin = new Padding(3, 2, 3, 2);
+			btnDepartments.Name = "btnDepartments";
+			btnDepartments.Size = new Size(138, 94);
+			btnDepartments.TabIndex = 43;
+			btnDepartments.Text = "Departments";
+			btnDepartments.UseVisualStyleBackColor = true;
+			btnDepartments.Click += btnDepartments_Click;
+			// 
+			// btnShifts
+			// 
+			btnShifts.FlatAppearance.BorderSize = 0;
+			btnShifts.FlatStyle = FlatStyle.Flat;
+			btnShifts.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+			btnShifts.Location = new Point(432, -1);
+			btnShifts.Margin = new Padding(3, 2, 3, 2);
+			btnShifts.Name = "btnShifts";
+			btnShifts.Size = new Size(118, 94);
+			btnShifts.TabIndex = 44;
+			btnShifts.Text = "Shifts";
+			btnShifts.UseVisualStyleBackColor = true;
+			btnShifts.Click += btnShifts_Click;
+			// 
+			// btnEmployees
+			// 
+			btnEmployees.FlatAppearance.BorderSize = 0;
+			btnEmployees.FlatStyle = FlatStyle.Flat;
+			btnEmployees.Font = new Font("Segoe UI Semibold", 13F, FontStyle.Bold, GraphicsUnit.Point);
+			btnEmployees.Location = new Point(163, 0);
+			btnEmployees.Margin = new Padding(3, 2, 3, 2);
+			btnEmployees.Name = "btnEmployees";
+			btnEmployees.Size = new Size(119, 94);
+			btnEmployees.TabIndex = 42;
+			btnEmployees.Text = "Employees";
+			btnEmployees.UseVisualStyleBackColor = true;
+			btnEmployees.Click += btnEmployees_Click;
 			// 
 			// AdminLandingForm
 			// 
-			AutoScaleDimensions = new SizeF(8F, 20F);
+			AutoScaleDimensions = new SizeF(7F, 15F);
 			AutoScaleMode = AutoScaleMode.Font;
-			ClientSize = new Size(956, 623);
+			ClientSize = new Size(836, 467);
+			Controls.Add(panel2);
 			Controls.Add(gbFilters);
 			Controls.Add(lblAnnouncements);
 			Controls.Add(btnCreateAnno);
 			Controls.Add(lbAnnouncements);
 			Controls.Add(lblAnno);
 			Controls.Add(lblWelcome);
-			Controls.Add(panel1);
 			FormBorderStyle = FormBorderStyle.FixedToolWindow;
+			Margin = new Padding(3, 2, 3, 2);
 			Name = "AdminLandingForm";
 			StartPosition = FormStartPosition.CenterScreen;
-			Text = "AdminLandingForm";
+			Text = "Main page";
 			Load += AdminLandingForm_Load;
 			gbFilters.ResumeLayout(false);
 			gbFilters.PerformLayout();
-			panel1.ResumeLayout(false);
+			panel2.ResumeLayout(false);
 			ResumeLayout(false);
 			PerformLayout();
 		}
@@ -275,10 +303,12 @@
 		private Label lblAnno;
 		private Label lblWelcome;
 		private Label lblAnnouncements;
-		private Panel panel1;
-		private Button bttnAnnouncement;
-		private Button button2;
-		private Button bttnShifts;
-		private Button bttnEmployees;
+		private Panel panel2;
+		private Button btnLogout;
+		private Button btnStocks;
+		private Button btnAnnouncements;
+		private Button btnDepartments;
+		private Button btnShifts;
+		private Button btnEmployees;
 	}
 }

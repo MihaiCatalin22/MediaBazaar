@@ -60,55 +60,54 @@
 			// 
 			lblEdit.AutoSize = true;
 			lblEdit.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point);
-			lblEdit.Location = new Point(139, 40);
+			lblEdit.Location = new Point(122, 30);
 			lblEdit.Name = "lblEdit";
-			lblEdit.Size = new Size(215, 36);
+			lblEdit.Size = new Size(181, 29);
 			lblEdit.TabIndex = 62;
 			lblEdit.Text = "Edit employee";
 			// 
 			// dtpDOB
 			// 
-			dtpDOB.Location = new Point(201, 425);
+			dtpDOB.Location = new Point(176, 319);
+			dtpDOB.Margin = new Padding(3, 2, 3, 2);
 			dtpDOB.Name = "dtpDOB";
-			dtpDOB.Size = new Size(245, 27);
+			dtpDOB.Size = new Size(215, 23);
 			dtpDOB.TabIndex = 86;
 			// 
 			// lblDOB
 			// 
 			lblDOB.AutoSize = true;
 			lblDOB.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-			lblDOB.Location = new Point(53, 425);
+			lblDOB.Location = new Point(46, 319);
 			lblDOB.Name = "lblDOB";
-			lblDOB.Size = new Size(127, 22);
+			lblDOB.Size = new Size(106, 18);
 			lblDOB.TabIndex = 85;
 			lblDOB.Text = "Date of birth:";
 			// 
 			// tbBSN
 			// 
-			tbBSN.Location = new Point(201, 382);
-			tbBSN.Margin = new Padding(3, 4, 3, 4);
+			tbBSN.Location = new Point(176, 286);
 			tbBSN.MaxLength = 9;
 			tbBSN.Name = "tbBSN";
-			tbBSN.Size = new Size(245, 27);
+			tbBSN.Size = new Size(215, 23);
 			tbBSN.TabIndex = 84;
 			// 
 			// lblBSN
 			// 
 			lblBSN.AutoSize = true;
 			lblBSN.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-			lblBSN.Location = new Point(124, 383);
+			lblBSN.Location = new Point(108, 287);
 			lblBSN.Name = "lblBSN";
-			lblBSN.Size = new Size(56, 22);
+			lblBSN.Size = new Size(47, 18);
 			lblBSN.TabIndex = 83;
 			lblBSN.Text = "BSN:";
 			// 
 			// btnEdit
 			// 
 			btnEdit.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
-			btnEdit.Location = new Point(324, 650);
-			btnEdit.Margin = new Padding(3, 4, 3, 4);
+			btnEdit.Location = new Point(284, 488);
 			btnEdit.Name = "btnEdit";
-			btnEdit.Size = new Size(92, 68);
+			btnEdit.Size = new Size(80, 51);
 			btnEdit.TabIndex = 82;
 			btnEdit.Text = "Edit employee";
 			btnEdit.UseVisualStyleBackColor = true;
@@ -117,10 +116,9 @@
 			// btnBack
 			// 
 			btnBack.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
-			btnBack.Location = new Point(80, 650);
-			btnBack.Margin = new Padding(3, 4, 3, 4);
+			btnBack.Location = new Point(70, 488);
 			btnBack.Name = "btnBack";
-			btnBack.Size = new Size(94, 68);
+			btnBack.Size = new Size(82, 51);
 			btnBack.TabIndex = 81;
 			btnBack.Text = "Go back";
 			btnBack.UseVisualStyleBackColor = true;
@@ -128,74 +126,66 @@
 			// 
 			// tbName
 			// 
-			tbName.Location = new Point(202, 99);
-			tbName.Margin = new Padding(3, 4, 3, 4);
+			tbName.Location = new Point(177, 74);
 			tbName.Name = "tbName";
-			tbName.Size = new Size(244, 27);
+			tbName.Size = new Size(214, 23);
 			tbName.TabIndex = 80;
 			// 
 			// tbUsername
 			// 
-			tbUsername.Location = new Point(202, 146);
-			tbUsername.Margin = new Padding(3, 4, 3, 4);
+			tbUsername.Location = new Point(177, 110);
 			tbUsername.Name = "tbUsername";
-			tbUsername.Size = new Size(244, 27);
+			tbUsername.Size = new Size(214, 23);
 			tbUsername.TabIndex = 79;
 			// 
 			// tbPassword
 			// 
-			tbPassword.Location = new Point(202, 195);
-			tbPassword.Margin = new Padding(3, 4, 3, 4);
+			tbPassword.Location = new Point(177, 146);
 			tbPassword.Name = "tbPassword";
 			tbPassword.PasswordChar = '*';
-			tbPassword.Size = new Size(244, 27);
+			tbPassword.Size = new Size(214, 23);
 			tbPassword.TabIndex = 78;
 			// 
 			// tbEmail
 			// 
-			tbEmail.Location = new Point(202, 242);
-			tbEmail.Margin = new Padding(3, 4, 3, 4);
+			tbEmail.Location = new Point(177, 182);
 			tbEmail.Name = "tbEmail";
-			tbEmail.Size = new Size(244, 27);
+			tbEmail.Size = new Size(214, 23);
 			tbEmail.TabIndex = 77;
 			// 
 			// cbDepartment
 			// 
 			cbDepartment.FormattingEnabled = true;
-			cbDepartment.Location = new Point(201, 283);
-			cbDepartment.Margin = new Padding(3, 4, 3, 4);
+			cbDepartment.Location = new Point(176, 212);
 			cbDepartment.Name = "cbDepartment";
-			cbDepartment.Size = new Size(245, 28);
+			cbDepartment.Size = new Size(215, 23);
 			cbDepartment.TabIndex = 76;
 			// 
 			// tbPhone
 			// 
-			tbPhone.Location = new Point(201, 335);
-			tbPhone.Margin = new Padding(3, 4, 3, 4);
+			tbPhone.Location = new Point(176, 251);
 			tbPhone.MaxLength = 12;
 			tbPhone.Name = "tbPhone";
-			tbPhone.Size = new Size(245, 27);
+			tbPhone.Size = new Size(215, 23);
 			tbPhone.TabIndex = 75;
 			// 
 			// numUDSalary
 			// 
 			numUDSalary.DecimalPlaces = 2;
 			numUDSalary.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-			numUDSalary.Location = new Point(201, 472);
-			numUDSalary.Margin = new Padding(3, 4, 3, 4);
+			numUDSalary.Location = new Point(176, 354);
 			numUDSalary.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
 			numUDSalary.Name = "numUDSalary";
-			numUDSalary.Size = new Size(245, 27);
+			numUDSalary.Size = new Size(214, 23);
 			numUDSalary.TabIndex = 74;
 			// 
 			// ckbEvening
 			// 
 			ckbEvening.AutoSize = true;
 			ckbEvening.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-			ckbEvening.Location = new Point(201, 592);
-			ckbEvening.Margin = new Padding(3, 4, 3, 4);
+			ckbEvening.Location = new Point(176, 444);
 			ckbEvening.Name = "ckbEvening";
-			ckbEvening.Size = new Size(127, 24);
+			ckbEvening.Size = new Size(108, 21);
 			ckbEvening.TabIndex = 73;
 			ckbEvening.Text = "Evening shift";
 			ckbEvening.UseVisualStyleBackColor = true;
@@ -204,10 +194,9 @@
 			// 
 			ckbAfternoon.AutoSize = true;
 			ckbAfternoon.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-			ckbAfternoon.Location = new Point(201, 558);
-			ckbAfternoon.Margin = new Padding(3, 4, 3, 4);
+			ckbAfternoon.Location = new Point(176, 418);
 			ckbAfternoon.Name = "ckbAfternoon";
-			ckbAfternoon.Size = new Size(140, 24);
+			ckbAfternoon.Size = new Size(119, 21);
 			ckbAfternoon.TabIndex = 72;
 			ckbAfternoon.Text = "Afternoon shift";
 			ckbAfternoon.UseVisualStyleBackColor = true;
@@ -216,10 +205,9 @@
 			// 
 			ckbMorning.AutoSize = true;
 			ckbMorning.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-			ckbMorning.Location = new Point(201, 525);
-			ckbMorning.Margin = new Padding(3, 4, 3, 4);
+			ckbMorning.Location = new Point(176, 394);
 			ckbMorning.Name = "ckbMorning";
-			ckbMorning.Size = new Size(128, 24);
+			ckbMorning.Size = new Size(108, 21);
 			ckbMorning.TabIndex = 71;
 			ckbMorning.Text = "Morning shift";
 			ckbMorning.UseVisualStyleBackColor = true;
@@ -228,9 +216,9 @@
 			// 
 			lblSalary.AutoSize = true;
 			lblSalary.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-			lblSalary.Location = new Point(107, 472);
+			lblSalary.Location = new Point(94, 354);
 			lblSalary.Name = "lblSalary";
-			lblSalary.Size = new Size(73, 22);
+			lblSalary.Size = new Size(60, 18);
 			lblSalary.TabIndex = 70;
 			lblSalary.Text = "Salary:";
 			// 
@@ -238,9 +226,9 @@
 			// 
 			lblAvailability.AutoSize = true;
 			lblAvailability.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-			lblAvailability.Location = new Point(67, 524);
+			lblAvailability.Location = new Point(59, 393);
 			lblAvailability.Name = "lblAvailability";
-			lblAvailability.Size = new Size(113, 22);
+			lblAvailability.Size = new Size(91, 18);
 			lblAvailability.TabIndex = 69;
 			lblAvailability.Text = "Availability:";
 			// 
@@ -248,9 +236,9 @@
 			// 
 			lblPhone.AutoSize = true;
 			lblPhone.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-			lblPhone.Location = new Point(35, 336);
+			lblPhone.Location = new Point(31, 252);
 			lblPhone.Name = "lblPhone";
-			lblPhone.Size = new Size(145, 22);
+			lblPhone.Size = new Size(122, 18);
 			lblPhone.TabIndex = 68;
 			lblPhone.Text = "Phone number:";
 			// 
@@ -258,9 +246,9 @@
 			// 
 			lblEmail.AutoSize = true;
 			lblEmail.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-			lblEmail.Location = new Point(115, 239);
+			lblEmail.Location = new Point(101, 179);
 			lblEmail.Name = "lblEmail";
-			lblEmail.Size = new Size(65, 22);
+			lblEmail.Size = new Size(55, 18);
 			lblEmail.TabIndex = 67;
 			lblEmail.Text = "Email:";
 			// 
@@ -268,9 +256,9 @@
 			// 
 			lblDepartment.AutoSize = true;
 			lblDepartment.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-			lblDepartment.Location = new Point(66, 281);
+			lblDepartment.Location = new Point(58, 211);
 			lblDepartment.Name = "lblDepartment";
-			lblDepartment.Size = new Size(119, 22);
+			lblDepartment.Size = new Size(100, 18);
 			lblDepartment.TabIndex = 66;
 			lblDepartment.Text = "Department:";
 			// 
@@ -278,9 +266,9 @@
 			// 
 			lblPassword.AutoSize = true;
 			lblPassword.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-			lblPassword.Location = new Point(77, 192);
+			lblPassword.Location = new Point(67, 144);
 			lblPassword.Name = "lblPassword";
-			lblPassword.Size = new Size(103, 22);
+			lblPassword.Size = new Size(88, 18);
 			lblPassword.TabIndex = 65;
 			lblPassword.Text = "Password:";
 			// 
@@ -288,9 +276,9 @@
 			// 
 			lblUsername.AutoSize = true;
 			lblUsername.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-			lblUsername.Location = new Point(74, 143);
+			lblUsername.Location = new Point(65, 107);
 			lblUsername.Name = "lblUsername";
-			lblUsername.Size = new Size(106, 22);
+			lblUsername.Size = new Size(90, 18);
 			lblUsername.TabIndex = 64;
 			lblUsername.Text = "Username:";
 			// 
@@ -298,17 +286,17 @@
 			// 
 			lblName.AutoSize = true;
 			lblName.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-			lblName.Location = new Point(113, 99);
+			lblName.Location = new Point(99, 74);
 			lblName.Name = "lblName";
-			lblName.Size = new Size(67, 22);
+			lblName.Size = new Size(57, 18);
 			lblName.TabIndex = 63;
 			lblName.Text = "Name:";
 			// 
 			// EmployeeEditForm
 			// 
-			AutoScaleDimensions = new SizeF(8F, 20F);
+			AutoScaleDimensions = new SizeF(7F, 15F);
 			AutoScaleMode = AutoScaleMode.Font;
-			ClientSize = new Size(482, 748);
+			ClientSize = new Size(422, 561);
 			Controls.Add(dtpDOB);
 			Controls.Add(lblDOB);
 			Controls.Add(tbBSN);
@@ -335,9 +323,10 @@
 			Controls.Add(lblName);
 			Controls.Add(lblEdit);
 			FormBorderStyle = FormBorderStyle.FixedToolWindow;
+			Margin = new Padding(3, 2, 3, 2);
 			Name = "EmployeeEditForm";
 			StartPosition = FormStartPosition.CenterScreen;
-			Text = "EmployeeEditForm";
+			Text = "Edit an employee";
 			((System.ComponentModel.ISupportInitialize)numUDSalary).EndInit();
 			ResumeLayout(false);
 			PerformLayout();
