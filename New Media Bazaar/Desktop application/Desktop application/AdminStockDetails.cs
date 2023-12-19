@@ -53,8 +53,11 @@ namespace Desktop_application
 
 		private void btnDepartments_Click(object sender, EventArgs e)
 		{
-			// TO BE IMPLEMENTED
-		}
+            AdminDepartmentsForm form = new AdminDepartmentsForm(_loggedInEmployee);
+            this.Hide();
+            form.ShowDialog();
+            this.Close();
+        }
 
 		private void bttnShifts_Click(object sender, EventArgs e)
 		{
