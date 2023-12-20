@@ -41,11 +41,17 @@
             btnDepartments = new Button();
             bttnShifts = new Button();
             bttnEmployees = new Button();
+            panel1 = new Panel();
+            panel3 = new Panel();
+            panel4 = new Panel();
+            pictureBox1 = new PictureBox();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // lbDepartments
             // 
+            lbDepartments.BackColor = Color.White;
             lbDepartments.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             lbDepartments.FormattingEnabled = true;
             lbDepartments.ItemHeight = 23;
@@ -117,7 +123,7 @@
             // 
             // panel2
             // 
-            panel2.BackColor = Color.DimGray;
+            panel2.BackColor = Color.Black;
             panel2.Controls.Add(btnLogout);
             panel2.Controls.Add(btnStocks);
             panel2.Controls.Add(bttnAnnouncement);
@@ -134,8 +140,9 @@
             // 
             btnLogout.FlatAppearance.BorderSize = 0;
             btnLogout.FlatStyle = FlatStyle.Flat;
-            btnLogout.Font = new Font("Segoe UI Semibold", 13F, FontStyle.Bold, GraphicsUnit.Point);
-            btnLogout.Location = new Point(1025, 0);
+            btnLogout.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            btnLogout.ForeColor = Color.White;
+            btnLogout.Location = new Point(1028, -6);
             btnLogout.Name = "btnLogout";
             btnLogout.Size = new Size(155, 125);
             btnLogout.TabIndex = 43;
@@ -147,8 +154,9 @@
             // 
             btnStocks.FlatAppearance.BorderSize = 0;
             btnStocks.FlatStyle = FlatStyle.Flat;
-            btnStocks.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnStocks.Location = new Point(800, -1);
+            btnStocks.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            btnStocks.ForeColor = Color.White;
+            btnStocks.Location = new Point(817, -5);
             btnStocks.Name = "btnStocks";
             btnStocks.Size = new Size(160, 125);
             btnStocks.TabIndex = 45;
@@ -158,25 +166,28 @@
             // 
             // bttnAnnouncement
             // 
+            bttnAnnouncement.BackColor = Color.Black;
             bttnAnnouncement.FlatAppearance.BorderSize = 0;
             bttnAnnouncement.FlatStyle = FlatStyle.Flat;
-            bttnAnnouncement.Font = new Font("Segoe UI Semibold", 13F, FontStyle.Bold, GraphicsUnit.Point);
-            bttnAnnouncement.Location = new Point(-14, 0);
+            bttnAnnouncement.Font = new Font("Microsoft Sans Serif", 13.2000008F, FontStyle.Bold, GraphicsUnit.Point);
+            bttnAnnouncement.ForeColor = Color.White;
+            bttnAnnouncement.Location = new Point(10, -5);
             bttnAnnouncement.Name = "bttnAnnouncement";
-            bttnAnnouncement.Size = new Size(193, 125);
+            bttnAnnouncement.Size = new Size(211, 125);
             bttnAnnouncement.TabIndex = 41;
             bttnAnnouncement.Text = "Announcements";
-            bttnAnnouncement.UseVisualStyleBackColor = true;
+            bttnAnnouncement.UseVisualStyleBackColor = false;
             bttnAnnouncement.Click += bttnAnnouncement_Click;
             // 
             // btnDepartments
             // 
             btnDepartments.FlatAppearance.BorderSize = 0;
             btnDepartments.FlatStyle = FlatStyle.Flat;
-            btnDepartments.Font = new Font("Segoe UI Semibold", 13F, FontStyle.Bold, GraphicsUnit.Point);
-            btnDepartments.Location = new Point(412, -3);
+            btnDepartments.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            btnDepartments.ForeColor = Color.White;
+            btnDepartments.Location = new Point(460, -5);
             btnDepartments.Name = "btnDepartments";
-            btnDepartments.Size = new Size(158, 125);
+            btnDepartments.Size = new Size(176, 125);
             btnDepartments.TabIndex = 43;
             btnDepartments.Text = "Departments";
             btnDepartments.UseVisualStyleBackColor = true;
@@ -186,8 +197,9 @@
             // 
             bttnShifts.FlatAppearance.BorderSize = 0;
             bttnShifts.FlatStyle = FlatStyle.Flat;
-            bttnShifts.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            bttnShifts.Location = new Point(607, -1);
+            bttnShifts.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            bttnShifts.ForeColor = Color.White;
+            bttnShifts.Location = new Point(676, -5);
             bttnShifts.Name = "bttnShifts";
             bttnShifts.Size = new Size(135, 125);
             bttnShifts.TabIndex = 44;
@@ -199,20 +211,60 @@
             // 
             bttnEmployees.FlatAppearance.BorderSize = 0;
             bttnEmployees.FlatStyle = FlatStyle.Flat;
-            bttnEmployees.Font = new Font("Segoe UI Semibold", 13F, FontStyle.Bold, GraphicsUnit.Point);
-            bttnEmployees.Location = new Point(217, 0);
+            bttnEmployees.Font = new Font("Microsoft Sans Serif", 13.2000008F, FontStyle.Bold, GraphicsUnit.Point);
+            bttnEmployees.ForeColor = Color.White;
+            bttnEmployees.Location = new Point(262, -5);
             bttnEmployees.Name = "bttnEmployees";
-            bttnEmployees.Size = new Size(136, 125);
+            bttnEmployees.Size = new Size(158, 125);
             bttnEmployees.TabIndex = 42;
             bttnEmployees.Text = "Employees";
             bttnEmployees.UseVisualStyleBackColor = true;
             bttnEmployees.Click += bttnEmployees_Click;
             // 
+            // panel1
+            // 
+            panel1.BackColor = Color.Black;
+            panel1.Location = new Point(637, 331);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(239, 3);
+            panel1.TabIndex = 37;
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.Black;
+            panel3.Location = new Point(638, 438);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(239, 3);
+            panel3.TabIndex = 38;
+            // 
+            // panel4
+            // 
+            panel4.BackColor = Color.Black;
+            panel4.Location = new Point(638, 547);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(239, 3);
+            panel4.TabIndex = 39;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.department;
+            pictureBox1.Location = new Point(937, 136);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(140, 86);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 40;
+            pictureBox1.TabStop = false;
+            // 
             // AdminDepartmentsForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             ClientSize = new Size(1182, 691);
+            Controls.Add(pictureBox1);
+            Controls.Add(panel4);
+            Controls.Add(panel3);
+            Controls.Add(panel1);
             Controls.Add(panel2);
             Controls.Add(btnRemoveDepartment);
             Controls.Add(label2);
@@ -223,6 +275,7 @@
             Name = "AdminDepartmentsForm";
             Text = "AdminDepartmentsForm";
             panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -242,5 +295,9 @@
         private Button btnDepartments;
         private Button bttnShifts;
         private Button bttnEmployees;
+        private Panel panel1;
+        private Panel panel3;
+        private Panel panel4;
+        private PictureBox pictureBox1;
     }
 }
