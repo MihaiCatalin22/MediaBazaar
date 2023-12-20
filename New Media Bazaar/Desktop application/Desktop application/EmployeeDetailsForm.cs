@@ -13,6 +13,8 @@ namespace Desktop_application
 {
     public partial class EmployeeDetailsForm : Form
     {
+        private Employee _loggedInEmployee;
+
         public EmployeeDetailsForm()
         {
             InitializeComponent();
@@ -26,5 +28,18 @@ namespace Desktop_application
 
         public Employee LoggedInEmployee { get; }
         public Employee Employee { get; }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            AdminEmployeeForm adminEmployeeForm = new AdminEmployeeForm(_loggedInEmployee);
+            this.Hide();
+            adminEmployeeForm.ShowDialog();
+            this.Close();
+        }
+
+        private void btnApply_Click(object sender, EventArgs e)
+        {
+            // to be implemented
+        }
     }
 }

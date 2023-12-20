@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditAnnouncement));
             bttnDelete = new Button();
             bttnEdit = new Button();
             dtpEndTime = new DateTimePicker();
@@ -47,6 +48,8 @@
             panel5 = new Panel();
             panel6 = new Panel();
             panel7 = new Panel();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // bttnDelete
@@ -241,12 +244,23 @@
             panel7.Size = new Size(171, 4);
             panel7.TabIndex = 70;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(-1, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(125, 62);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 71;
+            pictureBox1.TabStop = false;
+            // 
             // EditAnnouncement
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(800, 451);
+            Controls.Add(pictureBox1);
             Controls.Add(panel7);
             Controls.Add(panel6);
             Controls.Add(panel5);
@@ -270,6 +284,7 @@
             Name = "EditAnnouncement";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Edit an announcement";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -295,5 +310,6 @@
         private Panel panel5;
         private Panel panel6;
         private Panel panel7;
+        private PictureBox pictureBox1;
     }
 }
