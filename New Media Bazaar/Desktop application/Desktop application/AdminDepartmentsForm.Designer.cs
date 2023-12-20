@@ -274,6 +274,7 @@
             Controls.Add(btnAddDepartment);
             Controls.Add(tbDepartmentName);
             Controls.Add(lbDepartments);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "AdminDepartmentsForm";
             Text = "AdminDepartmentsForm";
             panel2.ResumeLayout(false);
