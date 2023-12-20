@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminLandingForm));
             rbPostPonedAnnouncement = new RadioButton();
             rbPastAnnouncement = new RadioButton();
             rbAllAnnouncements = new RadioButton();
@@ -47,8 +48,10 @@
             btnShifts = new Button();
             btnEmployees = new Button();
             panel1 = new Panel();
+            pictureBox1 = new PictureBox();
             gbFilters.SuspendLayout();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // rbPostPonedAnnouncement
@@ -297,12 +300,23 @@
             panel1.Size = new Size(336, 3);
             panel1.TabIndex = 42;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(716, 141);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(125, 62);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 43;
+            pictureBox1.TabStop = false;
+            // 
             // AdminLandingForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(957, 623);
+            Controls.Add(pictureBox1);
             Controls.Add(panel1);
             Controls.Add(panel2);
             Controls.Add(gbFilters);
@@ -319,6 +333,7 @@
             gbFilters.ResumeLayout(false);
             gbFilters.PerformLayout();
             panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -343,5 +358,6 @@
         private Button btnShifts;
         private Button btnEmployees;
         private Panel panel1;
+        private PictureBox pictureBox1;
     }
 }
