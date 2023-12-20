@@ -52,7 +52,8 @@
             // lbDepartments
             // 
             lbDepartments.BackColor = Color.White;
-            lbDepartments.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lbDepartments.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lbDepartments.ForeColor = Color.Black;
             lbDepartments.FormattingEnabled = true;
             lbDepartments.ItemHeight = 23;
             lbDepartments.Location = new Point(45, 174);
@@ -99,11 +100,12 @@
             // 
             // tbDepartmentName
             // 
+            tbDepartmentName.BorderStyle = BorderStyle.None;
             tbDepartmentName.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             tbDepartmentName.Location = new Point(638, 297);
             tbDepartmentName.Margin = new Padding(3, 4, 3, 4);
             tbDepartmentName.Name = "tbDepartmentName";
-            tbDepartmentName.Size = new Size(238, 37);
+            tbDepartmentName.Size = new Size(238, 30);
             tbDepartmentName.TabIndex = 17;
             // 
             // btnRemoveDepartment
@@ -248,9 +250,9 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.department;
-            pictureBox1.Location = new Point(937, 136);
+            pictureBox1.Location = new Point(934, 126);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(140, 86);
+            pictureBox1.Size = new Size(125, 62);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 40;
             pictureBox1.TabStop = false;
