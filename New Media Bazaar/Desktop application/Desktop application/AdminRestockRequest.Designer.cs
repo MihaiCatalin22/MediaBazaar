@@ -223,6 +223,7 @@
             Name = "AdminRestockRequest";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Send a restock request";
+            Load += AdminRestockRequest_Load_1;
             ((System.ComponentModel.ISupportInitialize)NUDQuantity).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);

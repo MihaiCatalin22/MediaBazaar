@@ -93,5 +93,10 @@ namespace Desktop_application
             adminStockDetails.ShowDialog();
             this.Close();
         }
+
+        private void AdminRestockRequest_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
