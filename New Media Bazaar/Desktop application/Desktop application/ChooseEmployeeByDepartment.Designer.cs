@@ -84,7 +84,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Century Gothic", 16.125F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(14, 41);
+            label1.Location = new Point(76, 60);
             label1.Name = "label1";
             label1.Size = new Size(261, 33);
             label1.TabIndex = 6;
@@ -103,7 +103,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(281, 30);
+            pictureBox1.Location = new Point(-3, -5);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(104, 62);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;

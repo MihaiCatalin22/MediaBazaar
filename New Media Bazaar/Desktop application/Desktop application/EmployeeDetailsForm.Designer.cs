@@ -443,6 +443,7 @@
             Controls.Add(lblEmpDetails);
             FormBorderStyle = FormBorderStyle.None;
             Name = "EmployeeDetailsForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "EmployeeDetailsForm";
             ((System.ComponentModel.ISupportInitialize)numUDSalary).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

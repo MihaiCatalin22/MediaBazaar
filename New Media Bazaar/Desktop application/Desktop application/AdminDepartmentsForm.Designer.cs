@@ -276,6 +276,7 @@
             Controls.Add(lbDepartments);
             FormBorderStyle = FormBorderStyle.None;
             Name = "AdminDepartmentsForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AdminDepartmentsForm";
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
