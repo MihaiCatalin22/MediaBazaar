@@ -51,5 +51,22 @@ namespace Desktop_application
                 }
             }
         }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            tbUsername.Clear();
+            tbPassword.Clear();
+            tbUsername.Focus();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
