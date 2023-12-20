@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnCancel = new Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateAnnouncement));
             btnSendAnno = new Button();
             dtpEndTime = new DateTimePicker();
             dtpStartTime = new DateTimePicker();
@@ -43,35 +43,21 @@
             panel1 = new Panel();
             panel2 = new Panel();
             panel3 = new Panel();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
-            // 
-            // btnCancel
-            // 
-            btnCancel.BackColor = Color.Black;
-            btnCancel.FlatAppearance.BorderSize = 0;
-            btnCancel.FlatStyle = FlatStyle.Flat;
-            btnCancel.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCancel.ForeColor = Color.White;
-            btnCancel.Location = new Point(395, 331);
-            btnCancel.Margin = new Padding(3, 4, 3, 4);
-            btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(177, 83);
-            btnCancel.TabIndex = 51;
-            btnCancel.Text = "Cancel announcement";
-            btnCancel.UseVisualStyleBackColor = false;
-            btnCancel.Click += btnCancel_Click;
             // 
             // btnSendAnno
             // 
-            btnSendAnno.BackColor = Color.Black;
+            btnSendAnno.BackColor = Color.MediumSeaGreen;
             btnSendAnno.FlatAppearance.BorderSize = 0;
             btnSendAnno.FlatStyle = FlatStyle.Flat;
-            btnSendAnno.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnSendAnno.Font = new Font("Century Gothic", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnSendAnno.ForeColor = Color.White;
-            btnSendAnno.Location = new Point(174, 331);
+            btnSendAnno.Location = new Point(75, 331);
             btnSendAnno.Margin = new Padding(3, 4, 3, 4);
             btnSendAnno.Name = "btnSendAnno";
-            btnSendAnno.Size = new Size(177, 83);
+            btnSendAnno.Size = new Size(609, 53);
             btnSendAnno.TabIndex = 50;
             btnSendAnno.Text = "Send announcement";
             btnSendAnno.UseVisualStyleBackColor = false;
@@ -199,18 +185,28 @@
             panel3.Size = new Size(223, 4);
             panel3.TabIndex = 59;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(125, 62);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 60;
+            pictureBox1.TabStop = false;
+            // 
             // CreateAnnouncement
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(800, 451);
+            Controls.Add(pictureBox1);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(panel7);
             Controls.Add(btnExitCreateAnnouncement);
-            Controls.Add(btnCancel);
             Controls.Add(btnSendAnno);
             Controls.Add(dtpEndTime);
             Controls.Add(dtpStartTime);
@@ -224,13 +220,12 @@
             Name = "CreateAnnouncement";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Create an announcement";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private Button btnCancel;
         private Button btnSendAnno;
         private DateTimePicker dtpEndTime;
         private DateTimePicker dtpStartTime;
@@ -245,5 +240,6 @@
         private Panel panel1;
         private Panel panel2;
         private Panel panel3;
+        private PictureBox pictureBox1;
     }
 }

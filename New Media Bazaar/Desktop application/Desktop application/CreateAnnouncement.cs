@@ -52,10 +52,10 @@ namespace Desktop_application
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            AdminLandingForm adminLandingForm = new AdminLandingForm(_loggedInEmployee);
-            this.Hide();
-            adminLandingForm.ShowDialog();
-            this.Close();
+            //AdminLandingForm adminLandingForm = new AdminLandingForm(_loggedInEmployee);
+            //this.Hide();
+            //adminLandingForm.ShowDialog();
+            //this.Close();
         }
 
         private void btnExitCreateAnnouncement_Click(object sender, EventArgs e)

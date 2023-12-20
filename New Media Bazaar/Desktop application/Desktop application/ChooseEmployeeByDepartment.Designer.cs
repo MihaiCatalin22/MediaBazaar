@@ -147,6 +147,7 @@
             btnExitChooseEmpByDepartment.TabIndex = 54;
             btnExitChooseEmpByDepartment.Text = "X";
             btnExitChooseEmpByDepartment.UseVisualStyleBackColor = false;
+            btnExitChooseEmpByDepartment.Click += btnExitChooseEmpByDepartment_Click;
             // 
             // ChooseEmployeeByDepartment
             // 

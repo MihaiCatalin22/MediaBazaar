@@ -67,5 +67,11 @@ namespace Desktop_application
         {
 
         }
+
+        // I left empty this part because I don't know after which form we open this one !!!!
+        private void btnExitChooseEmpByDepartment_Click(object sender, EventArgs e)
+        {
+            // to be implemented
+        }
     }
 }

@@ -48,12 +48,14 @@ namespace Desktop_application
                 cbName.Items.Add(name);
             }
         }
+
+        // comment out as we have exit button
         private void btnBack_Click(object sender, EventArgs e)
         {
-            AdminStockDetails form = new AdminStockDetails(_loggedInEmployee);
-            this.Hide();
-            form.ShowDialog();
-            this.Close();
+            //AdminStockDetails form = new AdminStockDetails(_loggedInEmployee);
+            //this.Hide();
+            //form.ShowDialog();
+            //this.Close();
         }
 
         private void btnSend_Click(object sender, EventArgs e)

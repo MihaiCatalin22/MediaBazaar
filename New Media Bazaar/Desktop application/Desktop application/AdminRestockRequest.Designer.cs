@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminRestockRequest));
             lblRestockReq = new Label();
             btnSend = new Button();
-            btnBack = new Button();
             lblType = new Label();
             lblQuantity = new Label();
             lblName = new Label();
@@ -59,35 +58,19 @@
             // 
             // btnSend
             // 
-            btnSend.BackColor = Color.Black;
+            btnSend.BackColor = Color.MediumSeaGreen;
             btnSend.FlatAppearance.BorderSize = 0;
             btnSend.FlatStyle = FlatStyle.Flat;
             btnSend.Font = new Font("Century Gothic", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnSend.ForeColor = Color.White;
-            btnSend.Location = new Point(282, 385);
+            btnSend.Location = new Point(64, 322);
             btnSend.Margin = new Padding(3, 4, 3, 4);
             btnSend.Name = "btnSend";
-            btnSend.Size = new Size(128, 80);
+            btnSend.Size = new Size(346, 58);
             btnSend.TabIndex = 23;
             btnSend.Text = "Send request";
             btnSend.UseVisualStyleBackColor = false;
             btnSend.Click += btnSend_Click;
-            // 
-            // btnBack
-            // 
-            btnBack.BackColor = Color.Black;
-            btnBack.FlatAppearance.BorderSize = 0;
-            btnBack.FlatStyle = FlatStyle.Flat;
-            btnBack.Font = new Font("Century Gothic", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            btnBack.ForeColor = Color.White;
-            btnBack.Location = new Point(88, 385);
-            btnBack.Margin = new Padding(3, 4, 3, 4);
-            btnBack.Name = "btnBack";
-            btnBack.Size = new Size(106, 80);
-            btnBack.TabIndex = 24;
-            btnBack.Text = "Go back";
-            btnBack.UseVisualStyleBackColor = false;
-            btnBack.Click += btnBack_Click;
             // 
             // lblType
             // 
@@ -203,7 +186,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(482, 499);
+            ClientSize = new Size(482, 448);
             Controls.Add(pictureBox1);
             Controls.Add(panel3);
             Controls.Add(panel2);
@@ -215,7 +198,6 @@
             Controls.Add(lblName);
             Controls.Add(lblQuantity);
             Controls.Add(lblType);
-            Controls.Add(btnBack);
             Controls.Add(btnSend);
             Controls.Add(lblRestockReq);
             FormBorderStyle = FormBorderStyle.None;
@@ -234,7 +216,6 @@
 
         private Label lblRestockReq;
         private Button btnSend;
-        private Button btnBack;
         private Label lblType;
         private Label lblQuantity;
         private Label lblName;
