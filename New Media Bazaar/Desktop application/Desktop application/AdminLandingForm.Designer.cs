@@ -49,6 +49,7 @@
             btnEmployees = new Button();
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
+            panel3 = new Panel();
             gbFilters.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -310,12 +311,21 @@
             pictureBox1.TabIndex = 43;
             pictureBox1.TabStop = false;
             // 
+            // panel3
+            // 
+            panel3.BackColor = Color.Black;
+            panel3.Location = new Point(237, 473);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(335, 4);
+            panel3.TabIndex = 44;
+            // 
             // AdminLandingForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(957, 623);
+            Controls.Add(panel3);
             Controls.Add(pictureBox1);
             Controls.Add(panel1);
             Controls.Add(panel2);
@@ -359,5 +369,6 @@
         private Button btnEmployees;
         private Panel panel1;
         private PictureBox pictureBox1;
+        private Panel panel3;
     }
 }
