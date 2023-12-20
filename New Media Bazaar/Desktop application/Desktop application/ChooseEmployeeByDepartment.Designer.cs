@@ -92,12 +92,11 @@
             // 
             // txbSearch
             // 
-            txbSearch.BorderStyle = BorderStyle.None;
             txbSearch.Font = new Font("Century Gothic", 14F, FontStyle.Regular, GraphicsUnit.Point);
             txbSearch.Location = new Point(14, 99);
             txbSearch.Margin = new Padding(3, 4, 3, 4);
             txbSearch.Name = "txbSearch";
-            txbSearch.Size = new Size(335, 29);
+            txbSearch.Size = new Size(335, 36);
             txbSearch.TabIndex = 5;
             txbSearch.TextChanged += txbSearch_TextChanged;
             // 
@@ -114,7 +113,7 @@
             // panel7
             // 
             panel7.BackColor = Color.Black;
-            panel7.Location = new Point(12, 129);
+            panel7.Location = new Point(12, 132);
             panel7.Name = "panel7";
             panel7.Size = new Size(337, 3);
             panel7.TabIndex = 51;
@@ -170,6 +169,7 @@
             Name = "ChooseEmployeeByDepartment";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ChooseEmployeeByDepartment";
+            Load += ChooseEmployeeByDepartment_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();

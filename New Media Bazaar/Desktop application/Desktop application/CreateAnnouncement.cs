@@ -36,9 +36,9 @@ namespace Desktop_application
                 Announcement announcement = new Announcement();
                 announcement.Title = tbTitle.Text;
                 announcement.Details = tbDetails.Text;
-				announcement.StartDate = DateOnly.FromDateTime(dtpStartTime.Value.Date);
-				announcement.EndDate = DateOnly.FromDateTime(dtpEndTime.Value.Date);
-				AnnoucementController.AddAnnouncement(announcement);
+                announcement.StartDate = DateOnly.FromDateTime(dtpStartTime.Value.Date);
+                announcement.EndDate = DateOnly.FromDateTime(dtpEndTime.Value.Date);
+                AnnoucementController.AddAnnouncement(announcement);
                 AdminLandingForm adminLandingForm = new AdminLandingForm(_loggedInEmployee);
                 this.Hide();
                 adminLandingForm.ShowDialog();
@@ -55,6 +55,14 @@ namespace Desktop_application
             AdminLandingForm adminLandingForm = new AdminLandingForm(_loggedInEmployee);
             this.Hide();
             adminLandingForm.ShowDialog();
+            this.Close();
+        }
+
+        private void btnExitCreateAnnouncement_Click(object sender, EventArgs e)
+        {
+            AdminLandingForm form = new AdminLandingForm(_loggedInEmployee);
+            this.Hide();
+            form.ShowDialog();
             this.Close();
         }
     }

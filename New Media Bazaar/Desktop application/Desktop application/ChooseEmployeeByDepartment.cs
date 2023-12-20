@@ -62,5 +62,10 @@ namespace Desktop_application
 
             this.Close();
         }
+
+        private void ChooseEmployeeByDepartment_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
