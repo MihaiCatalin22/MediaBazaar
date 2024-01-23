@@ -384,5 +384,54 @@ namespace DAL
                 return null;
             }
         }
+
+        public CancelledShift[] GetFromVacation(int id)
+        {
+            try
+            {
+                List<CancelledShift> cancelledShifts = new();
+                EmployeeController _employeeController = new(new DALEmployeeController());
+                VacationController _vacationController = new(new DALVacationController());
+                ShiftController _shiftController = new(new DALShiftController());
+
+                Vacation vacation = _vacationController.ReadById(id);
+
+                using SqlConnection conn = new SqlConnection(CONNECTION_STRING);
+                {
+                    string sql = "SELECT c.* FROM Shift AS s INNER JOIN CancelledShift AS c ON s.Id = c.ShiftID INNER JOIN Vacation AS v ON c.AssignedEmployeeID = v.EmployeeId WHERE c.AssignedEmployeeID = @empId AND c.NewEmployeeID IS NULL AND s.Date >= @startDate AND s.Date <= @endDate ORDER BY s.Date";
+
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@empId", vacation.Employee.Id);
+                        cmd.Parameters.AddWithValue("@startDate", vacation.StartDate.ToDateTime(TimeOnly.MinValue));
+                        cmd.Parameters.AddWithValue("@endDate", vacation.EndDate.ToDateTime(TimeOnly.MinValue));
+                        conn.Open();
+                        SqlDataReader dr = cmd.ExecuteReader();
+
+                        while (dr.Read())
+                        {
+                            Shift shift = _shiftController.GetById(Convert.ToInt32(dr[1]));
+                            Employee assignedEmployee = _employeeController.GetById(Convert.ToInt32(dr[2]));
+                            Employee? newEmployee;
+                            if (dr[3] is DBNull)
+                                newEmployee = null;
+                            else
+                                newEmployee = _employeeController.GetById(Convert.ToInt32(dr[3]));
+
+                            CancelledShift newCancelledShift = new CancelledShift(Convert.ToInt32(dr[0]), shift,
+                                assignedEmployee, newEmployee, dr[4].ToString(), Convert.ToBoolean(dr[5]));
+
+                            cancelledShifts.Add(newCancelledShift);
+                        }
+                    }
+
+                }
+                return cancelledShifts.ToArray();
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
     }
 }

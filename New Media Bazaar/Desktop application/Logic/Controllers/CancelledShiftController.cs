@@ -65,5 +65,9 @@ namespace Logic.Controllers
         {
             return _cancelledShiftDal.GetAllIfNewEmpAssigned(assigned);
         }
+        public CancelledShift[] GetFromVacation(int id)
+        {
+            return _cancelledShiftDal.GetFromVacation(id);
+        }
     }
 }

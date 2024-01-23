@@ -124,9 +124,9 @@ namespace DAL
 				}
 				return vacations.ToArray();
 			}
-			catch (Exception ex)
+			catch (SqlException ex)
 			{
-				return null;
+				throw ex;
 			}
 		}
 

@@ -18,5 +18,6 @@ namespace Logic.Interfaces
         public CancelledShift[] GetAllInThePast();
         public CancelledShift[] GetAllByStatus(bool status);
         public CancelledShift[] GetAllIfNewEmpAssigned(bool assigned);
+        CancelledShift[] GetFromVacation(int id);
     }
 }
