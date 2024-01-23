@@ -283,5 +283,44 @@ namespace DAL
 			}
 		}
 
+		public Shift[] GetShiftsFromVacation(Vacation vacation)
+		{
+			try
+			{
+				List<Shift> shifts = new();
+				EmployeeController employeeController = new(new DALEmployeeController());
+				using SqlConnection conn = new SqlConnection(CONNECTION_STRING);
+				{
+					string sql = "SELECT s.* FROM Shift AS s INNER JOIN Vacation AS V ON s.EmployeeID = v.EmployeeId WHERE s.EmployeeID = @empId AND s.Date >= @startDate AND s.Date <= @endDate";
+
+					using (SqlCommand cmd = new SqlCommand(sql, conn))
+					{
+						cmd.Parameters.AddWithValue("@empId", vacation.Employee.Id);
+						cmd.Parameters.AddWithValue("@startDate", vacation.StartDate.ToDateTime(TimeOnly.MinValue));
+						cmd.Parameters.AddWithValue("@endDate", vacation.EndDate.ToDateTime(TimeOnly.MinValue));
+
+						conn.Open();
+						SqlDataReader dr = cmd.ExecuteReader();
+
+						while (dr.Read())
+						{
+							Employee employee = employeeController.GetById(Convert.ToInt32(dr[1]));
+							Shift newShift = new Shift(Convert.ToInt32(dr[0]), employee, Convert.ToDateTime(dr[2]), Convert.ToInt32(dr[3]), Convert.ToBoolean(dr[4]));
+
+							if (!newShift.IsCancelled)
+							{
+								shifts.Add(newShift);
+							}
+						}
+					}
+
+				}
+				return shifts.ToArray();
+			}
+			catch (Exception ex)
+			{
+				return null;
+			}
+		}
 	}
 }

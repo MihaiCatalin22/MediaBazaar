@@ -9,7 +9,16 @@ namespace Logic.Classes
     public class Announcement
     {
         public Announcement() { }
-        public Announcement(int id, string title, string details, DateOnly startDate, DateOnly endDate) 
+
+		public Announcement(string title, string details, DateOnly startDate, DateOnly endDate)
+		{
+			Title = title;
+			Details = details;
+			StartDate = startDate;
+			EndDate = endDate;
+		}
+
+		public Announcement(int id, string title, string details, DateOnly startDate, DateOnly endDate) 
         { 
             Id = id;
             Title = title;

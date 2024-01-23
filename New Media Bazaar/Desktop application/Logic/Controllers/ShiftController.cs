@@ -59,5 +59,9 @@ namespace Logic.Controllers
 		{
 			return _shiftDal.GetFutureShiftsByEmp(employee);
 		}
+		public Shift[] GetShiftsFromVacation(Vacation vacation)
+		{
+			return _shiftDal.GetShiftsFromVacation(vacation);
+		}
 	}
 }
